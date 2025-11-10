@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CheckIcon } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
@@ -43,7 +42,7 @@ const ImageCard: React.FC<{ src: string; alt: string; title: string }> = ({ src,
 );
 
 
-const Coca18Page: React.FC = () => {
+const Neko62Page: React.FC = () => {
   return (
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,4 +83,4 @@ const Coca18Page: React.FC = () => {
   );
 };
 
-export default Coca18Page;
+export default Neko62Page;

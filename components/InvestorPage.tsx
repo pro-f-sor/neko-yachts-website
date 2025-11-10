@@ -77,12 +77,6 @@ const InvestorPage: React.FC = () => {
                         bio="An award-winning German architect, William's avant-garde designs push the boundaries of performance and aesthetics. He is the creative force behind the NEKO 62's innovative hull design and spacious layout." 
                     />
                     <TeamMemberCard 
-                        imgSrc="https://coolcatamaran.com/images/headshots/adele.png"
-                        name="Adele" 
-                        title="Interior Designer" 
-                        bio="Adele specializes in creating luxurious, functional, and lightweight interiors for the marine environment. Her designs maximize space and integrate sustainable, high-end materials for ultimate comfort." 
-                    />
-                    <TeamMemberCard 
                         imgSrc="https://coolcatamaran.com/images/headshots/tanielle.png"
                         name="Tanielle" 
                         title="Interior Designer" 

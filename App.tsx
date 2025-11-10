@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import WhyPage from './components/WhyPage';
 import DnaPage from './components/DnaPage';
-import Coca18Page from './components/Coca18Page';
+import Neko62Page from './components/Neko62Page';
 import ContactPage from './components/ContactPage';
 import InvestorPage from './components/InvestorPage';
 import PasswordProtect from './components/PasswordProtect';
@@ -43,7 +42,7 @@ const App: React.FC = () => {
       case 'The DNA':
         return <DnaPage />;
       case 'NEKO 62':
-        return <Coca18Page />;
+        return <Neko62Page />;
       case 'Investors':
         return (
           <PasswordProtect>

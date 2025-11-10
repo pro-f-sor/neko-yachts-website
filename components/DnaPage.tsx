@@ -35,7 +35,7 @@ const DnaPage: React.FC = () => {
 
         <AnimatedSection className="mt-24 max-w-4xl mx-auto">
             <img 
-                src="https://images.unsplash.com/photo-1543204991-f93d39e3834c?q=80&w=1974&auto=format&fit=crop"
+                src="http://coolcatamaran.com/images/aerial%20shot%202.png"
                 alt="Aerial view of a catamaran sailing on clear blue water"
                 className="rounded-lg shadow-2xl object-cover w-full h-80"
             />
