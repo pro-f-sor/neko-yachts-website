@@ -11,6 +11,7 @@ import PasswordProtect from './components/PasswordProtect';
 import { Page } from './types';
 import { NAV_LINKS } from './constants';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Dna2Page from './components/Dna2Page';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('Home');
@@ -41,6 +42,8 @@ const App: React.FC = () => {
         return <WhyPage />;
       case 'The DNA':
         return <DnaPage />;
+      case 'DNA 2':
+        return <Dna2Page />;
       case 'NEKO 62':
         return <Neko62Page />;
       case 'Investors':
