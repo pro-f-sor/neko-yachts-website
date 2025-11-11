@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Page, NavLink } from '../types';
 import { TwitterIcon, InstagramIcon, LinkedInIcon } from './icons/Icons';
@@ -59,7 +58,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase">Contact</h3>
               <ul className="mt-4 space-y-2 text-base text-gray-400">
                 <li><a href="mailto:hello@nekoyachts.com" className="hover:text-white">hello@nekoyachts.com</a></li>
-                <li>Germany & EU</li>
+                <li>Designed in the EU & UK</li>
               </ul>
             </div>
           </div>
