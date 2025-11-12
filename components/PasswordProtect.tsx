@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LockIcon } from './icons/Icons';
 
 // In a real-world application, this would be stored securely in an environment variable.
-const CORRECT_PASSWORD = 'NEKOFuture2026';
+const CORRECT_PASSWORD = 'NEKOFuture2025';
 
 interface PasswordProtectProps {
   children: React.ReactNode;
