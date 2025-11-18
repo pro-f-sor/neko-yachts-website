@@ -66,9 +66,15 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
   const isTransparent = !isScrolled && !isMenuOpen && currentPage === 'Home';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isTransparent ? 'bg-transparent' : 'bg-grey-900/95 backdrop-blur-sm shadow-lg'}`}>
+    <header 
+      className={`fixed z-50 transition-all duration-500 ease-in-out ${
+        isTransparent 
+          ? 'top-0 left-0 right-0 bg-transparent' 
+          : 'top-4 left-4 right-4 md:left-8 md:right-8 rounded-3xl bg-[#0E1F2F]/40 backdrop-blur-md shadow-lg border border-white/5'
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className={`flex items-center justify-between transition-all duration-500 ${isTransparent ? 'h-20' : 'h-16'}`}>
           <div 
             className="text-2xl font-bold tracking-wider cursor-pointer transition-colors hover:text-[#D5C4A1]"
             onClick={() => handleNavClick('Home')}
@@ -142,7 +148,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-grey-900 border-t border-grey-800">
+        <div className="md:hidden bg-[#0E1F2F]/95 backdrop-blur-md border-t border-grey-800 rounded-b-3xl">
           <nav className="flex flex-col items-center space-y-6 py-8">
             {navLinks.map((link) => (
               <a
