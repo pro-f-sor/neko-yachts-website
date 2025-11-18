@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
@@ -5,7 +6,7 @@ const TeamMemberCard: React.FC<{ imgSrc: string; name: string; title: string; bi
     <div className="text-center">
         <img className="w-40 h-40 mx-auto rounded-full object-cover shadow-lg" src={imgSrc} alt={`Portrait of ${name}`} />
         <h4 className="mt-4 text-xl font-bold text-white">{name}</h4>
-        <p className="text-cyan-400">{title}</p>
+        <p className="text-[#D5C4A1]">{title}</p>
         <p className="mt-2 text-grey-400 text-sm">{bio}</p>
     </div>
 );
@@ -26,7 +27,7 @@ const InvestorPage: React.FC = () => {
       <div className="relative z-10 py-20 sm:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <p className="text-cyan-400 font-semibold tracking-wider">FOR INVESTORS</p>
+            <p className="text-[#D5C4A1] font-semibold tracking-wider">FOR INVESTORS</p>
             <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Join Us in Shaping the Future of Sailing</h1>
             <p className="mt-6 text-xl text-grey-300">
                 NEKO Yachts is poised to disrupt the luxury catamaran market. We combine innovative design, sustainable technology, and a direct-to-consumer model to create unparalleled value for both our customers and investors.
@@ -37,19 +38,19 @@ const InvestorPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-center text-white mb-12">Investment Highlights</h2>
             <div className="grid md:grid-cols-2 gap-8 text-lg">
                 <div className="bg-grey-950/50 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-4">Massive Market Opportunity</h3>
+                <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Massive Market Opportunity</h3>
                 <p className="text-grey-300">The global catamaran market is growing rapidly, with increasing demand for larger, more comfortable, and eco-friendly vessels. We are positioned to capture a significant share of this expanding market.</p>
                 </div>
                 <div className="bg-grey-950/50 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-4">Disruptive Business Model</h3>
+                <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Disruptive Business Model</h3>
                 <p className="text-grey-300">Our lean, tech-driven approach minimizes overhead and traditional dealership markups, allowing us to offer a superior product at a competitive price point, maximizing profitability.</p>
                 </div>
                 <div className="bg-grey-950/50 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-4">Proprietary Technology</h3>
+                <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Proprietary Technology</h3>
                 <p className="text-grey-300">Investment in our 'fast-build' techniques and integrated smart-yacht systems creates a strong competitive moat and opportunities for future licensing and technology partnerships.</p>
                 </div>
                 <div className="bg-grey-950/50 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-4">Experienced Team</h3>
+                <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Experienced Team</h3>
                 <p className="text-grey-300">Our founding team comprises seasoned naval architects, marine engineers, and business leaders with a proven track record of innovation and success in the marine industry.</p>
                 </div>
             </div>
@@ -94,7 +95,7 @@ const InvestorPage: React.FC = () => {
             <AnimatedSection className="mt-24 max-w-3xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-white mb-6">Request Investor Deck</h2>
                 <p className="text-xl text-grey-300 mb-8">For detailed financial projections, market analysis, and to learn more about our funding rounds, please contact our investor relations team.</p>
-                <a href="mailto:invest@nekoyachts.com" className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                <a href="mailto:invest@nekoyachts.com" className="inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
                     Contact Investor Relations
                 </a>
             </AnimatedSection>

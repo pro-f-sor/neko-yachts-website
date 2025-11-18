@@ -3,9 +3,9 @@ import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
 const QuoteCard: React.FC<{ children: React.ReactNode; author?: string }> = ({ children, author }) => (
-    <div className="bg-cyan-800/20 border-l-4 border-cyan-500 p-6 my-8 rounded-r-lg">
+    <div className="bg-[#D5C4A1]/10 border-l-4 border-[#D5C4A1] p-6 my-8 rounded-r-lg">
         <p className="text-xl italic text-grey-300">{children}</p>
-        {author && <p className="text-right mt-4 text-cyan-400 font-semibold">{author}</p>}
+        {author && <p className="text-right mt-4 text-[#D5C4A1] font-semibold">{author}</p>}
     </div>
 );
 
@@ -22,7 +22,7 @@ const WhyPage: React.FC = () => {
 
         <div className="mt-20 max-w-4xl mx-auto space-y-12 text-lg text-grey-300 leading-relaxed">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-cyan-400 mb-4">The Problem with the Status Quo</h2>
+            <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">The Problem with the Status Quo</h2>
             <p>
               Visit almost any catamaran vendor website and you will likely be confronted with jargon on the landing page - engineering mumbo-jumbo, self-praise about construction techniques, and never-ending superlatives. In this sector of the market, the 'C' words crop up almost as frequently as mushrooms: Custom, compromise, colossal, comfort, cutting (edge).
             </p>
@@ -35,7 +35,7 @@ const WhyPage: React.FC = () => {
           </AnimatedSection>
 
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-cyan-400 mb-4">Our Philosophy: Value as Standard</h2>
+            <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">Our Philosophy: Value as Standard</h2>
             <p>
               We are not racing our boats, and we doubt you are either. As a modern and tech-savvy company, we can't help but be critical about everything we do. If it doesn't add value or solve a real-world pain-point, it won't make it to our feature list. We've discovered that many manufacturers view 'value' as simply an upsell option.
             </p>
@@ -48,7 +48,7 @@ const WhyPage: React.FC = () => {
           </AnimatedSection>
 
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-cyan-400 mb-4">Introducing "NEKO"</h2>
+            <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">Introducing "NEKO"</h2>
             <p>
               We introduce a new name... "NEKO" (our cue for Next-generation Eco Katamaran). This name exemplifies Value – not as an add-on, but as standard. A NEKO Catamaran occupies that rare space where the three pillars of performance, price, and comfort meet.
             </p>

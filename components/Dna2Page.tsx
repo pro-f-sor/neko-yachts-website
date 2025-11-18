@@ -37,7 +37,7 @@ const FounderCard: React.FC<{ imgSrc: string; name: string; title: string; summa
         >
             <img className="w-40 h-40 mx-auto rounded-full object-cover shadow-lg mb-4" src={imgSrc} alt={`Portrait of ${name}`} />
             <h4 className="text-2xl font-bold text-white">{name}</h4>
-            <p className="text-cyan-400 mb-4">{title}</p>
+            <p className="text-[#D5C4A1] mb-4">{title}</p>
             <div className="text-grey-400 text-left text-base leading-relaxed flex-grow w-full">
                 <p className="italic">{summary}</p>
                 <div
@@ -47,7 +47,7 @@ const FounderCard: React.FC<{ imgSrc: string; name: string; title: string; summa
                     <p>{bio}</p>
                 </div>
             </div>
-             <div className="mt-4 text-sm text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+             <div className="mt-4 text-sm text-[#D5C4A1] font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                 {isExpanded ? 'Show Less' : 'Show More'}
             </div>
         </div>
@@ -90,7 +90,7 @@ const Dna2Page: React.FC = () => {
                     <AnimatedSection>
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h2 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-6">A vision to redefine what’s possible</h2>
+                                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#D5C4A1] mb-6">A vision to redefine what’s possible</h2>
                                 <p className="text-lg text-grey-300 leading-relaxed">
                                     For over two years we have dedicated ourselves to designing a catamaran that redefines what is possible, balancing performance, beauty and comfort without compromise.
                                 </p>
@@ -119,7 +119,7 @@ const Dna2Page: React.FC = () => {
                                 />
                             </div>
                             <div className="md:order-1">
-                                <h2 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-6">Heritage meets innovation</h2>
+                                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#D5C4A1] mb-6">Heritage meets innovation</h2>
                                 <p className="text-lg text-grey-300 leading-relaxed">
                                     Perhaps the sea was always in their blood. Their mother once circumnavigated the globe on a 100-foot schooner — a quiet reminder that true journeys begin with courage and conviction.
                                 </p>
@@ -148,7 +148,7 @@ const Dna2Page: React.FC = () => {
                     <AnimatedSection>
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h2 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-6">Intelligent design. Effortless performance.</h2>
+                                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#D5C4A1] mb-6">Intelligent design. Effortless performance.</h2>
                                 <p className="text-lg text-grey-300 leading-relaxed">
                                     Our first creation, a 19-metre vessel, is designed for the cruising couple who want to live their dream. It offers the space, refinement and performance of a larger yacht, yet remains effortless to sail single-handed.
                                 </p>
@@ -197,7 +197,7 @@ const Dna2Page: React.FC = () => {
                                     alt="Aerial view of a catamaran on the open ocean"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-grey-950/70"></div>
+                                <div className="absolute inset-0 bg-[#524339]/35"></div>
                             </div>
                              <div className="relative z-10 max-w-4xl mx-auto">
                                 <PullQuote className="my-0">

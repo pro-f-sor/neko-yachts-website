@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Page } from '../types';
 import { 
@@ -125,7 +126,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           <div className="mt-10">
             <button
               onClick={() => handleNavClick('NEKO 19')}
-              className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
             >
               Explore The NEKO 19
               <ArrowRightIcon />
@@ -270,7 +271,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           <AnimatedSection className="text-center mt-16">
             <button
               onClick={() => handleNavClick('NEKO 19')}
-              className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
             >
               See The NEKO 19 In Detail
               <ArrowRightIcon />
@@ -298,7 +299,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             <p className="mt-6 text-lg text-grey-300">
               The full reveal is coming. By joining our private list, you will be the first to see the full designs, receive access to the private specification sheet, and be notified of exclusive pre-launch events.
             </p>
-             <p className="mt-4 text-lg text-cyan-400 font-semibold">
+             <p className="mt-4 text-lg text-[#D5C4A1] font-semibold">
               Access is limited. Register your interest.
             </p>
             <div className="mt-10">
@@ -315,11 +316,11 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
                     placeholder="Your email address"
                     required
                     aria-label="Email address"
-                    className="flex-grow bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors w-full"
+                    className="flex-grow bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1] transition-colors w-full"
                   />
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full shadow-md transition-transform transform hover:scale-105 duration-300 whitespace-nowrap"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold rounded-full shadow-md transition-transform transform hover:scale-105 duration-300 whitespace-nowrap"
                   >
                     Register Interest
                     <ArrowRightIcon />

@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div 
-            className="text-2xl font-bold tracking-wider cursor-pointer transition-colors hover:text-cyan-400"
+            className="text-2xl font-bold tracking-wider cursor-pointer transition-colors hover:text-[#D5C4A1]"
             onClick={() => handleNavClick('Home')}
           >
             NEKO
@@ -42,10 +42,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
                   e.preventDefault();
                   handleNavClick(link.name);
                 }}
-                className={`text-sm font-medium uppercase tracking-widest transition-colors duration-300 ${
+                className={`text-sm font-medium uppercase tracking-widest transition-colors duration-300 hover:text-white ${
                   currentPage === link.name
-                    ? 'text-cyan-400'
-                    : 'text-grey-300 hover:text-white'
+                    ? 'text-[#D5C4A1]'
+                    : 'text-[#D8D8D8]'
                 }`}
               >
                 {link.name}
@@ -73,8 +73,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
                   e.preventDefault();
                   handleNavClick(link.name);
                 }}
-                className={`text-lg font-medium uppercase tracking-widest ${
-                  currentPage === link.name ? 'text-cyan-400' : 'text-grey-300'
+                className={`text-lg font-medium uppercase tracking-widest transition-colors duration-300 hover:text-white ${
+                  currentPage === link.name ? 'text-[#D5C4A1]' : 'text-[#D8D8D8]'
                 }`}
               >
                 {link.name}

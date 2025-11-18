@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { generateVoyageItinerary } from '../services/geminiService';
 import { SparklesIcon } from './icons/Icons';
@@ -26,7 +27,7 @@ const ContactPage: React.FC = () => {
         try {
             const result = await generateVoyageItinerary(destination);
             const formattedResult = result
-                .replace(/### (.*)/g, '<h3 class="text-xl font-semibold text-cyan-400 mt-4 mb-2">$1</h3>')
+                .replace(/### (.*)/g, '<h3 class="text-xl font-semibold text-[#D5C4A1] mt-4 mb-2">$1</h3>')
                 .replace(/## (.*)/g, '<h2 class="text-2xl font-bold text-white mt-6 mb-3">$1</h2>')
                 .replace(/\* \*(.*?)\* \*/g, '<strong>$1</strong>')
                 .replace(/\* (.*?)\n/g, '<li class="ml-5 list-disc">$1</li>')
@@ -80,20 +81,20 @@ const ContactPage: React.FC = () => {
                         <div className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-grey-300 mb-2">Full Name</label>
-                                <input type="text" name="name" id="name" value={formState.name} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+                                <input type="text" name="name" id="name" value={formState.name} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]" />
                             </div>
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-grey-300 mb-2">Email Address</label>
-                                <input type="email" name="email" id="email" value={formState.email} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+                                <input type="email" name="email" id="email" value={formState.email} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]" />
                             </div>
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-grey-300 mb-2">Message</label>
-                                <textarea name="message" id="message" rows={5} value={formState.message} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                                <textarea name="message" id="message" rows={5} value={formState.message} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]"></textarea>
                             </div>
                         </div>
                         {formError && <p className="text-red-400 mt-4 text-center">{formError}</p>}
                         <div className="mt-8 text-center">
-                            <button type="submit" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full transition-colors">
+                            <button type="submit" className="bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold py-3 px-8 rounded-full transition-colors">
                                 Send Message
                             </button>
                         </div>
@@ -114,10 +115,10 @@ const ContactPage: React.FC = () => {
                             value={destination}
                             onChange={(e) => setDestination(e.target.value)}
                             placeholder="e.g., The Greek Islands, The Caribbean, or Fiji"
-                            className="flex-grow bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                            className="flex-grow bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]"
                             disabled={isLoading}
                         />
-                        <button onClick={handleGenerate} disabled={isLoading} className="bg-cyan-500 hover:bg-cyan-600 disabled:bg-cyan-800 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-full transition-colors flex items-center justify-center">
+                        <button onClick={handleGenerate} disabled={isLoading} className="bg-[#D5C4A1] hover:bg-[#C8B593] disabled:bg-[#D5C4A1]/50 disabled:cursor-not-allowed text-grey-900 font-semibold py-3 px-6 rounded-full transition-colors flex items-center justify-center">
                             {isLoading ? 'Generating...' : 'Create Itinerary'}
                         </button>
                     </div>

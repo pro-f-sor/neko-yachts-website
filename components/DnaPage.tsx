@@ -1,8 +1,9 @@
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
 const QuoteBlock: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div className="bg-grey-950/50 border-l-4 border-cyan-500 p-6 rounded-r-lg">
+    <div className="bg-grey-950/50 border-l-4 border-[#D5C4A1] p-6 rounded-r-lg">
         <p className="text-2xl italic text-grey-200 font-semibold">{children}</p>
     </div>
 );
@@ -17,7 +18,7 @@ const DnaPage: React.FC = () => {
 
         <div className="mt-20 max-w-4xl mx-auto space-y-16 text-lg text-grey-300 leading-relaxed">
             <AnimatedSection>
-                <h2 className="text-3xl font-bold text-cyan-400 mb-4">A Vision to Redefine What’s Possible</h2>
+                <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">A Vision to Redefine What’s Possible</h2>
                 <p>
                     We are a group of creative thinkers building a business to change an industry.
                 </p>
@@ -27,7 +28,7 @@ const DnaPage: React.FC = () => {
             </AnimatedSection>
             
             <AnimatedSection>
-                <h2 className="text-3xl font-bold text-cyan-400 mb-4">From Idea to Vision</h2>
+                <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">From Idea to Vision</h2>
                 <p>
                     The journey began with two brothers who could not find a vessel that met every expectation, so they set out to create their own.
                 </p>
@@ -37,7 +38,7 @@ const DnaPage: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection>
-                <h2 className="text-3xl font-bold text-cyan-400 mb-4">Heritage and Strength</h2>
+                <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">Heritage and Strength</h2>
                 <p>
                     Perhaps the sea was always in their blood.
                 </p>
@@ -50,7 +51,7 @@ const DnaPage: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection>
-                <h2 className="text-3xl font-bold text-cyan-400 mb-4">Our Philosophy</h2>
+                <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">Our Philosophy</h2>
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center mt-6">
                     <div className="md:flex-1">
                         <p>
@@ -64,7 +65,7 @@ const DnaPage: React.FC = () => {
             </AnimatedSection>
             
             <AnimatedSection>
-                <h2 className="text-3xl font-bold text-cyan-400 mb-4">The First Design</h2>
+                <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">The First Design</h2>
                 <p>
                     Our first creation, a 19-metre vessel, is designed for the cruising couple seeking to live their dream.
                 </p>
@@ -74,7 +75,7 @@ const DnaPage: React.FC = () => {
             </AnimatedSection>
             
             <AnimatedSection>
-                <h2 className="text-3xl font-bold text-cyan-400 mb-4">Intelligent Design</h2>
+                <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">Intelligent Design</h2>
                  <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center mt-6">
                     <div className="md:flex-1">
                         <p>
@@ -91,7 +92,7 @@ const DnaPage: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection>
-                <h2 className="text-3xl font-bold text-cyan-400 mb-4">A Lasting Belief</h2>
+                <h2 className="text-3xl font-bold text-[#D5C4A1] mb-4">A Lasting Belief</h2>
                 <p>
                     True innovation lies not in excess, but in excellence.
                 </p>

@@ -23,9 +23,9 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
             <h2 className="text-2xl font-bold tracking-wider text-white">NEKO</h2>
             <p className="mt-4 text-grey-400 text-sm">Redefining performance cruising.</p>
             <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-grey-400 hover:text-cyan-400 transition-colors"><TwitterIcon /></a>
-              <a href="#" className="text-grey-400 hover:text-cyan-400 transition-colors"><InstagramIcon /></a>
-              <a href="#" className="text-grey-400 hover:text-cyan-400 transition-colors"><LinkedInIcon /></a>
+              <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><TwitterIcon /></a>
+              <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><InstagramIcon /></a>
+              <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><LinkedInIcon /></a>
             </div>
           </div>
           <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <ul className="mt-4 space-y-2">
                 {navLinks.map(link => (
                   <li key={link.name}>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.name); }} className="text-base text-grey-400 hover:text-white transition-colors">
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.name); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">
                       {link.name}
                     </a>
                   </li>
@@ -45,13 +45,13 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <h3 className="text-sm font-semibold text-grey-200 tracking-wider uppercase">Enquiries</h3>
               <ul className="mt-4 space-y-2">
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Contact'); }} className="text-base text-grey-400 hover:text-white transition-colors">Sales</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Contact'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Sales</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Supplier Partnerships'); }} className="text-base text-grey-400 hover:text-white transition-colors">Supplier Partnerships</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Supplier Partnerships'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Supplier Partnerships</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Investors'); }} className="text-base text-grey-400 hover:text-white transition-colors">Investors</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Investors'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Investors</a>
                 </li>
               </ul>
             </div>
@@ -59,22 +59,22 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <h3 className="text-sm font-semibold text-grey-200 tracking-wider uppercase">Legal</h3>
               <ul className="mt-4 space-y-2">
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Privacy Policy'); }} className="text-base text-grey-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Privacy Policy'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Privacy Policy</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Cookie Policy'); }} className="text-base text-grey-400 hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Cookie Policy'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Cookie Policy</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Terms and Conditions'); }} className="text-base text-grey-400 hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Terms and Conditions'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Terms & Conditions</a>
                 </li>
                  <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Disclaimer'); }} className="text-base text-grey-400 hover:text-white transition-colors">Disclaimer</a>
+                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Disclaimer'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Disclaimer</a>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-grey-200 tracking-wider uppercase">Contact</h3>
-              <ul className="mt-4 space-y-2 text-base text-grey-400">
+              <ul className="mt-4 space-y-2 text-base text-[#D8D8D8]">
                 <li><a href="mailto:hello@nekoyachts.com" className="hover:text-white">hello@nekoyachts.com</a></li>
                 <li>Designed in the EU & UK</li>
               </ul>

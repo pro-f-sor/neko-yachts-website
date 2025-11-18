@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import { LightningBoltIcon, DiamondIcon, UserGroupIcon, MegaphoneIcon } from './icons/Icons';
@@ -35,7 +36,7 @@ const SupplierPartnershipsPage: React.FC = () => {
       <div className="py-20 sm:py-28 bg-grey-950/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-cyan-400 mb-6">
+            <h2 className="text-3xl font-bold text-[#D5C4A1] mb-6">
               A Partnership Built on Excellence
             </h2>
             <div className="text-lg text-grey-300 leading-relaxed space-y-6 text-left md:text-center">
@@ -72,7 +73,7 @@ const SupplierPartnershipsPage: React.FC = () => {
                 If you are a leader in your field and share our commitment to quality and innovation, we invite you to connect with us.
              </p>
              <p className="mt-6 text-lg font-semibold">
-                 Contact our partnerships team at <a href="mailto:info@nekoyachts.com" className="text-cyan-400 hover:underline">info@nekoyachts.com</a>
+                 Contact our partnerships team at <a href="mailto:info@nekoyachts.com" className="text-[#D5C4A1] hover:underline">info@nekoyachts.com</a>
              </p>
         </AnimatedSection>
 

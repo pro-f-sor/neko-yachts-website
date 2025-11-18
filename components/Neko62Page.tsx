@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CheckIcon } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
@@ -47,7 +48,7 @@ const Neko19Page: React.FC = () => {
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="max-w-3xl mx-auto text-center">
-          <p className="text-cyan-400 font-semibold tracking-wider">THE NEKO 19</p>
+          <p className="text-[#D5C4A1] font-semibold tracking-wider">THE NEKO 19</p>
           <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">A New Standard in Performance Cruising</h1>
           <p className="mt-6 text-xl text-grey-300">
             Featuring the latest in lightweight construction technology and a raft of 'fast-build' proprietary techniques, the NEKO 19 is sleek, dynamic, and comfortable. It will throw down the gauntlet to all but the quickest catamarans out there.

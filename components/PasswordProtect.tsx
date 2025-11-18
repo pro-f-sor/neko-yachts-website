@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { LockIcon } from './icons/Icons';
 
@@ -41,10 +42,10 @@ const PasswordProtect: React.FC<PasswordProtectProps> = ({ children }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              className="bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-center"
+              className="bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1] text-center"
               autoFocus
             />
-            <button type="submit" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full transition-colors">
+            <button type="submit" className="bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold py-3 px-6 rounded-full transition-colors">
               Access
             </button>
           </form>
