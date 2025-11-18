@@ -4,7 +4,7 @@ import AnimatedSection from './AnimatedSection';
 // A simple pull-quote component for this page
 const PullQuote: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
     <div className={`text-center my-12 ${className}`}>
-        <p className="text-2xl md:text-3xl italic text-gray-200 font-light leading-relaxed">
+        <p className="text-2xl md:text-3xl italic text-grey-200 font-light leading-relaxed">
             {children}
         </p>
     </div>
@@ -25,7 +25,7 @@ const FounderCard: React.FC<{ imgSrc: string; name: string; title: string; summa
 
     return (
         <div
-            className="group bg-gray-950/50 p-8 rounded-lg text-center flex flex-col items-center h-full transition-all duration-300 ease-in-out cursor-pointer"
+            className="group bg-grey-950/50 p-8 rounded-lg text-center flex flex-col items-center h-full transition-all duration-300 ease-in-out cursor-pointer"
             onMouseEnter={() => setIsExpanded(true)}
             onMouseLeave={() => setIsExpanded(false)}
             onClick={toggleExpand}
@@ -38,7 +38,7 @@ const FounderCard: React.FC<{ imgSrc: string; name: string; title: string; summa
             <img className="w-40 h-40 mx-auto rounded-full object-cover shadow-lg mb-4" src={imgSrc} alt={`Portrait of ${name}`} />
             <h4 className="text-2xl font-bold text-white">{name}</h4>
             <p className="text-cyan-400 mb-4">{title}</p>
-            <div className="text-gray-400 text-left text-base leading-relaxed flex-grow w-full">
+            <div className="text-grey-400 text-left text-base leading-relaxed flex-grow w-full">
                 <p className="italic">{summary}</p>
                 <div
                     id={`bio-${name.toLowerCase()}`}
@@ -57,7 +57,7 @@ const FounderCard: React.FC<{ imgSrc: string; name: string; title: string; summa
 
 const Dna2Page: React.FC = () => {
     return (
-        <div className="bg-gray-900 text-white">
+        <div className="bg-grey-900 text-white">
             {/* 1. Hero Section */}
             <div className="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -69,7 +69,7 @@ const Dna2Page: React.FC = () => {
                         className="w-full h-full object-cover"
                         poster="https://images.pexels.com/photos/163236/luxury-yacht-sailing-sea-sky-163236.jpeg?auto=compress&cs=tinysrgb&w=1920"
                     >
-                        <source src="http://coolcatamaran.com/images/video/oceansunset.mp4" type="video/mp4" />
+                        <source src="http://coolcatamaran.com/images/video/oceansunset_modified.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                     <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -78,7 +78,7 @@ const Dna2Page: React.FC = () => {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
                         Do what is right, not what is easy.
                     </h1>
-                    <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
+                    <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-grey-300">
                         We are a group of creative thinkers building a business to change an industry.
                     </p>
                 </AnimatedSection>
@@ -91,10 +91,10 @@ const Dna2Page: React.FC = () => {
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-6">A vision to redefine what’s possible</h2>
-                                <p className="text-lg text-gray-300 leading-relaxed">
+                                <p className="text-lg text-grey-300 leading-relaxed">
                                     For over two years we have dedicated ourselves to designing a catamaran that redefines what is possible, balancing performance, beauty and comfort without compromise.
                                 </p>
-                                <p className="mt-4 text-lg text-gray-300 leading-relaxed">
+                                <p className="mt-4 text-lg text-grey-300 leading-relaxed">
                                     The idea began with two brothers who could not find a vessel that met every expectation, so they set out to create their own. What started as a personal pursuit soon became a shared mission to craft the catamaran they had always dreamed of — and that others too had been waiting for.
                                 </p>
                             </div>
@@ -120,10 +120,10 @@ const Dna2Page: React.FC = () => {
                             </div>
                             <div className="md:order-1">
                                 <h2 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-6">Heritage meets innovation</h2>
-                                <p className="text-lg text-gray-300 leading-relaxed">
+                                <p className="text-lg text-grey-300 leading-relaxed">
                                     Perhaps the sea was always in their blood. Their mother once circumnavigated the globe on a 100-foot schooner — a quiet reminder that true journeys begin with courage and conviction.
                                 </p>
-                                <p className="mt-4 text-lg text-gray-300 leading-relaxed">
+                                <p className="mt-4 text-lg text-grey-300 leading-relaxed">
                                     With backgrounds in business, technology and engineering, the brothers bring precision, innovation and attention to detail to every decision. Their combination of entrepreneurial vision and technical mastery defines the essence of Neko.
                                 </p>
                             </div>
@@ -138,7 +138,7 @@ const Dna2Page: React.FC = () => {
                             To create with intention. To build without compromise.
                         </PullQuote>
                         <div className="max-w-4xl mx-auto text-center">
-                            <p className="text-lg text-gray-300 leading-relaxed">
+                            <p className="text-lg text-grey-300 leading-relaxed">
                                 From the beginning we chose to listen. We spoke with manufacturers, suppliers and sailors — both seasoned and new — gathering insights to understand what truly matters at sea: what works, what endures, what feels right.
                             </p>
                         </div>
@@ -149,10 +149,10 @@ const Dna2Page: React.FC = () => {
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>
                                 <h2 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-6">Intelligent design. Effortless performance.</h2>
-                                <p className="text-lg text-gray-300 leading-relaxed">
-                                    Our first creation, a 19-metre (62-foot) vessel, is designed for the cruising couple who want to live their dream. It offers the space, refinement and performance of a larger yacht, yet remains effortless to sail single-handed.
+                                <p className="text-lg text-grey-300 leading-relaxed">
+                                    Our first creation, a 19-metre vessel, is designed for the cruising couple who want to live their dream. It offers the space, refinement and performance of a larger yacht, yet remains effortless to sail single-handed.
                                 </p>
-                                <p className="mt-4 text-lg text-gray-300 leading-relaxed">
+                                <p className="mt-4 text-lg text-grey-300 leading-relaxed">
                                     Drawing on expertise from both the marine and aviation worlds, we integrate proven technologies to achieve simplicity, efficiency and reliability — delivering exceptional value without compromise.
                                 </p>
                             </div>
@@ -169,7 +169,7 @@ const Dna2Page: React.FC = () => {
                     {/* 6. Founders Section */}
                     <AnimatedSection>
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-white mb-4">The Founders</h2>
-                        <p className="text-center text-lg text-gray-400 mb-12 max-w-3xl mx-auto">Two brothers united by vision, innovation and a lifelong connection to the sea.</p>
+                        <p className="text-center text-lg text-grey-400 mb-12 max-w-3xl mx-auto">Two brothers united by vision, innovation and a lifelong connection to the sea.</p>
                         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
                             <FounderCard
                                 name="Peter Walker"
@@ -197,7 +197,7 @@ const Dna2Page: React.FC = () => {
                                     alt="Aerial view of a catamaran on the open ocean"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gray-950/70"></div>
+                                <div className="absolute inset-0 bg-grey-950/70"></div>
                             </div>
                              <div className="relative z-10 max-w-4xl mx-auto">
                                 <PullQuote className="my-0">

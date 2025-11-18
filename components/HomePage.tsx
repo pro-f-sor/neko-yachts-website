@@ -119,15 +119,15 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
             WE MAKE DREAMS REAL
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+          <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-grey-300">
             Discover the freedom of the open water. A new era of performance cruising is on the horizon.
           </p>
           <div className="mt-10">
             <button
-              onClick={() => handleNavClick('NEKO 62')}
+              onClick={() => handleNavClick('NEKO 19')}
               className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
             >
-              Explore The NEKO 62
+              Explore The NEKO 19
               <ArrowRightIcon />
             </button>
           </div>
@@ -135,14 +135,14 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       </div>
 
       {/* Why Compromise Section */}
-      <div className="py-20 sm:py-28 bg-gray-950/50">
+      <div className="py-20 sm:py-28 bg-grey-950/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 md:order-1">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
                 We Asked: Why Compromise?
               </h2>
-              <p className="mt-6 text-lg text-gray-300 leading-relaxed">
+              <p className="mt-6 text-lg text-grey-300 leading-relaxed">
                 For too long, sailors have been forced to choose. Speed or comfort? Performance or luxury? We believed a better way was possible. We are crafting a vessel that reconciles these opposites—a catamaran that doesn’t just sail, it performs, without sacrificing comfort.
               </p>
             </div>
@@ -164,7 +164,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
               Details Matter
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-grey-400">
               A preview of the philosophy that guides our hands and inspires our design.
             </p>
           </AnimatedSection>
@@ -235,7 +235,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       </div>
       
       {/* The Ethos Section */}
-      <div className="py-20 sm:py-28 bg-gray-950/50">
+      <div className="py-20 sm:py-28 bg-grey-950/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
@@ -247,21 +247,21 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             <AnimatedSection className="text-center" delay={0}>
               <LightningBoltIcon />
               <h3 className="mt-6 text-2xl font-bold text-white">Unrivalled Performance</h3>
-              <p className="mt-4 text-gray-400">
+              <p className="mt-4 text-grey-400">
                 We are obsessed with speed, stability, and responsiveness. Our design challenges convention to deliver an exhilarating and confident ride in all conditions.
               </p>
             </AnimatedSection>
             <AnimatedSection className="text-center" delay={200}>
               <DiamondIcon />
               <h3 className="mt-6 text-2xl font-bold text-white">Refined Bespoke Luxury</h3>
-              <p className="mt-4 text-gray-400">
+              <p className="mt-4 text-grey-400">
                 This is not a production boat. This is a floating masterpiece, with interiors and finishes that reflect the discerning tastes of its owner.
               </p>
             </AnimatedSection>
             <AnimatedSection className="text-center" delay={400}>
               <LeafIcon />
               <h3 className="mt-6 text-2xl font-bold text-white">Sustainable Eco Future</h3>
-              <p className="mt-4 text-gray-400">
+              <p className="mt-4 text-grey-400">
                 Harnessing the power of the ocean means protecting it. We are integrating cutting-edge, eco-conscious systems and materials.
               </p>
             </AnimatedSection>
@@ -269,10 +269,10 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
 
           <AnimatedSection className="text-center mt-16">
             <button
-              onClick={() => handleNavClick('NEKO 62')}
+              onClick={() => handleNavClick('NEKO 19')}
               className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
             >
-              See The NEKO 62 In Detail
+              See The NEKO 19 In Detail
               <ArrowRightIcon />
             </button>
           </AnimatedSection>
@@ -287,7 +287,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             alt="A luxury catamaran anchored in a serene bay at dusk"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gray-950/80"></div>
+          <div className="absolute inset-0 bg-grey-950/80"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -295,7 +295,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
               Join the Inner Circle
             </h2>
-            <p className="mt-6 text-lg text-gray-300">
+            <p className="mt-6 text-lg text-grey-300">
               The full reveal is coming. By joining our private list, you will be the first to see the full designs, receive access to the private specification sheet, and be notified of exclusive pre-launch events.
             </p>
              <p className="mt-4 text-lg text-cyan-400 font-semibold">
@@ -315,7 +315,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
                     placeholder="Your email address"
                     required
                     aria-label="Email address"
-                    className="flex-grow bg-gray-800 border border-gray-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors w-full"
+                    className="flex-grow bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors w-full"
                   />
                   <button
                     type="submit"

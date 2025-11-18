@@ -4,7 +4,7 @@ import AnimatedSection from './AnimatedSection';
 
 const QuoteCard: React.FC<{ children: React.ReactNode; author?: string }> = ({ children, author }) => (
     <div className="bg-cyan-800/20 border-l-4 border-cyan-500 p-6 my-8 rounded-r-lg">
-        <p className="text-xl italic text-gray-300">{children}</p>
+        <p className="text-xl italic text-grey-300">{children}</p>
         {author && <p className="text-right mt-4 text-cyan-400 font-semibold">{author}</p>}
     </div>
 );
@@ -15,12 +15,12 @@ const WhyPage: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Our Raison D'être</h1>
-          <p className="mt-6 text-xl text-gray-300">
+          <p className="mt-6 text-xl text-grey-300">
             Our respect for nature and love of the sea is a design attribute, not just a slogan. We're moving the dial away from ‘old-school’ thinking and the costly list of compromises that typically goes with it.
           </p>
         </AnimatedSection>
 
-        <div className="mt-20 max-w-4xl mx-auto space-y-12 text-lg text-gray-300 leading-relaxed">
+        <div className="mt-20 max-w-4xl mx-auto space-y-12 text-lg text-grey-300 leading-relaxed">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-cyan-400 mb-4">The Problem with the Status Quo</h2>
             <p>
@@ -40,7 +40,7 @@ const WhyPage: React.FC = () => {
               We are not racing our boats, and we doubt you are either. As a modern and tech-savvy company, we can't help but be critical about everything we do. If it doesn't add value or solve a real-world pain-point, it won't make it to our feature list. We've discovered that many manufacturers view 'value' as simply an upsell option.
             </p>
             <p className="mt-4">
-              So-called 'optional' features are typically disguised under a cloak of 'personalization', resulting in almost every new boat being incapable of "sailing away" in its basic form. We're keeping it simple—not because it's easy, but because we respect you and your time.
+              So-called 'optional' features are typically disguised under a cloak of 'personalisation', resulting in almost every new boat being incapable of "sailing away" in its basic form. We're keeping it simple—not because it's easy, but because we respect you and your time.
             </p>
             <QuoteCard author="Simon Sinek">
               The opportunity for creativity begins the moment we don't know what we are doing.

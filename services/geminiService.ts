@@ -5,7 +5,7 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   // By initializing here, we prevent a site-wide crash if process.env is not available on load.
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
-  const prompt = `You are a world-class sailing voyage planner. Create a thrilling and luxurious 7-day sailing itinerary for a state-of-the-art 60-foot catamaran trip to ${destination}. The itinerary should be aspirational and exciting. Include daily stops, unique activities (like snorkeling in hidden coves, dining at exclusive restaurants, exploring local culture), and vivid descriptions of the scenic highlights. Structure the response in Markdown format, with each day as a main heading.`;
+  const prompt = `You are a world-class sailing voyage planner. Create a thrilling and luxurious 7-day sailing itinerary for a state-of-the-art 19-metre catamaran trip to ${destination}. The itinerary should be aspirational and exciting. Include daily stops, unique activities (like snorkeling in hidden coves, dining at exclusive restaurants, exploring local culture), and vivid descriptions of the scenic highlights. Structure the response in Markdown format, with each day as a main heading.`;
 
   try {
     const response = await ai.models.generateContent({

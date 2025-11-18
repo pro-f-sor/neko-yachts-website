@@ -31,17 +31,17 @@ const PasswordProtect: React.FC<PasswordProtectProps> = ({ children }) => {
   return (
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md mx-auto bg-gray-950/50 p-8 md:p-12 rounded-2xl shadow-2xl text-center">
+        <div className="max-w-md mx-auto bg-grey-950/50 p-8 md:p-12 rounded-2xl shadow-2xl text-center">
           <LockIcon />
           <h2 className="text-2xl font-bold text-white mt-4">Investor Relations</h2>
-          <p className="mt-2 text-gray-400">This area is password protected. Please enter the password to proceed.</p>
+          <p className="mt-2 text-grey-400">This area is password protected. Please enter the password to proceed.</p>
           <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              className="bg-gray-800 border border-gray-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-center"
+              className="bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-center"
               autoFocus
             />
             <button type="submit" className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full transition-colors">

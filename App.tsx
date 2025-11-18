@@ -1,10 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import WhyPage from './components/WhyPage';
-import DnaPage from './components/DnaPage';
-import Neko62Page from './components/Neko62Page';
+import Neko19Page from './components/Neko62Page';
 import ContactPage from './components/ContactPage';
 import InvestorPage from './components/InvestorPage';
 import PasswordProtect from './components/PasswordProtect';
@@ -12,6 +12,11 @@ import { Page } from './types';
 import { NAV_LINKS } from './constants';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Dna2Page from './components/Dna2Page';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import CookiePolicyPage from './components/CookiePolicyPage';
+import TermsPage from './components/TermsPage';
+import DisclaimerPage from './components/DisclaimerPage';
+import SupplierPartnershipsPage from './components/SupplierPartnershipsPage';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('Home');
@@ -41,11 +46,9 @@ const App: React.FC = () => {
       case 'The Why':
         return <WhyPage />;
       case 'The DNA':
-        return <DnaPage />;
-      case 'DNA 2':
         return <Dna2Page />;
-      case 'NEKO 62':
-        return <Neko62Page />;
+      case 'NEKO 19':
+        return <Neko19Page />;
       case 'Investors':
         return (
           <PasswordProtect>
@@ -54,6 +57,16 @@ const App: React.FC = () => {
         );
       case 'Contact':
         return <ContactPage />;
+      case 'Privacy Policy':
+        return <PrivacyPolicyPage />;
+      case 'Cookie Policy':
+        return <CookiePolicyPage />;
+      case 'Terms and Conditions':
+        return <TermsPage />;
+      case 'Disclaimer':
+        return <DisclaimerPage />;
+      case 'Supplier Partnerships':
+        return <SupplierPartnershipsPage />;
       case 'Home':
       default:
         return <HomePage setCurrentPage={setCurrentPage} />;
@@ -61,7 +74,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-200">
+    <div className="min-h-screen flex flex-col bg-grey-900 text-grey-200">
       <Header 
         currentPage={currentPage} 
         setCurrentPage={setCurrentPage}

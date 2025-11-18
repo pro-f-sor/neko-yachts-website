@@ -2,20 +2,20 @@ import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
 const QuoteBlock: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div className="bg-gray-950/50 border-l-4 border-cyan-500 p-6 rounded-r-lg">
-        <p className="text-2xl italic text-gray-200 font-semibold">{children}</p>
+    <div className="bg-grey-950/50 border-l-4 border-cyan-500 p-6 rounded-r-lg">
+        <p className="text-2xl italic text-grey-200 font-semibold">{children}</p>
     </div>
 );
 
 const DnaPage: React.FC = () => {
   return (
-    <div className="py-20 sm:py-28 bg-gray-950/50">
+    <div className="py-20 sm:py-28 bg-grey-950/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Our DNA</h1>
         </AnimatedSection>
 
-        <div className="mt-20 max-w-4xl mx-auto space-y-16 text-lg text-gray-300 leading-relaxed">
+        <div className="mt-20 max-w-4xl mx-auto space-y-16 text-lg text-grey-300 leading-relaxed">
             <AnimatedSection>
                 <h2 className="text-3xl font-bold text-cyan-400 mb-4">A Vision to Redefine What’s Possible</h2>
                 <p>
@@ -66,7 +66,7 @@ const DnaPage: React.FC = () => {
             <AnimatedSection>
                 <h2 className="text-3xl font-bold text-cyan-400 mb-4">The First Design</h2>
                 <p>
-                    Our first creation, a 19-metre (62-foot) vessel, is designed for the cruising couple seeking to live their dream.
+                    Our first creation, a 19-metre vessel, is designed for the cruising couple seeking to live their dream.
                 </p>
                 <p className="mt-4">
                     It offers the space, refinement and performance of a larger yacht, yet can be sailed single-handed with ease.

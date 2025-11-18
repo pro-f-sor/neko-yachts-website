@@ -28,12 +28,12 @@ const FeatureItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <div className="flex-shrink-0">
       <CheckIcon />
     </div>
-    <span className="ml-3 text-gray-300">{children}</span>
+    <span className="ml-3 text-grey-300">{children}</span>
   </li>
 );
 
 const ImageCard: React.FC<{ src: string; alt: string; title: string }> = ({ src, alt, title }) => (
-    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+    <div className="bg-grey-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
         <img src={src} alt={alt} className="w-full h-64 object-cover" />
         <div className="p-4">
             <h3 className="text-lg font-semibold text-white">{title}</h3>
@@ -42,21 +42,21 @@ const ImageCard: React.FC<{ src: string; alt: string; title: string }> = ({ src,
 );
 
 
-const Neko62Page: React.FC = () => {
+const Neko19Page: React.FC = () => {
   return (
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="max-w-3xl mx-auto text-center">
-          <p className="text-cyan-400 font-semibold tracking-wider">THE NEKO 62</p>
+          <p className="text-cyan-400 font-semibold tracking-wider">THE NEKO 19</p>
           <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">A New Standard in Performance Cruising</h1>
-          <p className="mt-6 text-xl text-gray-300">
-            Featuring the latest in lightweight construction technology and a raft of 'fast-build' proprietary techniques, the NEKO 62 is sleek, dynamic, and comfortable. It will throw down the gauntlet to all but the quickest catamarans out there.
+          <p className="mt-6 text-xl text-grey-300">
+            Featuring the latest in lightweight construction technology and a raft of 'fast-build' proprietary techniques, the NEKO 19 is sleek, dynamic, and comfortable. It will throw down the gauntlet to all but the quickest catamarans out there.
           </p>
         </AnimatedSection>
 
         <AnimatedSection className="mt-20">
           <h2 className="text-3xl font-bold text-center text-white mb-12">Inclusive 'Menu' of Standard Features</h2>
-          <div className="max-w-4xl mx-auto bg-gray-950/50 p-8 rounded-lg">
+          <div className="max-w-4xl mx-auto bg-grey-950/50 p-8 rounded-lg">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
               {features.map((feature, index) => (
                 <FeatureItem key={index}>{feature}</FeatureItem>
@@ -75,7 +75,7 @@ const Neko62Page: React.FC = () => {
                 <ImageCard src="https://images.unsplash.com/photo-1519752697889-491a5e4a3b1a?q=80&w=1974&auto=format&fit=crop" alt="Sleek, modern catamaran hull slicing through the water" title="Advanced Hull Design" />
                 <ImageCard src="https://images.unsplash.com/photo-1618220252344-88b9a184b86d?q=80&w=1964&auto=format&fit=crop" alt="Bright and modern interior of a luxury yacht saloon" title="Modern Interiors" />
             </div>
-             <p className="text-center mt-8 text-gray-400 italic">Conceptual photos. Final design may vary.</p>
+             <p className="text-center mt-8 text-grey-400 italic">Conceptual photos. Final design may vary.</p>
         </AnimatedSection>
 
       </div>
@@ -83,4 +83,4 @@ const Neko62Page: React.FC = () => {
   );
 };
 
-export default Neko62Page;
+export default Neko19Page;

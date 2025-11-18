@@ -1,5 +1,5 @@
 
-export type Page = 'Home' | 'The Why' | 'The DNA' | 'DNA 2' | 'NEKO 62' | 'Investors' | 'Contact';
+export type Page = 'Home' | 'The Why' | 'The DNA' | 'NEKO 19' | 'Investors' | 'Contact' | 'Privacy Policy' | 'Cookie Policy' | 'Terms and Conditions' | 'Disclaimer' | 'Supplier Partnerships';
 
 export interface NavLink {
   name: Page;

@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
   const isTransparent = !isScrolled && !isMenuOpen && currentPage === 'Home';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isTransparent ? 'bg-transparent' : 'bg-gray-900/95 backdrop-blur-sm shadow-lg'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isTransparent ? 'bg-transparent' : 'bg-grey-900/95 backdrop-blur-sm shadow-lg'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div 
@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
                 className={`text-sm font-medium uppercase tracking-widest transition-colors duration-300 ${
                   currentPage === link.name
                     ? 'text-cyan-400'
-                    : 'text-gray-300 hover:text-white'
+                    : 'text-grey-300 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none"
+              className="text-grey-300 hover:text-white focus:outline-none"
             >
               {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-900">
+        <div className="md:hidden bg-grey-900">
           <nav className="flex flex-col items-center space-y-6 py-8">
             {navLinks.map((link) => (
               <a
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
                   handleNavClick(link.name);
                 }}
                 className={`text-lg font-medium uppercase tracking-widest ${
-                  currentPage === link.name ? 'text-cyan-400' : 'text-gray-300'
+                  currentPage === link.name ? 'text-cyan-400' : 'text-grey-300'
                 }`}
               >
                 {link.name}
