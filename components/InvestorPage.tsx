@@ -86,8 +86,8 @@ const InvestorPage: React.FC = () => {
                     <TeamMemberCard 
                         imgSrc="https://coolcatamaran.com/images/headshots/keagan.png"
                         name="Keagan" 
-                        title="3D Visualization Expert" 
-                        bio="A master of digital modeling, Keagan brings our designs to life with stunningly realistic renders. His work allows clients to virtually experience their yacht before it's built, ensuring every detail is perfect." 
+                        title="3D Visualisation Expert" 
+                        bio="A master of digital modelling, Keagan brings our designs to life with stunningly realistic renders. His work allows clients to virtually experience their yacht before it's built, ensuring every detail is perfect." 
                     />
                 </div>
             </AnimatedSection>

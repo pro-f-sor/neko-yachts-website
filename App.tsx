@@ -4,22 +4,24 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import WhyPage from './components/WhyPage';
-import Neko19Page from './components/Neko62Page';
+import Neko19Page from './components/Neko19Page';
 import ContactPage from './components/ContactPage';
 import InvestorPage from './components/InvestorPage';
 import PasswordProtect from './components/PasswordProtect';
-import { Page } from './types';
+import { Page, Language } from './types';
 import { NAV_LINKS } from './constants';
 import ScrollToTopButton from './components/ScrollToTopButton';
-import Dna2Page from './components/Dna2Page';
+import DnaPage from './components/DnaPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import CookiePolicyPage from './components/CookiePolicyPage';
 import TermsPage from './components/TermsPage';
 import DisclaimerPage from './components/DisclaimerPage';
 import SupplierPartnershipsPage from './components/SupplierPartnershipsPage';
+import CookieConsent from './components/CookieConsent';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('Home');
+  const [language, setLanguage] = useState<Language>('en');
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
 
@@ -46,7 +48,7 @@ const App: React.FC = () => {
       case 'The Why':
         return <WhyPage />;
       case 'The DNA':
-        return <Dna2Page />;
+        return <DnaPage />;
       case 'NEKO 19':
         return <Neko19Page />;
       case 'Investors':
@@ -80,12 +82,15 @@ const App: React.FC = () => {
         setCurrentPage={setCurrentPage}
         navLinks={NAV_LINKS}
         isScrolled={isScrolled}
+        language={language}
+        setLanguage={setLanguage}
       />
       <main className={`flex-grow ${currentPage === 'Home' ? '' : 'pt-20'}`}>
         {renderPage()}
       </main>
       <Footer setCurrentPage={setCurrentPage} navLinks={NAV_LINKS} />
       <ScrollToTopButton isVisible={showScrollButton} onClick={scrollToTop} />
+      <CookieConsent />
     </div>
   );
 };

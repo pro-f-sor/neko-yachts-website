@@ -150,7 +150,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             <div className="flex justify-center order-1 md:order-2">
               <img 
                 src="https://coolcatamaran.com/images/Carbon_fibre_2_Landscape.png"
-                alt="Abstract close-up of a carbon fiber weave"
+                alt="Abstract close-up of a carbon fibre weave"
                 className="rounded-lg shadow-2xl object-cover w-full h-auto max-w-md"
               />
             </div>
