@@ -37,23 +37,29 @@ const SupplierPartnershipsPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-[#D5C4A1] mb-6">
-              A Partnership Built on Excellence
+              A Partnership That Supports the NEKO Vision
             </h2>
             <div className="text-lg text-grey-300 leading-relaxed space-y-6 text-left md:text-center">
                 <p>
-                    For our NEKO range of catamarans, we consider our suppliers to be integral to our success. Our Supplier Partnerships help us develop world-class innovative products that delight our customers and deliver award-winning luxury performance catamarans.
+                    Our suppliers are instrumental in shaping the quality and performance of the NEKO catamaran range. As a growing company, we see our suppliers not simply as vendors but as valued partners who share our commitment to precision, innovation and dependable craftsmanship.
                 </p>
                 <p>
-                    We continually work to strengthen relationships with our suppliers to establish and maintain long-term business partnerships that benefit both parties.
+                    Every material, component and service sourced for NEKO directly influences the experience we provide to our customers. By working closely with trusted suppliers, we are able to deliver catamarans that offer reliability, comfort and thoughtful design, qualities our clients expect and appreciate.
+                </p>
+                <p>
+                    We aim to build long term and mutually rewarding relationships with suppliers who are passionate about raising standards. Together, we enhance the NEKO range, strengthen customer confidence and build a foundation for shared and sustainable success.
                 </p>
             </div>
           </AnimatedSection>
 
            <AnimatedSection className="mt-24">
-            <h2 className="text-3xl font-bold text-center text-white mb-12">Why Partner With NEKO Yachts?</h2>
+            <h2 className="text-3xl font-bold text-center text-white mb-6">Why Partner With the NEKO Brand?</h2>
+            <p className="text-lg text-grey-300 leading-relaxed text-center max-w-3xl mx-auto mb-12">
+                Although NEKO is a growing brand, we offer a positive and collaborative environment for suppliers who want to build long lasting relationships.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 <BenefitCard icon={<LightningBoltIcon />} title="Pioneer with Us">
-                    Bring your cutting-edge solutions to the forefront. We actively collaborate with our partners to integrate and co-develop innovative technologies, from sustainable materials to smart-yacht systems.
+                    Bring your cutting-edge solutions to the forefront. We actively collaborate with our partners to integrate and co-develop innovative technologies, from <strong>sustainable materials</strong> to smart-yacht systems.
                 </BenefitCard>
                 <BenefitCard icon={<DiamondIcon />} title="Reach a Discerning Audience">
                     Align your brand with the pinnacle of luxury and performance. NEKO catamarans attract a global clientele that values quality, craftsmanship, and innovation above all else.
@@ -67,13 +73,20 @@ const SupplierPartnershipsPage: React.FC = () => {
             </div>
         </AnimatedSection>
 
+        <AnimatedSection className="mt-24 max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-[#D5C4A1] mb-6">About NEKO</h2>
+            <p className="text-lg text-grey-300 leading-relaxed">
+                NEKO catamarans are designed with a clear focus on quality, efficiency and comfort. Each vessel reflects our belief that thoughtful engineering and attention to detail can deliver a remarkable experience on the water. Our ambition is to build dependable, beautifully crafted catamarans that our clients can trust, whether for leisure, charter or extended cruising.
+            </p>
+        </AnimatedSection>
+
          <AnimatedSection className="mt-24 text-center">
-             <h3 className="text-2xl font-bold text-white">Join Us</h3>
+             <h3 className="text-2xl font-bold text-white">Join Us in Shaping the Future of NEKO</h3>
              <p className="mt-4 max-w-2xl mx-auto text-lg text-grey-300">
-                If you are a leader in your field and share our commitment to quality and innovation, we invite you to connect with us.
+                We believe that strong supplier relationships are the foundation of reliable and well crafted catamarans. If you share our values and would like to contribute to the NEKO journey, we look forward to the opportunity to collaborate.
              </p>
-             <p className="mt-6 text-lg font-semibold">
-                 Contact our partnerships team at <a href="mailto:info@nekoyachts.com" className="text-[#D5C4A1] hover:underline">info@nekoyachts.com</a>
+             <p className="mt-6 text-lg font-semibold text-grey-300">
+                 contact us at: <a href="mailto:suppliers@nekoyachts.com" className="text-[#D5C4A1] hover:underline">suppliers@nekoyachts.com</a>
              </p>
         </AnimatedSection>
 

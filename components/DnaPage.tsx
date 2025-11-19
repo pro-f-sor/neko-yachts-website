@@ -159,7 +159,7 @@ const DnaPage: React.FC = () => {
                             </div>
                              <div className="flex justify-center">
                                 <img
-                                    src="https://coolcatamaran.com/images/Closeup_reverse_bow_landscape.png"
+                                    src="https://coolcatamaran.com/images/hullrender.jpg"
                                     alt="Sleek catamaran hull render"
                                     className="rounded-lg shadow-2xl object-cover w-full h-auto"
                                 />

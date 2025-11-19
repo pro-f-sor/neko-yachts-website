@@ -115,3 +115,13 @@ export const ChevronDownIcon = () => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
   </svg>
 );
+
+export const MapPinWaveIcon = () => (
+    <svg className="w-12 h-12 mx-auto text-[#D5C4A1]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        {/* Pin lifted slightly so it doesn't hit bottom */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.5 9.5c0 4.5-5.5 10.5-5.5 10.5S6.5 14 6.5 9.5a5.5 5.5 0 1 1 11 0Z" />
+        <circle cx="12" cy="9.5" r="2.5" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
+        {/* Waterline below */}
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 20.5c2.2-1.5 4.8-1.5 7 0 2.2 1.5 4.8 1.5 7 0 2.2-1.5 4.8-1.5 7 0" />
+    </svg>
+);
