@@ -43,7 +43,7 @@ const InvestorPage: React.FC = () => {
                 </div>
                 <div className="bg-grey-950/50 p-8 rounded-lg">
                 <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Disruptive Business Model</h3>
-                <p className="text-grey-300">Our lean, tech-driven approach minimizes overhead and traditional dealership markups, allowing us to offer a superior product at a competitive price point, maximizing profitability.</p>
+                <p className="text-grey-300">Our lean, tech-driven approach minimises overhead and traditional dealership markups, allowing us to offer a superior product at a competitive price point, maximising profitability.</p>
                 </div>
                 <div className="bg-grey-950/50 p-8 rounded-lg">
                 <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Proprietary Technology</h3>

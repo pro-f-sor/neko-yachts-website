@@ -8,11 +8,11 @@ const features = [
   "Spacious transom and bow lounges",
   "East-West beds for optimal comfort",
   "Fully appointed bathrooms",
-  "Integrated Washing machine & dryer",
+  "Integrated washing machine & dryer",
   "Full size 'home' fridge/freezer in Island style Galley",
   "Rain-fed drinking water tanks with separate black, grey & fuel tanks",
   "3kw Solar power system",
-  "Oversize Bow Storage for 'toys' & equipment",
+  "Oversized Bow Storage for 'toys' & equipment",
   "4 Watertight collision bulkheads – front & aft",
   "100Ah batteries in each hull (48v reticulation for efficiency)",
   "Video Camera links for monitoring",
@@ -73,7 +73,7 @@ const Neko19Page: React.FC = () => {
                 <ImageCard src="https://coolcatamaran.com/images/rend/rear.jpg" alt="Comfortable transom lounge area on a catamaran" title="Social Transom Lounge" />
                 <ImageCard src="https://coolcatamaran.com/images/rend/front.jpg" alt="Relaxing seating area on the bow of a yacht" title="Serene Bow Lounge" />
                 <ImageCard src="https://coolcatamaran.com/images/rend/int.jpg" alt="Overhead view showing the spacious layout of a catamaran" title="Layout & Space" />
-                <ImageCard src="https://coolcatamaran.com/images/rend/window.jpg" alt="Sleek, modern catamaran hull slicing through the water" title="Advanced Hull Design" />
+                <ImageCard src="https://coolcatamaran.com/images/rend/hull-starter.png" alt="Sleek, modern catamaran hull slicing through the water" title="Advanced Hull Design" />
                 <ImageCard src="https://coolcatamaran.com/images/rend/interior.jpg" alt="Bright and modern interior of a luxury yacht saloon" title="Modern Interiors" />
             </div>
              <p className="text-center mt-8 text-grey-400 italic">Conceptual photos. Final design may vary.</p>

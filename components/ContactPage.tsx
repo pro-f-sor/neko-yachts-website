@@ -38,11 +38,17 @@ const ContactPage: React.FC = () => {
         try {
             const result = await generateVoyageItinerary(destination);
             const formattedResult = result
-                .replace(/### (.*)/g, '<h3 class="text-xl font-semibold text-[#D5C4A1] mt-4 mb-2">$1</h3>')
-                .replace(/## (.*)/g, '<h2 class="text-2xl font-bold text-white mt-6 mb-3">$1</h2>')
-                .replace(/\* \*(.*?)\* \*/g, '<strong>$1</strong>')
-                .replace(/\* (.*?)\n/g, '<li class="ml-5 list-disc">$1</li>')
+                // Header 3
+                .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-[#D5C4A1] mt-6 mb-2">$1</h3>')
+                // Header 2
+                .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold text-white mt-8 mb-4 pb-2 border-b border-white/10">$1</h2>')
+                // Bold
+                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#D5C4A1]">$1</strong>')
+                // Lists (handle * and -)
+                .replace(/^\s*[\*\-]\s+(.*$)/gm, '<li class="ml-5 list-disc text-grey-300 mb-1 pl-2">$1</li>')
+                // Newlines
                 .replace(/\n/g, '<br />');
+                
             setItinerary(formattedResult);
         } catch (e) {
             setPlannerError('Failed to generate itinerary. Please try again.');
@@ -51,7 +57,7 @@ const ContactPage: React.FC = () => {
         }
     };
     
-    // Contact Form Validation
+    // Contact Form Validation logic
     const validateContactField = (name: string, value: string) => {
         if (name === 'name' && !value.trim()) return 'Full Name is required.';
         if (name === 'message' && !value.trim()) return 'Message is required.';
@@ -94,16 +100,17 @@ const ContactPage: React.FC = () => {
                 setIsFormSubmitted(false);
                 setFormState({ name: '', email: '', message: '' });
                 setFormTouched({ name: false, email: false, message: false });
+                setFormErrors({ name: '', email: '', message: '' });
             }, 5000);
         }
     };
 
-    // Newsletter Validation
+    // Newsletter Validation logic
     const handleNewsletterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const val = e.target.value;
         setNewsletterEmail(val);
         if (newsletterTouched) {
-             if (!val) setNewsletterError('Email is required.');
+             if (!val.trim()) setNewsletterError('Email is required.');
              else if (!validateEmail(val)) setNewsletterError('Please enter a valid email address.');
              else setNewsletterError('');
         }
@@ -111,7 +118,7 @@ const ContactPage: React.FC = () => {
 
     const handleNewsletterBlur = () => {
         setNewsletterTouched(true);
-        if (!newsletterEmail) setNewsletterError('Email is required.');
+        if (!newsletterEmail.trim()) setNewsletterError('Email is required.');
         else if (!validateEmail(newsletterEmail)) setNewsletterError('Please enter a valid email address.');
         else setNewsletterError('');
     };
@@ -121,7 +128,7 @@ const ContactPage: React.FC = () => {
         setNewsletterTouched(true);
         
         let error = '';
-        if (!newsletterEmail) error = 'Email is required.';
+        if (!newsletterEmail.trim()) error = 'Email is required.';
         else if (!validateEmail(newsletterEmail)) error = 'Please enter a valid email address.';
         
         setNewsletterError(error);
