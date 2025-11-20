@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { generateVoyageItinerary } from '../services/geminiService';
-import { MapPinWaveIcon } from './icons/Icons';
+import { MapPinWaveIcon, SpinnerIcon } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
 
 const ContactPage: React.FC = () => {
@@ -297,11 +297,22 @@ const ContactPage: React.FC = () => {
                             className="flex-grow bg-grey-800 border border-grey-700 text-white rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]"
                             disabled={isLoading}
                         />
-                        <button onClick={handleGenerate} disabled={isLoading} className="bg-[#D5C4A1] hover:bg-[#C8B593] disabled:bg-[#D5C4A1]/50 disabled:cursor-not-allowed text-grey-900 font-semibold py-3 px-6 rounded-full transition-colors flex items-center justify-center">
-                            {isLoading ? 'Generating...' : 'Create Itinerary'}
+                         <button 
+                            onClick={handleGenerate} 
+                            disabled={isLoading} 
+                            className="bg-[#D5C4A1] hover:bg-[#C8B593] disabled:bg-[#D5C4A1]/50 disabled:cursor-not-allowed text-grey-900 font-semibold py-3 px-6 rounded-full transition-colors flex items-center justify-center min-w-[180px]"
+                        >
+                            {isLoading ? (
+                                <>
+                                    <SpinnerIcon />
+                                    <span>Generating...</span>
+                                </>
+                            ) : (
+                                'Create Itinerary'
+                            )}
                         </button>
                     </div>
-                    {plannerError && <p className="text-red-400 mt-4 text-center">{plannerError}</p>}
+                    {plannerError && <p className="text-red-400 mt-4 text-center bg-red-900/20 p-3 rounded-lg border border-red-500/30">{plannerError}</p>}
                     
                     {itinerary && !isLoading && (
                         <div className="mt-8 p-6 bg-grey-800 rounded-lg prose prose-invert max-w-none prose-p:text-grey-300">
