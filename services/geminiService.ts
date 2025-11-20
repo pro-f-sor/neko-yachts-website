@@ -2,7 +2,7 @@
 import { GoogleGenAI } from "@google/genai";
 
 export const generateVoyageItinerary = async (destination: string): Promise<string> => {
-  const prompt = `You are a world-class sailing voyage planner. Create a thrilling and luxurious 7-day sailing itinerary for a state-of-the-art 19-metre catamaran trip to ${destination}. The itinerary should be aspirational and exciting. Include daily stops, unique activities (like snorkelling in hidden coves, dining at exclusive restaurants, exploring local culture), and vivid descriptions of the scenic highlights.
+  const systemInstruction = `You are a world-class sailing voyage planner. Create a thrilling and luxurious 7-day sailing itinerary for a state-of-the-art 19-metre catamaran. The itinerary should be aspirational and exciting. Include daily stops, unique activities (like snorkelling in hidden coves, dining at exclusive restaurants, exploring local culture), and vivid descriptions of the scenic highlights.
   
   Format the response in Markdown:
   - Use "## Day X: Title" for daily headings.
@@ -16,7 +16,10 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
 
     const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
-        contents: prompt,
+        contents: `Plan a voyage to: ${destination}`,
+        config: {
+            systemInstruction: systemInstruction,
+        }
     });
     return response.text || "Detailed itinerary unavailable. Please try a different destination.";
   } catch (error) {

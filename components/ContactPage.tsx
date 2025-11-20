@@ -37,19 +37,24 @@ const ContactPage: React.FC = () => {
         setItinerary('');
         try {
             const result = await generateVoyageItinerary(destination);
-            const formattedResult = result
-                // Header 3
-                .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-[#D5C4A1] mt-6 mb-2">$1</h3>')
-                // Header 2
-                .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold text-white mt-8 mb-4 pb-2 border-b border-white/10">$1</h2>')
-                // Bold
-                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#D5C4A1]">$1</strong>')
-                // Lists (handle * and -)
-                .replace(/^\s*[\*\-]\s+(.*$)/gm, '<li class="ml-5 list-disc text-grey-300 mb-1 pl-2">$1</li>')
-                // Newlines
-                .replace(/\n/g, '<br />');
-                
-            setItinerary(formattedResult);
+            
+            if (result.startsWith("We're sorry") || result.startsWith("Detailed itinerary unavailable")) {
+                 setPlannerError(result);
+            } else {
+                const formattedResult = result
+                    // Header 3
+                    .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-[#D5C4A1] mt-6 mb-2">$1</h3>')
+                    // Header 2
+                    .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold text-white mt-8 mb-4 pb-2 border-b border-white/10">$1</h2>')
+                    // Bold
+                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#D5C4A1]">$1</strong>')
+                    // Lists (handle * and -)
+                    .replace(/^\s*[\*\-]\s+(.*$)/gm, '<li class="ml-5 list-disc text-grey-300 mb-1 pl-2">$1</li>')
+                    // Newlines
+                    .replace(/\n/g, '<br />');
+                    
+                setItinerary(formattedResult);
+            }
         } catch (e) {
             setPlannerError('Failed to generate itinerary. Please try again.');
         } finally {
