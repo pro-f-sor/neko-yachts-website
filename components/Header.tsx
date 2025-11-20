@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
     <header 
       className={`fixed z-50 transition-all duration-500 ease-in-out ${
         isTransparent 
-          ? 'top-0 left-0 right-0 bg-transparent' 
+          ? 'top-0 left-0 right-0 bg-transparent border border-transparent' 
           : 'top-4 left-4 right-4 md:left-8 md:right-8 rounded-3xl bg-[#0E1F2F]/40 backdrop-blur-md shadow-lg border border-white/5'
       }`}
     >

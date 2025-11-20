@@ -69,12 +69,12 @@ const Neko19Page: React.FC = () => {
         <AnimatedSection className="mt-24">
             <h2 className="text-3xl font-bold text-center text-white mb-12">Design Glimpses</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <ImageCard src="https://images.unsplash.com/photo-1620051911306-25dc39a73741?q=80&w=1964&auto=format&fit=crop" alt="Expansive view from a modern yacht flybridge" title="Expansive Flybridge" />
-                <ImageCard src="https://images.unsplash.com/photo-1605330353272-5d904b3a4a0f?q=80&w=2070&auto=format&fit=crop" alt="Comfortable transom lounge area on a catamaran" title="Social Transom Lounge" />
-                <ImageCard src="https://images.unsplash.com/photo-1616394584738-651421413153?q=80&w=1974&auto=format&fit=crop" alt="Relaxing seating area on the bow of a yacht" title="Serene Bow Lounge" />
-                <ImageCard src="https://images.unsplash.com/photo-1621912450098-252a0a7b4614?q=80&w=1974&auto=format&fit=crop" alt="Overhead view showing the spacious layout of a catamaran" title="Layout & Space" />
-                <ImageCard src="https://images.unsplash.com/photo-1519752697889-491a5e4a3b1a?q=80&w=1974&auto=format&fit=crop" alt="Sleek, modern catamaran hull slicing through the water" title="Advanced Hull Design" />
-                <ImageCard src="https://images.unsplash.com/photo-1618220252344-88b9a184b86d?q=80&w=1964&auto=format&fit=crop" alt="Bright and modern interior of a luxury yacht saloon" title="Modern Interiors" />
+                <ImageCard src="https://coolcatamaran.com/images/rend/flybridge.jpg" alt="Expansive view from a modern yacht flybridge" title="Expansive Flybridge" />
+                <ImageCard src="https://coolcatamaran.com/images/rend/rear.jpg" alt="Comfortable transom lounge area on a catamaran" title="Social Transom Lounge" />
+                <ImageCard src="https://coolcatamaran.com/images/rend/front.jpg" alt="Relaxing seating area on the bow of a yacht" title="Serene Bow Lounge" />
+                <ImageCard src="https://coolcatamaran.com/images/rend/int.jpg" alt="Overhead view showing the spacious layout of a catamaran" title="Layout & Space" />
+                <ImageCard src="https://coolcatamaran.com/images/rend/window.jpg" alt="Sleek, modern catamaran hull slicing through the water" title="Advanced Hull Design" />
+                <ImageCard src="https://coolcatamaran.com/images/rend/interior.jpg" alt="Bright and modern interior of a luxury yacht saloon" title="Modern Interiors" />
             </div>
              <p className="text-center mt-8 text-grey-400 italic">Conceptual photos. Final design may vary.</p>
         </AnimatedSection>

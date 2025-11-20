@@ -13,13 +13,19 @@ const ContactPage: React.FC = () => {
 
     // State for contact form
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+    const [formErrors, setFormErrors] = useState({ name: '', email: '', message: '' });
+    const [formTouched, setFormTouched] = useState({ name: false, email: false, message: false });
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-    const [formError, setFormError] = useState('');
 
     // State for newsletter
     const [newsletterEmail, setNewsletterEmail] = useState('');
-    const [isNewsletterSubmitted, setIsNewsletterSubmitted] = useState(false);
     const [newsletterError, setNewsletterError] = useState('');
+    const [newsletterTouched, setNewsletterTouched] = useState(false);
+    const [isNewsletterSubmitted, setIsNewsletterSubmitted] = useState(false);
+
+    const validateEmail = (email: string) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
 
     const handleGenerate = async () => {
         if (!destination.trim()) {
@@ -45,37 +51,88 @@ const ContactPage: React.FC = () => {
         }
     };
     
-    const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+    // Contact Form Validation
+    const validateContactField = (name: string, value: string) => {
+        if (name === 'name' && !value.trim()) return 'Full Name is required.';
+        if (name === 'message' && !value.trim()) return 'Message is required.';
+        if (name === 'email') {
+             if (!value.trim()) return 'Email Address is required.';
+             if (!validateEmail(value)) return 'Please enter a valid email address.';
+        }
+        return '';
+    };
+
+    const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormState(prev => ({ ...prev, [name]: value }));
+        
+        if (formTouched[name as keyof typeof formTouched]) {
+             setFormErrors(prev => ({ ...prev, [name]: validateContactField(name, value) }));
+        }
+    };
+
+    const handleContactBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormTouched(prev => ({ ...prev, [name]: true }));
+        setFormErrors(prev => ({ ...prev, [name]: validateContactField(name, value) }));
     };
 
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!formState.name || !formState.email || !formState.message) {
-            setFormError('Please fill in all fields.');
-            return;
+        
+        const nameError = validateContactField('name', formState.name);
+        const emailError = validateContactField('email', formState.email);
+        const messageError = validateContactField('message', formState.message);
+        
+        setFormErrors({ name: nameError, email: emailError, message: messageError });
+        setFormTouched({ name: true, email: true, message: true });
+
+        if (!nameError && !emailError && !messageError) {
+            console.log('Form submitted:', formState);
+            setIsFormSubmitted(true);
+            setTimeout(() => {
+                setIsFormSubmitted(false);
+                setFormState({ name: '', email: '', message: '' });
+                setFormTouched({ name: false, email: false, message: false });
+            }, 5000);
         }
-        console.log('Form submitted:', formState); // In a real app, send this to a backend.
-        setFormError('');
-        setIsFormSubmitted(true);
-        setTimeout(() => {
-            setIsFormSubmitted(false);
-            setFormState({ name: '', email: '', message: '' });
-        }, 5000);
+    };
+
+    // Newsletter Validation
+    const handleNewsletterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const val = e.target.value;
+        setNewsletterEmail(val);
+        if (newsletterTouched) {
+             if (!val) setNewsletterError('Email is required.');
+             else if (!validateEmail(val)) setNewsletterError('Please enter a valid email address.');
+             else setNewsletterError('');
+        }
+    };
+
+    const handleNewsletterBlur = () => {
+        setNewsletterTouched(true);
+        if (!newsletterEmail) setNewsletterError('Email is required.');
+        else if (!validateEmail(newsletterEmail)) setNewsletterError('Please enter a valid email address.');
+        else setNewsletterError('');
     };
 
     const handleNewsletterSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!newsletterEmail || !newsletterEmail.includes('@')) {
-            setNewsletterError('Please enter a valid email address.');
-            return;
+        setNewsletterTouched(true);
+        
+        let error = '';
+        if (!newsletterEmail) error = 'Email is required.';
+        else if (!validateEmail(newsletterEmail)) error = 'Please enter a valid email address.';
+        
+        setNewsletterError(error);
+
+        if (!error) {
+            console.log('Newsletter signup:', newsletterEmail);
+            setIsNewsletterSubmitted(true);
+            setNewsletterEmail('');
+            setNewsletterTouched(false);
+            setTimeout(() => setIsNewsletterSubmitted(false), 5000);
         }
-        // In a real app, send this to backend
-        console.log('Newsletter signup:', newsletterEmail);
-        setIsNewsletterSubmitted(true);
-        setNewsletterError('');
-        setNewsletterEmail('');
-        setTimeout(() => setIsNewsletterSubmitted(false), 5000);
     };
 
     return (
@@ -120,18 +177,47 @@ const ContactPage: React.FC = () => {
                                     <div className="space-y-6">
                                         <div>
                                             <label htmlFor="name" className="block text-sm font-medium text-grey-300 mb-2">Full Name</label>
-                                            <input type="text" name="name" id="name" value={formState.name} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]" />
+                                            <input 
+                                                type="text" 
+                                                name="name" 
+                                                id="name" 
+                                                value={formState.name} 
+                                                onChange={handleContactChange} 
+                                                onBlur={handleContactBlur}
+                                                required 
+                                                className={`w-full bg-grey-800 border ${formErrors.name ? 'border-red-500' : 'border-grey-700'} text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${formErrors.name ? 'focus:ring-red-500' : 'focus:ring-[#D5C4A1]'}`} 
+                                            />
+                                            {formErrors.name && <p className="mt-1 text-sm text-red-400">{formErrors.name}</p>}
                                         </div>
                                         <div>
                                             <label htmlFor="email" className="block text-sm font-medium text-grey-300 mb-2">Email Address</label>
-                                            <input type="email" name="email" id="email" value={formState.email} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]" />
+                                            <input 
+                                                type="email" 
+                                                name="email" 
+                                                id="email" 
+                                                value={formState.email} 
+                                                onChange={handleContactChange} 
+                                                onBlur={handleContactBlur}
+                                                required 
+                                                className={`w-full bg-grey-800 border ${formErrors.email ? 'border-red-500' : 'border-grey-700'} text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${formErrors.email ? 'focus:ring-red-500' : 'focus:ring-[#D5C4A1]'}`} 
+                                            />
+                                            {formErrors.email && <p className="mt-1 text-sm text-red-400">{formErrors.email}</p>}
                                         </div>
                                         <div>
                                             <label htmlFor="message" className="block text-sm font-medium text-grey-300 mb-2">Message</label>
-                                            <textarea name="message" id="message" rows={3} value={formState.message} onChange={handleFormChange} required className="w-full bg-grey-800 border border-grey-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1]"></textarea>
+                                            <textarea 
+                                                name="message" 
+                                                id="message" 
+                                                rows={3} 
+                                                value={formState.message} 
+                                                onChange={handleContactChange} 
+                                                onBlur={handleContactBlur}
+                                                required 
+                                                className={`w-full bg-grey-800 border ${formErrors.message ? 'border-red-500' : 'border-grey-700'} text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 ${formErrors.message ? 'focus:ring-red-500' : 'focus:ring-[#D5C4A1]'}`}
+                                            ></textarea>
+                                            {formErrors.message && <p className="mt-1 text-sm text-red-400">{formErrors.message}</p>}
                                         </div>
                                     </div>
-                                    {formError && <p className="text-red-400 mt-4 text-center">{formError}</p>}
                                     <div className="mt-8">
                                         <button type="submit" className="w-full bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold py-3 px-8 rounded-full transition-colors shadow-lg">
                                             Send Message
@@ -156,26 +242,29 @@ const ContactPage: React.FC = () => {
                                 Thank you! You are on the list.
                             </div>
                         ) : (
-                            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                                <input
-                                    type="email"
-                                    value={newsletterEmail}
-                                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                                    placeholder="Your email address"
-                                    required
-                                    className="flex-grow bg-grey-800 border border-grey-700 text-white rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1] w-full"
-                                />
+                            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto items-start" noValidate>
+                                <div className="flex-grow w-full text-left">
+                                    <input
+                                        type="email"
+                                        value={newsletterEmail}
+                                        onChange={handleNewsletterChange}
+                                        onBlur={handleNewsletterBlur}
+                                        placeholder="Your email address"
+                                        required
+                                        className={`w-full bg-grey-800 border ${newsletterError ? 'border-red-500' : 'border-grey-700'} text-white rounded-full px-6 py-3 focus:outline-none focus:ring-2 ${newsletterError ? 'focus:ring-red-500' : 'focus:ring-[#D5C4A1]'}`}
+                                    />
+                                    {newsletterError && <p className="text-sm text-red-400 mt-2 ml-4">{newsletterError}</p>}
+                                </div>
                                 <button
                                     type="submit"
-                                    className="bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold py-3 px-8 rounded-full transition-colors shadow-lg whitespace-nowrap"
+                                    className="bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold py-3 px-8 rounded-full transition-colors shadow-lg whitespace-nowrap h-[50px]"
                                 >
                                     Join List
                                 </button>
                             </form>
                         )}
-                        {newsletterError && <p className="text-red-400 mt-2">{newsletterError}</p>}
 
-                        <p className="text-grey-400 mt-6 italic">
+                        <p className={`text-grey-400 mt-6 italic`}>
                             Your interest means a lot as we craft something truly special.
                         </p>
                     </div>
