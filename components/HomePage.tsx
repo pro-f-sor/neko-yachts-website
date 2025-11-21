@@ -106,7 +106,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             poster="https://images.pexels.com/photos/163236/luxury-yacht-sailing-sea-sky-163236.jpeg?auto=compress&cs=tinysrgb&w=1920"
           >
             <source
-              src="https://coolcatamaran.com/images/veo-video-1762517943829.mp4"
+              src="https://coolcatamaran.com/images/video/sidehull.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.

@@ -19,11 +19,72 @@ import DisclaimerPage from './components/DisclaimerPage';
 import SupplierPartnershipsPage from './components/SupplierPartnershipsPage';
 import CookieConsent from './components/CookieConsent';
 
+// Mapping for URL slugs to internal Page types
+const SLUG_TO_PAGE: Record<string, Page> = {
+  'home': 'Home',
+  'the-why': 'The Why',
+  'the-dna': 'The DNA',
+  'neko-19': 'NEKO 19',
+  'investors': 'Investors',
+  'contact': 'Contact',
+  'privacy-policy': 'Privacy Policy',
+  'cookie-policy': 'Cookie Policy',
+  'terms-and-conditions': 'Terms and Conditions',
+  'disclaimer': 'Disclaimer',
+  'supplier-partnerships': 'Supplier Partnerships'
+};
+
+// Reverse mapping to generate URL slugs from Page types
+const PAGE_TO_SLUG: Record<string, string> = Object.entries(SLUG_TO_PAGE).reduce((acc, [slug, page]) => {
+  acc[page] = slug;
+  return acc;
+}, {} as Record<string, string>);
+
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('Home');
+  // Initialize state by reading the URL 'page' query parameter
+  const [currentPage, setCurrentPage] = useState<Page>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const pageSlug = params.get('page');
+      if (pageSlug && SLUG_TO_PAGE[pageSlug]) {
+        return SLUG_TO_PAGE[pageSlug];
+      }
+    }
+    return 'Home';
+  });
+
   const [language, setLanguage] = useState<Language>('en');
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
+
+  // Sync URL when currentPage changes
+  useEffect(() => {
+    const slug = PAGE_TO_SLUG[currentPage] || 'home';
+    const url = new URL(window.location.href);
+    
+    if (slug === 'home') {
+      url.searchParams.delete('page');
+    } else {
+      url.searchParams.set('page', slug);
+    }
+
+    // Only push state if the URL actually changed to prevent redundant history entries
+    if (window.location.search !== url.search) {
+      window.history.pushState({}, '', url);
+    }
+  }, [currentPage]);
+
+  // Handle browser Back/Forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const pageSlug = params.get('page');
+      setCurrentPage(pageSlug && SLUG_TO_PAGE[pageSlug] ? SLUG_TO_PAGE[pageSlug] : 'Home');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +111,7 @@ const App: React.FC = () => {
       case 'The DNA':
         return <DnaPage />;
       case 'NEKO 19':
-        return <Neko19Page />;
+        return <Neko19Page setCurrentPage={setCurrentPage} />;
       case 'Investors':
         return (
           <PasswordProtect>

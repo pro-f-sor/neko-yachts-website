@@ -1,7 +1,12 @@
 
 import React from 'react';
-import { CheckIcon } from './icons/Icons';
+import { Page } from '../types';
+import { CheckIcon, ArrowRightIcon } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
+
+interface Neko19PageProps {
+  setCurrentPage: (page: Page) => void;
+}
 
 const features = [
   "Flybridge with 360° views for easier docking and social gatherings",
@@ -43,7 +48,12 @@ const ImageCard: React.FC<{ src: string; alt: string; title: string }> = ({ src,
 );
 
 
-const Neko19Page: React.FC = () => {
+const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
+  const handleRequestBrochure = () => {
+    setCurrentPage('Contact');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,6 +87,34 @@ const Neko19Page: React.FC = () => {
                 <ImageCard src="https://coolcatamaran.com/images/rend/interior.jpg" alt="Bright and modern interior of a luxury yacht saloon" title="Modern Interiors" />
             </div>
              <p className="text-center mt-8 text-grey-400 italic">Conceptual photos. Final design may vary.</p>
+        </AnimatedSection>
+
+        <AnimatedSection className="mt-24 pb-12">
+            <div className="relative bg-gradient-to-br from-grey-900 to-[#0E1F2F] border border-[#D5C4A1]/20 rounded-3xl p-8 md:p-16 text-center overflow-hidden shadow-2xl">
+                {/* Background decoration */}
+                <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#D5C4A1] rounded-full filter blur-3xl"></div>
+                    <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#D5C4A1] rounded-full filter blur-3xl"></div>
+                </div>
+
+                <div className="relative z-10 max-w-3xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Ready to Start Your Journey?
+                    </h2>
+                    <p className="text-lg text-grey-300 mb-10 leading-relaxed">
+                        The NEKO 19 represents a new era of catamaran design. Get in touch to request our comprehensive brochure, explore technical specifications, and discover customization possibilities in detail.
+                    </p>
+                    <button
+                        onClick={handleRequestBrochure}
+                        className="group inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-bold text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1] focus:ring-offset-2 focus:ring-offset-grey-900"
+                    >
+                        Request a Brochure
+                        <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                            <ArrowRightIcon />
+                        </span>
+                    </button>
+                </div>
+            </div>
         </AnimatedSection>
 
       </div>

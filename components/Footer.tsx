@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <ul className="mt-4 space-y-2">
                 {navLinks.map(link => (
                   <li key={link.name}>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.name); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">
+                    <a href={link.href} onClick={(e) => { e.preventDefault(); handleNavClick(link.name); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">
                       {link.name}
                     </a>
                   </li>
@@ -45,13 +45,13 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <h3 className="text-sm font-semibold text-grey-200 tracking-wider uppercase">Enquiries</h3>
               <ul className="mt-4 space-y-2">
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Contact'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Sales</a>
+                    <a href="?page=contact" onClick={(e) => { e.preventDefault(); handleNavClick('Contact'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Sales</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Supplier Partnerships'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Supplier Partnerships</a>
+                    <a href="?page=supplier-partnerships" onClick={(e) => { e.preventDefault(); handleNavClick('Supplier Partnerships'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Supplier Partnerships</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Investors'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Investors</a>
+                    <a href="?page=investors" onClick={(e) => { e.preventDefault(); handleNavClick('Investors'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Investors</a>
                 </li>
               </ul>
             </div>
@@ -59,16 +59,16 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <h3 className="text-sm font-semibold text-grey-200 tracking-wider uppercase">Legal</h3>
               <ul className="mt-4 space-y-2">
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Privacy Policy'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="?page=privacy-policy" onClick={(e) => { e.preventDefault(); handleNavClick('Privacy Policy'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Privacy Policy</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Cookie Policy'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="?page=cookie-policy" onClick={(e) => { e.preventDefault(); handleNavClick('Cookie Policy'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Cookie Policy</a>
                 </li>
                 <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Terms and Conditions'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="?page=terms-and-conditions" onClick={(e) => { e.preventDefault(); handleNavClick('Terms and Conditions'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Terms & Conditions</a>
                 </li>
                  <li>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('Disclaimer'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Disclaimer</a>
+                    <a href="?page=disclaimer" onClick={(e) => { e.preventDefault(); handleNavClick('Disclaimer'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Disclaimer</a>
                 </li>
               </ul>
             </div>
