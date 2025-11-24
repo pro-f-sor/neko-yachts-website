@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { ChevronDownIcon, ChevronLeftIcon } from './icons/Icons';
 
 type CookieCategory = 'necessary' | 'analytics' | 'marketing';
 
@@ -21,11 +20,19 @@ const CookieConsent: React.FC = () => {
 
   useEffect(() => {
     // Check if user has already made a choice
-    const savedConsent = localStorage.getItem('neko-cookie-consent');
-    if (!savedConsent) {
-      // Small delay for animation effect on load
-      const timer = setTimeout(() => setIsVisible(true), 1000);
-      return () => clearTimeout(timer);
+    try {
+      const savedConsent = localStorage.getItem('neko-cookie-consent');
+      if (!savedConsent) {
+        // Small delay for animation effect on load
+        const timer = setTimeout(() => setIsVisible(true), 1000);
+        return () => clearTimeout(timer);
+      } else {
+        // Load saved preferences if available
+        setPreferences(JSON.parse(savedConsent));
+      }
+    } catch (e) {
+      // If localStorage is blocked, just show the banner
+      setIsVisible(true);
     }
   }, []);
 
@@ -44,7 +51,11 @@ const CookieConsent: React.FC = () => {
   };
 
   const savePreferences = (prefs: CookiePreferences) => {
-    localStorage.setItem('neko-cookie-consent', JSON.stringify(prefs));
+    try {
+      localStorage.setItem('neko-cookie-consent', JSON.stringify(prefs));
+    } catch (e) {
+      console.warn('Could not save cookie preferences to localStorage');
+    }
     setPreferences(prefs);
     setIsVisible(false);
     
@@ -75,7 +86,7 @@ const CookieConsent: React.FC = () => {
               <h3 className="text-xl font-bold text-white mb-3">Your Privacy Choices</h3>
               <p className="text-grey-300 text-sm leading-relaxed">
                 We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or withdraw your consent at any time. 
-                <a href="#" className="text-[#D5C4A1] hover:underline ml-1">Read our Cookie Policy.</a>
+                <a href="?page=cookie-policy" className="text-[#D5C4A1] hover:underline ml-1">Read our Cookie Policy.</a>
               </p>
 
               {/* Detailed Preferences Toggle */}

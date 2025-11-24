@@ -53,7 +53,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
   // Click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+      // Check if target is a valid Node to prevent "Uncaught TypeError: parameter 1 is not of type 'Node'"
+      if (langMenuRef.current && event.target instanceof Node && !langMenuRef.current.contains(event.target)) {
         setIsLangMenuOpen(false);
       }
     };

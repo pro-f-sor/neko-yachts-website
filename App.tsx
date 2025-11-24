@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -69,8 +68,14 @@ const App: React.FC = () => {
     }
 
     // Only push state if the URL actually changed to prevent redundant history entries
-    if (window.location.search !== url.search) {
-      window.history.pushState({}, '', url);
+    // Ensure url is converted to string for compatibility
+    // Wrap in try-catch to prevent Uncaught SecurityError in restricted environments
+    try {
+      if (window.location.search !== url.search) {
+        window.history.pushState({}, '', url.toString());
+      }
+    } catch (e) {
+      console.warn('Unable to update URL history', e);
     }
   }, [currentPage]);
 
@@ -107,7 +112,7 @@ const App: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'The Why':
-        return <WhyPage />;
+        return <WhyPage setCurrentPage={setCurrentPage} />;
       case 'The DNA':
         return <DnaPage />;
       case 'NEKO 19':
