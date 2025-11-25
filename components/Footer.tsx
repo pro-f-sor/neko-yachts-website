@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <h3 className="text-sm font-semibold text-grey-200 tracking-wider uppercase">Enquiries</h3>
               <ul className="mt-4 space-y-2">
                 <li>
-                    <a href="?page=contact" onClick={(e) => { e.preventDefault(); handleNavClick('Contact'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Sales</a>
+                    <a href="?page=enquire" onClick={(e) => { e.preventDefault(); handleNavClick('Enquire'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Sales</a>
                 </li>
                 <li>
                     <a href="?page=supplier-partnerships" onClick={(e) => { e.preventDefault(); handleNavClick('Supplier Partnerships'); }} className="text-base text-[#D8D8D8] hover:text-white transition-colors">Supplier Partnerships</a>

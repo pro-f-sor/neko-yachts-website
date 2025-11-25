@@ -7,14 +7,14 @@ const BenefitCard: React.FC<{ icon: React.ReactNode; title: string; children: Re
     <div className="text-center">
         {icon}
         <h3 className="mt-6 text-2xl font-bold text-white">{title}</h3>
-        <p className="mt-4 text-grey-400">{children}</p>
+        <p className="mt-4 text-grey-400 font-light">{children}</p>
     </div>
 );
 
 
 const SupplierPartnershipsPage: React.FC = () => {
   return (
-    <div>
+    <div className="selection:bg-[#D5C4A1] selection:text-grey-900">
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -39,7 +39,7 @@ const SupplierPartnershipsPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-[#D5C4A1] mb-6">
               A Partnership That Supports the NEKO Vision
             </h2>
-            <div className="text-lg text-grey-300 leading-relaxed space-y-6 text-left md:text-center">
+            <div className="text-lg text-grey-300 font-light leading-relaxed space-y-6 text-left md:text-center">
                 <p>
                     Our suppliers are instrumental in shaping the quality and performance of the NEKO catamaran range. As a growing company, we see our suppliers not simply as vendors but as valued partners who share our commitment to precision, innovation and dependable craftsmanship.
                 </p>
@@ -54,7 +54,7 @@ const SupplierPartnershipsPage: React.FC = () => {
 
            <AnimatedSection className="mt-24">
             <h2 className="text-3xl font-bold text-center text-white mb-6">Why Partner With the NEKO Brand?</h2>
-            <p className="text-lg text-grey-300 leading-relaxed text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-grey-300 font-light leading-relaxed text-center max-w-3xl mx-auto mb-12">
                 Although NEKO is a growing brand, we offer a positive and collaborative environment for suppliers who want to build long lasting relationships.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -75,14 +75,14 @@ const SupplierPartnershipsPage: React.FC = () => {
 
         <AnimatedSection className="mt-24 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-[#D5C4A1] mb-6">About NEKO</h2>
-            <p className="text-lg text-grey-300 leading-relaxed">
+            <p className="text-lg text-grey-300 font-light leading-relaxed">
                 NEKO catamarans are designed with a clear focus on quality, efficiency and comfort. Each vessel reflects our belief that thoughtful engineering and attention to detail can deliver a remarkable experience on the water. Our ambition is to build dependable, beautifully crafted catamarans that our clients can trust, whether for leisure, charter or extended cruising.
             </p>
         </AnimatedSection>
 
          <AnimatedSection className="mt-24 text-center">
              <h3 className="text-2xl font-bold text-white">Join Us in Shaping the Future of NEKO</h3>
-             <p className="mt-4 max-w-2xl mx-auto text-lg text-grey-300">
+             <p className="mt-4 max-w-2xl mx-auto text-lg text-grey-300 font-light">
                 We believe that strong supplier relationships are the foundation of reliable and well crafted catamarans. If you share our values and would like to contribute to the NEKO journey, we look forward to the opportunity to collaborate.
              </p>
              <p className="mt-6 text-lg font-semibold text-grey-300">

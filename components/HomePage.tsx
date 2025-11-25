@@ -117,10 +117,10 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
         
         {/* Content container, on top of everything */}
         <AnimatedSection className="relative z-20 p-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
             WE MAKE DREAMS REAL
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-grey-300">
+          <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-grey-300 font-light">
             Discover the freedom of the open water. A new era of performance cruising is on the horizon.
           </p>
           <div className="mt-10">
@@ -140,10 +140,10 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
                 We Asked: Why Compromise?
               </h2>
-              <p className="mt-6 text-lg text-grey-300 leading-relaxed">
+              <p className="mt-6 text-lg text-grey-300 font-light leading-relaxed">
                 For too long, sailors have been forced to choose. Speed or comfort? Performance or luxury? We believed a better way was possible. We are crafting a vessel that reconciles these opposites—a catamaran that doesn’t just sail, it performs, without sacrificing comfort.
               </p>
             </div>
@@ -162,10 +162,10 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       <div className="py-20 sm:py-28 animated-gradient-bg-darker">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               Details Matter
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-grey-400">
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-grey-400 font-light">
               A preview of the philosophy that guides our hands and inspires our design.
             </p>
           </AnimatedSection>
@@ -189,7 +189,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-8 w-full text-center">
                     <p
-                      className={`text-white text-xl italic transition-all duration-700 ease-out ${
+                      className={`text-white text-xl font-light italic transition-all duration-700 ease-out ${
                         index === currentSlide
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-4'
@@ -239,7 +239,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       <div className="py-20 sm:py-28 bg-grey-950/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               The NEKO Difference
             </h2>
           </AnimatedSection>
@@ -248,21 +248,21 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             <AnimatedSection className="text-center" delay={0}>
               <LightningBoltIcon />
               <h3 className="mt-6 text-2xl font-bold text-white">Unrivalled Performance</h3>
-              <p className="mt-4 text-grey-400">
+              <p className="mt-4 text-grey-400 font-light">
                 We are obsessed with speed, stability, and responsiveness. Our design challenges convention to deliver an exhilarating and confident ride in all conditions.
               </p>
             </AnimatedSection>
             <AnimatedSection className="text-center" delay={200}>
               <DiamondIcon />
               <h3 className="mt-6 text-2xl font-bold text-white">Refined Bespoke Luxury</h3>
-              <p className="mt-4 text-grey-400">
+              <p className="mt-4 text-grey-400 font-light">
                 This is not a production boat. This is a floating masterpiece, with interiors and finishes that reflect the discerning tastes of its owner.
               </p>
             </AnimatedSection>
             <AnimatedSection className="text-center" delay={400}>
               <LeafIcon />
               <h3 className="mt-6 text-2xl font-bold text-white">Sustainable Eco Future</h3>
-              <p className="mt-4 text-grey-400">
+              <p className="mt-4 text-grey-400 font-light">
                 Harnessing the power of the ocean means protecting it. We are integrating cutting-edge, eco-conscious systems and materials.
               </p>
             </AnimatedSection>
@@ -293,10 +293,10 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
         
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               Join the Inner Circle
             </h2>
-            <p className="mt-6 text-lg text-grey-300">
+            <p className="mt-6 text-lg text-grey-300 font-light">
               The full reveal is coming. By joining our private list, you will be the first to see the full designs, receive access to the private specification sheet, and be notified of exclusive pre-launch events.
             </p>
              <p className="mt-4 text-lg text-[#D5C4A1] font-semibold">

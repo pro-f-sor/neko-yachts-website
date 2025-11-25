@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -25,7 +26,8 @@ const SLUG_TO_PAGE: Record<string, Page> = {
   'the-dna': 'The DNA',
   'neko-19': 'NEKO 19',
   'investors': 'Investors',
-  'contact': 'Contact',
+  'contact': 'Enquire', // Handle legacy slug
+  'enquire': 'Enquire',
   'privacy-policy': 'Privacy Policy',
   'cookie-policy': 'Cookie Policy',
   'terms-and-conditions': 'Terms and Conditions',
@@ -114,7 +116,7 @@ const App: React.FC = () => {
       case 'The Why':
         return <WhyPage setCurrentPage={setCurrentPage} />;
       case 'The DNA':
-        return <DnaPage />;
+        return <DnaPage setCurrentPage={setCurrentPage} />;
       case 'NEKO 19':
         return <Neko19Page setCurrentPage={setCurrentPage} />;
       case 'Investors':
@@ -123,7 +125,7 @@ const App: React.FC = () => {
             <InvestorPage />
           </PasswordProtect>
         );
-      case 'Contact':
+      case 'Enquire':
         return <ContactPage />;
       case 'Privacy Policy':
         return <PrivacyPolicyPage />;

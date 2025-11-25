@@ -250,7 +250,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
                         </button>
                         
                         <button
-                            onClick={() => handleNavigation('Contact')}
+                            onClick={() => handleNavigation('Enquire')}
                             className="mt-4 sm:mt-0 py-4 text-white hover:text-[#D5C4A1] transition-colors border-b border-transparent hover:border-[#D5C4A1] font-light"
                         >
                             Join the Waitlist

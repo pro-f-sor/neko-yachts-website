@@ -18,14 +18,14 @@ const NAV_LABELS: Record<Language, Record<string, string>> = {
     'The Why': 'The Why',
     'The DNA': 'The DNA',
     'NEKO 19': 'NEKO 19',
-    'Contact': 'Contact'
+    'Enquire': 'Enquire'
   },
   fr: {
     'Home': 'Accueil',
     'The Why': 'Philosophie',
     'The DNA': 'L\'ADN',
     'NEKO 19': 'NEKO 19',
-    'Contact': 'Contact'
+    'Enquire': 'Contact'
   }
 };
 
