@@ -145,7 +145,7 @@ const DnaPage: React.FC<DnaPageProps> = ({ setCurrentPage }) => {
                                 body={`If Peter is the destination, Michael is the machine. With an MBA and a deep background in digital systems, Michael brings an obsessive level of detail to the NEKO hull. He is not satisfied with 'standard marine practice.'
 
 Having cut his teeth sailing the Caribbean, he bridges the gap between the raw elements and advanced technology. He specializes in 'invisible engineering'—hybrid propulsion and systems integration that grant a sailor silence, safety, and autonomy. He ensures that every NEKO performs as beautifully in the engine room as it does at the helm.`}
-                                quote="Innovation isn’t adding more. It’s the discipline to make the right things disappear until only excellence remains."
+                                quote="Innovation isn’t adding more. It’s the discipline to strip away everything but excellence."
                             />
 
                             <FounderCard 
@@ -155,7 +155,7 @@ Having cut his teeth sailing the Caribbean, he bridges the gap between the raw e
                                 body={`Peter provides the stability behind the vision. A lifelong entrepreneur with a background in high-stakes finance, he built and exited a major Forex technology firm—a career defined by managing risk with zero margin for error.
 
 But his compass was always set on the water. Shaped by the Mediterranean and the inherited memory of his mother’s circumnavigation, he saw a need for a vessel that balanced true sailing capability with modern business precision. Peter ensures that NEKO is built not just as a passion project, but as a robust, enduring enterprise.`}
-                                quote="Every significant innovation begins with dissatisfaction. We simply refused to accept the limits others considered normal."
+                                quote="We refused to accept industry compromises. We didn't design this boat to compete; we designed it to correct."
                             />
                         </div>
                     </AnimatedSection>

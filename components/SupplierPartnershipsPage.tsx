@@ -1,97 +1,167 @@
 
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
-import { LightningBoltIcon, DiamondIcon, UserGroupIcon, MegaphoneIcon } from './icons/Icons';
-
-const BenefitCard: React.FC<{ icon: React.ReactNode; title: string; children: React.ReactNode }> = ({ icon, title, children }) => (
-    <div className="text-center">
-        {icon}
-        <h3 className="mt-6 text-2xl font-bold text-white">{title}</h3>
-        <p className="mt-4 text-grey-400 font-light">{children}</p>
-    </div>
-);
-
+import { LightningBoltIcon, MegaphoneIcon, UserGroupIcon, CheckIcon, ArrowRightIcon } from './icons/Icons';
 
 const SupplierPartnershipsPage: React.FC = () => {
   return (
-    <div className="selection:bg-[#D5C4A1] selection:text-grey-900">
-      {/* Hero Section */}
-      <div className="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://coolcatamaran.com/images/Ocean-wake-jpeg.jpg" 
-            alt="The wake of a fast-moving vessel on the ocean" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        </div>
-        <AnimatedSection className="relative z-10 p-4">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Supplier Partnerships
-          </h1>
-        </AnimatedSection>
+    <div className="bg-white text-grey-900 selection:bg-[#D5C4A1] selection:text-white font-sans">
+      
+      {/* SECTION 1: HERO (Full Width Background) */}
+      <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+         {/* Background Image */}
+         <div className="absolute inset-0 z-0">
+             <img 
+                src="https://coolcatamaran.com/images/Carbon_fibre_2_Landscape.png" 
+                alt="Detail of raw carbon fibre weave" 
+                className="w-full h-full object-cover"
+             />
+             <div className="absolute inset-0 bg-grey-900/75 mix-blend-multiply"></div>
+         </div>
+
+         {/* Content */}
+         <div className="relative z-10 container mx-auto px-6 lg:px-12">
+            <AnimatedSection className="max-w-4xl">
+                <div className="h-1 w-20 bg-[#D5C4A1] mb-8"></div>
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 uppercase leading-none text-white">
+                    Engineering<br/><span className="text-[#D5C4A1]">The Exception.</span>
+                </h1>
+                <h2 className="text-xl md:text-2xl font-light text-grey-200 mb-8 max-w-xl border-l-4 border-[#D5C4A1] pl-6 py-2">
+                    We don't just buy components. We co-develop the future of marine performance.
+                </h2>
+                <p className="text-lg text-grey-300 font-light leading-relaxed max-w-xl">
+                    The NEKO 19 is not an assembly of off-the-shelf parts. It is a curated integration of the world's finest marine engineering. We are looking for technical partners ready to push the limits of what a 19-meter vessel can achieve.
+                </p>
+            </AnimatedSection>
+         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="py-20 sm:py-28 bg-grey-950/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#D5C4A1] mb-6">
-              A Partnership That Supports the NEKO Vision
-            </h2>
-            <div className="text-lg text-grey-300 font-light leading-relaxed space-y-6 text-left md:text-center">
-                <p>
-                    Our suppliers are instrumental in shaping the quality and performance of the NEKO catamaran range. As a growing company, we see our suppliers not simply as vendors but as valued partners who share our commitment to precision, innovation and dependable craftsmanship.
-                </p>
-                <p>
-                    Every material, component and service sourced for NEKO directly influences the experience we provide to our customers. By working closely with trusted suppliers, we are able to deliver catamarans that offer reliability, comfort and thoughtful design, qualities our clients expect and appreciate.
-                </p>
-                <p>
-                    We aim to build long term and mutually rewarding relationships with suppliers who are passionate about raising standards. Together, we enhance the NEKO range, strengthen customer confidence and build a foundation for shared and sustainable success.
-                </p>
-            </div>
-          </AnimatedSection>
+      {/* SECTION 2: THE OPPORTUNITY (3-Column Grid) */}
+      <div className="py-24 bg-white">
+          <div className="container mx-auto px-6 lg:px-12">
+              <AnimatedSection className="mb-20">
+                  <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-grey-400 mb-4">The Opportunity</h2>
+                  <h3 className="text-3xl md:text-5xl font-bold text-grey-900">WHY PARTNER WITH NEKO?</h3>
+              </AnimatedSection>
 
-           <AnimatedSection className="mt-24">
-            <h2 className="text-3xl font-bold text-center text-white mb-6">Why Partner With the NEKO Brand?</h2>
-            <p className="text-lg text-grey-300 font-light leading-relaxed text-center max-w-3xl mx-auto mb-12">
-                Although NEKO is a growing brand, we offer a positive and collaborative environment for suppliers who want to build long lasting relationships.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                <BenefitCard icon={<LightningBoltIcon />} title="Pioneer with Us">
-                    Bring your cutting-edge solutions to the forefront. We actively collaborate with our partners to integrate and co-develop innovative technologies, from <strong>sustainable materials</strong> to smart-yacht systems.
-                </BenefitCard>
-                <BenefitCard icon={<DiamondIcon />} title="Reach a Discerning Audience">
-                    Align your brand with the pinnacle of luxury and performance. NEKO catamarans attract a global clientele that values quality, craftsmanship, and innovation above all else.
-                </BenefitCard>
-                 <BenefitCard icon={<UserGroupIcon />} title="Build a Lasting Partnership">
-                    We believe in growing together. We seek to build stable, long-term relationships based on trust, mutual respect, and shared success, moving beyond transactional interactions.
-                </BenefitCard>
-                <BenefitCard icon={<MegaphoneIcon />} title="Amplify Your Brand Story">
-                    Gain visibility through our marketing channels. We feature key partners in our communications, showcasing the quality and innovation that goes into every NEKO vessel.
-                </BenefitCard>
-            </div>
-        </AnimatedSection>
+              <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+                  {/* Card 1 */}
+                  <AnimatedSection delay={100} className="group">
+                      <div className="text-grey-900 mb-6 transform group-hover:scale-110 transition-transform duration-500 origin-left">
+                          <LightningBoltIcon />
+                      </div>
+                      <div className="border-t border-grey-200 pt-6 group-hover:border-[#D5C4A1] transition-colors duration-300">
+                        <h4 className="text-xl font-bold mb-4 uppercase text-grey-900">Innovation First</h4>
+                        <p className="text-grey-500 font-light leading-relaxed">
+                            We actively collaborate to beta-test and co-develop new technologies. Bring us your "impossible" prototypes. If it improves the hull, the helm, or the habitat, we will integrate it.
+                        </p>
+                      </div>
+                  </AnimatedSection>
 
-        <AnimatedSection className="mt-24 max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#D5C4A1] mb-6">About NEKO</h2>
-            <p className="text-lg text-grey-300 font-light leading-relaxed">
-                NEKO catamarans are designed with a clear focus on quality, efficiency and comfort. Each vessel reflects our belief that thoughtful engineering and attention to detail can deliver a remarkable experience on the water. Our ambition is to build dependable, beautifully crafted catamarans that our clients can trust, whether for leisure, charter or extended cruising.
-            </p>
-        </AnimatedSection>
+                  {/* Card 2 */}
+                  <AnimatedSection delay={200} className="group">
+                      <div className="text-grey-900 mb-6 transform group-hover:scale-110 transition-transform duration-500 origin-left">
+                          <MegaphoneIcon />
+                      </div>
+                      <div className="border-t border-grey-200 pt-6 group-hover:border-[#D5C4A1] transition-colors duration-300">
+                        <h4 className="text-xl font-bold mb-4 uppercase text-grey-900">Global Visibility</h4>
+                        <p className="text-grey-500 font-light leading-relaxed">
+                            We don't hide our suppliers; we celebrate them. A partnership with NEKO places your brand in front of a discerning, high-net-worth audience that values component pedigree.
+                        </p>
+                      </div>
+                  </AnimatedSection>
 
-         <AnimatedSection className="mt-24 text-center">
-             <h3 className="text-2xl font-bold text-white">Join Us in Shaping the Future of NEKO</h3>
-             <p className="mt-4 max-w-2xl mx-auto text-lg text-grey-300 font-light">
-                We believe that strong supplier relationships are the foundation of reliable and well crafted catamarans. If you share our values and would like to contribute to the NEKO journey, we look forward to the opportunity to collaborate.
-             </p>
-             <p className="mt-6 text-lg font-semibold text-grey-300">
-                 contact us at: <a href="mailto:suppliers@nekoyachts.com" className="text-[#D5C4A1] hover:underline">suppliers@nekoyachts.com</a>
-             </p>
-        </AnimatedSection>
-
-        </div>
+                  {/* Card 3 */}
+                  <AnimatedSection delay={300} className="group">
+                       <div className="text-grey-900 mb-6 transform group-hover:scale-110 transition-transform duration-500 origin-left">
+                          <UserGroupIcon />
+                       </div>
+                       <div className="border-t border-grey-200 pt-6 group-hover:border-[#D5C4A1] transition-colors duration-300">
+                        <h4 className="text-xl font-bold mb-4 uppercase text-grey-900">Sustainable Scale</h4>
+                        <p className="text-grey-500 font-light leading-relaxed">
+                            We are building for the next decade, not the next quarter. We offer stable, forecasted volume for partners who can meet our rigorous standards for sustainability and reliability.
+                        </p>
+                      </div>
+                  </AnimatedSection>
+              </div>
+          </div>
       </div>
+
+      {/* SECTION 3: THE STANDARD (Manifesto Block) */}
+      <div className="py-24 bg-[#D5C4A1]/20 border-y border-[#D5C4A1]/30">
+          <div className="container mx-auto px-6 lg:px-12">
+              <AnimatedSection className="grid md:grid-cols-2 gap-16 items-center">
+                  <div>
+                      <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-grey-600 mb-4">The Standard</h2>
+                      <h3 className="text-3xl md:text-4xl font-bold text-grey-900 mb-8">OUR EXPECTATIONS</h3>
+                      <p className="text-xl text-grey-700 font-light leading-relaxed">
+                          We view our suppliers as an extension of our own engineering team. We demand the same rigour from our partners as we do from ourselves.
+                      </p>
+                  </div>
+                  
+                  {/* Manifesto Card */}
+                  <div className="bg-white p-10 shadow-2xl border-l-4 border-[#D5C4A1]">
+                      <ul className="space-y-8">
+                          <li className="flex items-start">
+                              <span className="mt-1 mr-4 text-[#D5C4A1] flex-shrink-0"><CheckIcon /></span>
+                              <div>
+                                  <strong className="block text-grey-900 uppercase tracking-wide text-sm font-bold mb-1">Precision</strong>
+                                  <span className="text-grey-500 font-light">Zero tolerance for variance in specifications or quality.</span>
+                              </div>
+                          </li>
+                          <li className="flex items-start">
+                              <span className="mt-1 mr-4 text-[#D5C4A1] flex-shrink-0"><CheckIcon /></span>
+                              <div>
+                                  <strong className="block text-grey-900 uppercase tracking-wide text-sm font-bold mb-1">Transparency</strong>
+                                  <span className="text-grey-500 font-light">Open communication regarding supply chain and sourcing.</span>
+                              </div>
+                          </li>
+                           <li className="flex items-start">
+                              <span className="mt-1 mr-4 text-[#D5C4A1] flex-shrink-0"><CheckIcon /></span>
+                              <div>
+                                  <strong className="block text-grey-900 uppercase tracking-wide text-sm font-bold mb-1">Agility</strong>
+                                  <span className="text-grey-500 font-light">The ability to adapt quickly as we refine the NEKO definition.</span>
+                              </div>
+                          </li>
+                           <li className="flex items-start">
+                              <span className="mt-1 mr-4 text-[#D5C4A1] flex-shrink-0"><CheckIcon /></span>
+                              <div>
+                                  <strong className="block text-grey-900 uppercase tracking-wide text-sm font-bold mb-1">Support</strong>
+                                  <span className="text-grey-500 font-light">Global service capability to support our owners, wherever they sail.</span>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </AnimatedSection>
+          </div>
+      </div>
+
+      {/* SECTION 4: CALL TO ACTION */}
+      <div className="py-32 bg-[#D5C4A1] text-center">
+          <div className="container mx-auto px-6">
+              <AnimatedSection className="max-w-4xl mx-auto">
+                  <h2 className="text-4xl md:text-6xl font-bold text-grey-900 mb-8 uppercase tracking-tight">Join The Supply Chain.</h2>
+                  <p className="text-xl text-grey-800 font-light mb-12 leading-relaxed max-w-2xl mx-auto">
+                      If you believe your product belongs on the NEKO 19, we invite you to open a dialogue with our procurement team.
+                  </p>
+                  
+                  <div>
+                    <a 
+                        href="mailto:suppliers@nekoyachts.com?subject=Strategic Partnership Proposal | [Company Name]" 
+                        className="inline-flex items-center justify-center px-12 py-5 bg-grey-900 text-white font-bold tracking-[0.1em] uppercase hover:bg-white hover:text-grey-900 transition-all duration-300 shadow-xl"
+                    >
+                        Initiate A Partnership
+                        <span className="ml-3"><ArrowRightIcon /></span>
+                    </a>
+                  </div>
+                  
+                  <p className="mt-8 text-sm text-grey-800 font-light">
+                      Please include your technical portfolio and relevant certifications.
+                  </p>
+              </AnimatedSection>
+          </div>
+      </div>
+
     </div>
   );
 };

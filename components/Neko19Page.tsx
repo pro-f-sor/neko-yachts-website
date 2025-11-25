@@ -1,145 +1,243 @@
 
 import React from 'react';
 import { Page } from '../types';
-import { CheckIcon, ArrowRightIcon } from './icons/Icons';
+import { ArrowRightIcon, CheckIcon } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
 
 interface Neko19PageProps {
   setCurrentPage: (page: Page) => void;
 }
 
-const features = [
-  "Flybridge with 360° views for easier docking and social gatherings",
-  "Spacious transom and bow lounges",
-  "East-West beds for optimal comfort",
-  "Fully appointed bathrooms",
-  "Integrated washing machine & dryer",
-  "Full size 'home' fridge/freezer in Island style Galley",
-  "Rain-fed drinking water tanks with separate black, grey & fuel tanks",
-  "3kw Solar power system",
-  "Oversized Bow Storage for 'toys' & equipment",
-  "4 Watertight collision bulkheads – front & aft",
-  "100Ah batteries in each hull (48v reticulation for efficiency)",
-  "Video Camera links for monitoring",
-  "Integrated RIB/Swim platform",
-  "Dedicated workshop area",
-  "Ducted Air Conditioning",
-  "Integrated 10kw generator",
-  "Forward-facing Nav/PC station with 2nd helm position",
-  "Designed for single-handed sailing performance"
-];
-
-const FeatureItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <li className="flex items-start">
-    <div className="flex-shrink-0">
-      <CheckIcon />
-    </div>
-    <span className="ml-3 text-grey-300 font-light">{children}</span>
-  </li>
+const DossierCard: React.FC<{ 
+  number: string;
+  title: string; 
+  imgSrc: string; 
+  body: string;
+  label: string;
+}> = ({ number, title, imgSrc, body, label }) => (
+  <div className="bg-grey-950 border border-grey-800 rounded-sm overflow-hidden group hover:border-[#D5C4A1]/50 transition-colors duration-500">
+      {/* Image Container (Aspect Video) */}
+      <div className="relative aspect-video overflow-hidden">
+          <img 
+            src={imgSrc} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter saturate-0 group-hover:saturate-100" 
+          />
+          {/* Technical Overlay */}
+          <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 border border-white/10">
+              <span className="text-[10px] font-mono text-[#D5C4A1] tracking-widest uppercase">{label}</span>
+          </div>
+      </div>
+      
+      {/* Content */}
+      <div className="p-8">
+          <div className="text-xs font-mono text-grey-500 mb-2">{number}</div>
+          <h3 className="text-xl font-bold text-white mb-4 tracking-wide uppercase">{title}</h3>
+          <p className="text-grey-400 font-light leading-relaxed text-sm">
+            {body}
+          </p>
+      </div>
+  </div>
 );
-
-const ImageCard: React.FC<{ src: string; alt: string; title: string }> = ({ src, alt, title }) => (
-    <div className="bg-grey-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-        <img src={src} alt={alt} className="w-full h-64 object-cover" />
-        <div className="p-4">
-            <h3 className="text-lg font-semibold text-white">{title}</h3>
-        </div>
-    </div>
-);
-
 
 const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
-  const handleRequestBrochure = () => {
+  const handleJoinList = () => {
     setCurrentPage('Enquire');
     window.scrollTo(0, 0);
   };
 
   return (
-    <div className="selection:bg-[#D5C4A1] selection:text-grey-900">
-        {/* Full-Screen Hero Section */}
-        <div className="relative h-screen flex flex-col justify-center items-center overflow-hidden">
+    <div className="bg-grey-900 text-white selection:bg-[#D5C4A1] selection:text-grey-900 font-sans">
+        
+        {/* [SECTION 1: HERO] - The Silhouette */}
+        <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
              {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1566576588212-b478fb037996?q=80&w=2670&auto=format&fit=crop"
-                    alt="Catamaran sailing on a calm turquoise sea at sunset"
+                    src="https://coolcatamaran.com/images/neko19/mysterycat3.png"
+                    alt="Silhouette of the NEKO 19 Catamaran in low light"
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40"></div>
+                {/* Overlay: 10% Opacity Black */}
+                <div className="absolute inset-0 bg-black/10"></div>
             </div>
 
-             <AnimatedSection className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p className="text-[#D5C4A1] font-semibold tracking-[0.2em] uppercase mb-4 animate-fade-in-up">THE NEKO 19</p>
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-8">
-                    A New Standard in<br/>Performance Cruising
+             <AnimatedSection className="relative z-10 container mx-auto px-6 text-center">
+                <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white mb-6 uppercase">
+                    The NEKO 19
                 </h1>
-                <p className="max-w-2xl mx-auto text-xl text-white font-light leading-relaxed drop-shadow-md">
-                     Featuring the latest in lightweight construction technology and 'fast-build' proprietary techniques, the NEKO 19 is sleek, dynamic, and comfortable.
+                <p className="text-[#D5C4A1] text-sm md:text-lg font-medium tracking-[0.3em] uppercase mb-12">
+                    A Category of One. Arriving 2027.
                 </p>
+                
+                <div className="max-w-2xl mx-auto border-l-2 border-[#D5C4A1] pl-6 text-left md:text-center md:border-l-0 md:border-t-2 md:pt-8">
+                    <p className="text-xl md:text-2xl text-grey-200 font-light leading-relaxed mb-10">
+                        The world doesn't need another catamaran. It needs a better one. This is not just a launch. It’s a correction.
+                    </p>
+                </div>
+
+                <button
+                    onClick={handleJoinList}
+                    className="inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase text-sm hover:bg-white transition-all duration-300"
+                >
+                    Join The Priority List
+                    <span className="ml-3"><ArrowRightIcon /></span>
+                </button>
             </AnimatedSection>
             
             {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-80 z-10 text-white">
-                <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent mx-auto"></div>
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50 z-10">
+                <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
             </div>
         </div>
 
-      <div className="py-20 sm:py-28 bg-grey-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            
-          <AnimatedSection className="mt-10">
-             <h2 className="text-3xl font-bold text-center text-white mb-12">Inclusive 'Menu' of Standard Features</h2>
-            <div className="max-w-4xl mx-auto bg-grey-950/50 p-8 rounded-lg border border-white/5">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                {features.map((feature, index) => (
-                  <FeatureItem key={index}>{feature}</FeatureItem>
-                ))}
-              </ul>
+        {/* [SECTION 2: THE PROMISE] - Spec List */}
+        <section className="py-24 sm:py-32 bg-grey-950">
+            <div className="container mx-auto px-6 lg:px-12">
+                <AnimatedSection className="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
+                    {/* Left: Manifesto */}
+                    <div>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase leading-tight">
+                            The End of the <br/>"Option List"
+                        </h2>
+                        <h3 className="text-[#D5C4A1] text-xl font-light italic mb-8">Standard is the new Luxury.</h3>
+                        <p className="text-lg text-grey-300 font-light leading-relaxed">
+                            In an industry addicted to upsells, the NEKO 19 stands alone. We don't charge you extra for the things you actually need to sail. We believe a vessel should be capable of crossing an ocean the moment it leaves the factory.
+                        </p>
+                    </div>
+
+                    {/* Right: The List */}
+                    <div className="bg-grey-900 p-8 md:p-12 border border-white/5 rounded-sm">
+                        <ul className="space-y-6">
+                            <li className="flex items-start">
+                                <div className="mt-1 flex-shrink-0 text-[#D5C4A1]"><CheckIcon /></div>
+                                <div className="ml-4">
+                                    <h4 className="text-white font-bold text-lg uppercase tracking-wide">Global Autonomy</h4>
+                                    <p className="text-grey-400 font-light text-sm mt-1">Designed to CE Category A (Ocean) standards for unrestricted blue water navigation.</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <div className="mt-1 flex-shrink-0 text-[#D5C4A1]"><CheckIcon /></div>
+                                <div className="ml-4">
+                                    <h4 className="text-white font-bold text-lg uppercase tracking-wide">Energy Independence</h4>
+                                    <p className="text-grey-400 font-light text-sm mt-1">3kW Solar Array + 10kW Generator (Integrated).</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <div className="mt-1 flex-shrink-0 text-[#D5C4A1]"><CheckIcon /></div>
+                                <div className="ml-4">
+                                    <h4 className="text-white font-bold text-lg uppercase tracking-wide">True Liveability</h4>
+                                    <p className="text-grey-400 font-light text-sm mt-1">Full-size household refrigeration, Washing Machine & Dryer.</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <div className="mt-1 flex-shrink-0 text-[#D5C4A1]"><CheckIcon /></div>
+                                <div className="ml-4">
+                                    <h4 className="text-white font-bold text-lg uppercase tracking-wide">Aviation Systems</h4>
+                                    <p className="text-grey-400 font-light text-sm mt-1">48V Reticulation and Redundant Propulsion.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </AnimatedSection>
             </div>
-          </AnimatedSection>
+        </section>
 
-          <AnimatedSection className="mt-24">
-              <h2 className="text-3xl font-bold text-center text-white mb-12">Design Glimpses</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <ImageCard src="https://coolcatamaran.com/images/rend/flybridge.jpg" alt="Expansive view from a modern yacht flybridge" title="Expansive Flybridge" />
-                  <ImageCard src="https://coolcatamaran.com/images/rend/rear.jpg" alt="Comfortable transom lounge area on a catamaran" title="Social Transom Lounge" />
-                  <ImageCard src="https://coolcatamaran.com/images/rend/front.jpg" alt="Relaxing seating area on the bow of a yacht" title="Serene Bow Lounge" />
-                  <ImageCard src="https://coolcatamaran.com/images/rend/int.jpg" alt="Overhead view showing the spacious layout of a catamaran" title="Layout & Space" />
-                  <ImageCard src="https://coolcatamaran.com/images/rend/hull-starter.png" alt="Sleek, modern catamaran hull slicing through the water" title="Advanced Hull Design" />
-                  <ImageCard src="https://coolcatamaran.com/images/rend/interior.jpg" alt="Bright and modern interior of a luxury yacht saloon" title="Modern Interiors" />
-              </div>
-               <p className="text-center mt-8 text-grey-400 italic font-light">Conceptual photos. Final design may vary.</p>
-          </AnimatedSection>
+        {/* [SECTION 3: THE SNEAK PEEK] - Renders */}
+        <section className="py-24 sm:py-32 bg-grey-900">
+            <div className="container mx-auto px-6 lg:px-12">
+                <AnimatedSection className="mb-16 text-center">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-tight">Designed for the New Era</h2>
+                </AnimatedSection>
 
-          <AnimatedSection className="mt-24 pb-12">
-              <div className="relative bg-gradient-to-br from-grey-900 to-[#0E1F2F] border border-[#D5C4A1]/20 rounded-3xl p-8 md:p-16 text-center overflow-hidden shadow-2xl">
-                  {/* Background decoration */}
-                  <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#D5C4A1] rounded-full filter blur-3xl"></div>
-                      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#D5C4A1] rounded-full filter blur-3xl"></div>
-                  </div>
+                <AnimatedSection>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <DossierCard 
+                            number="01"
+                            title="The Flybridge"
+                            imgSrc="https://coolcatamaran.com/images/rend/flybridge.jpg"
+                            body="360° Vision. Zero Compromise. A command center designed for single-handed sailing, transitioning instantly into a social lounge for 8 guests."
+                            label="Engineering Concept [ALPHA]"
+                        />
+                         <DossierCard 
+                            number="02"
+                            title="The Interior"
+                            imgSrc="https://coolcatamaran.com/images/rend/interior.jpg"
+                            body="A Loft, Not a Cabin. East-West beds. Ducted climate control. We prioritized silence, space, and light over cabin count."
+                            label="Engineering Concept [ALPHA]"
+                        />
+                         <DossierCard 
+                            number="03"
+                            title="The Invisible Engineering"
+                            imgSrc="https://coolcatamaran.com/images/rend/hull-starter.png"
+                            body="From the collision bulkheads to the proprietary hull layup, the true luxury of the NEKO 19 is peace of mind."
+                            label="Engineering Concept [ALPHA]"
+                        />
+                    </div>
+                </AnimatedSection>
+            </div>
+        </section>
 
-                  <div className="relative z-10 max-w-3xl mx-auto">
-                      <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                          Ready to Start Your Journey?
-                      </h2>
-                      <p className="text-lg text-grey-300 mb-10 leading-relaxed font-light">
-                          The NEKO 19 represents a new era of catamaran design. Get in touch to request our comprehensive brochure, explore technical specifications, and discover customization possibilities in detail.
-                      </p>
-                      <button
-                          onClick={handleRequestBrochure}
-                          className="group inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-bold text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#D5C4A1] focus:ring-offset-2 focus:ring-offset-grey-900"
-                      >
-                          Request a Brochure
-                          <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                              <ArrowRightIcon />
-                          </span>
-                      </button>
-                  </div>
-              </div>
-          </AnimatedSection>
-        </div>
-      </div>
+        {/* [SECTION 4: THE STRATEGIC TEASE] */}
+        <section className="py-32 bg-black text-center">
+            <div className="container mx-auto px-6">
+                <AnimatedSection>
+                    <p className="text-[#D5C4A1] font-mono text-sm uppercase tracking-widest mb-6">Status Update</p>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter">
+                        "WE ARE SAVING THE BEST FOR LAST."
+                    </h2>
+                    <p className="text-xl text-grey-400 font-light max-w-3xl mx-auto leading-relaxed mb-16">
+                        The specifications you see here are just the baseline. We are currently finalizing three proprietary innovations that will redefine sustainable propulsion.
+                    </p>
+
+                    <div className="flex flex-col md:flex-row justify-center gap-12 text-center md:text-left border-t border-grey-900 pt-12 inline-flex">
+                        <div>
+                            <span className="block text-grey-500 text-xs font-bold uppercase tracking-widest mb-2">Projected Launch</span>
+                            <span className="text-white text-lg font-light">Mid 2027</span>
+                        </div>
+                        <div className="hidden md:block w-px bg-grey-900"></div>
+                        <div>
+                            <span className="block text-grey-500 text-xs font-bold uppercase tracking-widest mb-2">Hull Allocations</span>
+                            <span className="text-white text-lg font-light">Opening Soon</span>
+                        </div>
+                        <div className="hidden md:block w-px bg-grey-900"></div>
+                        <div>
+                            <span className="block text-grey-500 text-xs font-bold uppercase tracking-widest mb-2">Sea Trials</span>
+                            <span className="text-white text-lg font-light">Mediterranean, Early 2027</span>
+                        </div>
+                    </div>
+                </AnimatedSection>
+            </div>
+        </section>
+
+        {/* [SECTION 5: CONVERSION] */}
+        <section className="py-24 sm:py-32 bg-grey-900 border-t border-grey-800">
+            <div className="container mx-auto px-6 text-center">
+                <AnimatedSection className="max-w-4xl mx-auto bg-grey-950 p-12 md:p-20 rounded-lg shadow-2xl relative overflow-hidden">
+                    {/* Decorative blurred glow */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#D5C4A1]/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+                    <div className="relative z-10">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 uppercase">Secure Your Place In Line.</h2>
+                        <p className="text-lg md:text-xl text-grey-300 font-light mb-10 leading-relaxed">
+                            We are limiting the initial production run to ensure absolute perfection for our founding owners. Join the Inner Circle for uncensored updates and priority allocation.
+                        </p>
+                        
+                        <button 
+                            onClick={handleJoinList}
+                            className="inline-flex items-center justify-center px-12 py-5 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase text-sm hover:bg-white transition-all duration-300 shadow-xl"
+                        >
+                            Request Access
+                        </button>
+                        
+                        <p className="mt-6 text-grey-600 text-xs font-mono uppercase tracking-widest">
+                            Serious enquiries only.
+                        </p>
+                    </div>
+                </AnimatedSection>
+            </div>
+        </section>
+
     </div>
   );
 };

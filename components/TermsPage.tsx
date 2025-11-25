@@ -7,9 +7,9 @@ const TermsPage: React.FC = () => {
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-8">Website Terms and Conditions</h1>
-          <div className="prose prose-invert max-w-none text-grey-300 space-y-6 text-lg leading-relaxed">
-            <p className="text-grey-400 italic">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-8">Website Terms and Conditions</h1>
+          <div className="prose prose-invert max-w-none text-grey-300 space-y-6 text-lg leading-relaxed prose-p:font-light prose-li:font-light prose-headings:font-bold">
+            <p className="text-grey-400 italic font-light">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
             <p>Welcome to the Neko website (“Website”), operated by Cool Catamaran Company (“we”, “us”, “our”). By accessing this Website, you agree to these Terms of Service.</p>
             <p>If you do not agree, please do not use the Website.</p>
 

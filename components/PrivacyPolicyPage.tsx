@@ -7,9 +7,9 @@ const PrivacyPolicyPage: React.FC = () => {
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-8">Privacy Policy</h1>
-          <div className="prose prose-invert max-w-none text-grey-300 space-y-6 text-lg leading-relaxed">
-            <p className="text-grey-400 italic">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-8">Privacy Policy</h1>
+          <div className="prose prose-invert max-w-none text-grey-300 space-y-6 text-lg leading-relaxed prose-p:font-light prose-li:font-light prose-headings:font-bold">
+            <p className="text-grey-400 italic font-light">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
             <p>This Privacy Policy explains how Cool Catamaran Company (“we”, “us”, “our”) collects, uses, and protects your personal data when you visit the Neko website (“Website”).</p>
             <p>We are committed to complying with applicable UK data protection laws, including the UK GDPR and the Data Protection Act 2018.</p>
 

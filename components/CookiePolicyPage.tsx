@@ -7,9 +7,9 @@ const CookiePolicyPage: React.FC = () => {
     <div className="py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-8">Cookie Policy</h1>
-          <div className="prose prose-invert max-w-none text-grey-300 space-y-6 text-lg leading-relaxed">
-            <p className="text-grey-400 italic">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-8">Cookie Policy</h1>
+          <div className="prose prose-invert max-w-none text-grey-300 space-y-6 text-lg leading-relaxed prose-p:font-light prose-li:font-light prose-headings:font-bold">
+            <p className="text-grey-400 italic font-light">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
             
             <p>This Cookie Policy explains how Neko (“Website”) uses cookies and similar technologies.</p>
 
