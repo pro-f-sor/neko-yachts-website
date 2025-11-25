@@ -218,7 +218,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
                         We are not racing our boats, and we doubt you are either. While others chase knots, we chase moments.
                     </p>
                     <p>
-                        A NEKO is designed to be sailed single-handedly or by a couple, offering intimacy for owners and distinct privacy for up to 6 guests. It provides separate private spaces for tranquility and reflection. That is a feature you won’t see on a spec sheet, but it is essential for life on the water.
+                        A NEKO is designed to be sailed single-handedly or by a couple, offering intimacy for owners and distinct privacy for up to 6 guests. It provides separate private spaces for tranquillity and reflection. That is a feature you won’t see on a spec sheet, but it is essential for life on the water.
                     </p>
                 </div>
             </AnimatedSection>

@@ -156,14 +156,14 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
                             number="01"
                             title="The Flybridge"
                             imgSrc="https://coolcatamaran.com/images/rend/flybridge.jpg"
-                            body="360° Vision. Zero Compromise. A command center designed for single-handed sailing, transitioning instantly into a social lounge for 8 guests."
+                            body="360° Vision. Zero Compromise. A command centre designed for single-handed sailing, transitioning instantly into a social lounge for 8 guests."
                             label="Engineering Concept [ALPHA]"
                         />
                          <DossierCard 
                             number="02"
                             title="The Interior"
                             imgSrc="https://coolcatamaran.com/images/rend/interior.jpg"
-                            body="A Loft, Not a Cabin. East-West beds. Ducted climate control. We prioritized silence, space, and light over cabin count."
+                            body="A Loft, Not a Cabin. East-West beds. Ducted climate control. We prioritised silence, space, and light over cabin count."
                             label="Engineering Concept [ALPHA]"
                         />
                          <DossierCard 
@@ -187,7 +187,7 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
                         "WE ARE SAVING THE BEST FOR LAST."
                     </h2>
                     <p className="text-xl text-grey-400 font-light max-w-3xl mx-auto leading-relaxed mb-16">
-                        The specifications you see here are just the baseline. We are currently finalizing three proprietary innovations that will redefine sustainable propulsion.
+                        The specifications you see here are just the baseline. We are currently finalising three proprietary innovations that will redefine sustainable propulsion.
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-center gap-12 text-center md:text-left border-t border-grey-900 pt-12 inline-flex">

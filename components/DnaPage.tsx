@@ -144,7 +144,7 @@ const DnaPage: React.FC<DnaPageProps> = ({ setCurrentPage }) => {
                                 imgSrc="https://coolcatamaran.com/images/headshots/Mike.png"
                                 body={`If Peter is the destination, Michael is the machine. With an MBA and a deep background in digital systems, Michael brings an obsessive level of detail to the NEKO hull. He is not satisfied with 'standard marine practice.'
 
-Having cut his teeth sailing the Caribbean, he bridges the gap between the raw elements and advanced technology. He specializes in 'invisible engineering'—hybrid propulsion and systems integration that grant a sailor silence, safety, and autonomy. He ensures that every NEKO performs as beautifully in the engine room as it does at the helm.`}
+Having cut his teeth sailing the Caribbean, he bridges the gap between the raw elements and advanced technology. He specialises in 'invisible engineering'—hybrid propulsion and systems integration that grant a sailor silence, safety, and autonomy. He ensures that every NEKO performs as beautifully in the engine room as it does at the helm.`}
                                 quote="Innovation isn’t adding more. It’s the discipline to strip away everything but excellence."
                             />
 
@@ -260,7 +260,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                         <h2 className="text-3xl md:text-5xl font-bold text-[#D5C4A1] mb-8 leading-tight">NOW, MEET THE MACHINE.</h2>
                         
                         <p className="text-xl text-grey-300 font-light mb-10 leading-relaxed max-w-3xl mx-auto">
-                            Our history is in the past. Our philosophy is in the mind. The NEKO 19 is the proof. See how we translated heritage and safety into the most capable 19-meter catamaran ever conceived.
+                            Our history is in the past. Our philosophy is in the mind. The NEKO 19 is the proof. See how we translated heritage and safety into the most capable 19-metre catamaran ever conceived.
                         </p>
 
                         <div>

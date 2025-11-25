@@ -30,7 +30,7 @@ const SupplierPartnershipsPage: React.FC = () => {
                     We don't just buy components. We co-develop the future of marine performance.
                 </h2>
                 <p className="text-lg text-grey-300 font-light leading-relaxed max-w-xl">
-                    The NEKO 19 is not an assembly of off-the-shelf parts. It is a curated integration of the world's finest marine engineering. We are looking for technical partners ready to push the limits of what a 19-meter vessel can achieve.
+                    The NEKO 19 is not an assembly of off-the-shelf parts. It is a curated integration of the world's finest marine engineering. We are looking for technical partners ready to push the limits of what a 19-metre vessel can achieve.
                 </p>
             </AnimatedSection>
          </div>
