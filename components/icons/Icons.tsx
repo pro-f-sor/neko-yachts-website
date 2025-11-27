@@ -138,3 +138,17 @@ export const NorthStarIcon = () => (
         <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
     </svg>
 );
+
+export const PalmTreeIcon = () => (
+    <svg className="w-12 h-12 mx-auto text-[#D5C4A1]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21V10m0 0c-1-3-4-5-4-5s1.5-2 4-2 4 2 4 2-3 2-4 5zm0 0c-4 1-7 0-7 0s1.5 1 2 3c-3 1-5 4-5 4s3.5-1 6-2c-1 3-1 6-1 6s2-3 4-6m1 5c-1 3-1 6-1 6s3.5-1 6-2c-2-3-5-4-5-4s1.5-2 2-3c-3 0-6-1-7 0" />
+    </svg>
+);
+
+export const CompassRoseIcon = () => (
+    <svg className="w-12 h-12 mx-auto text-[#D5C4A1]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="9" strokeWidth="1" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2 2-7z" />
+        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+);

@@ -21,7 +21,7 @@ const FounderCard: React.FC<{
                 <img 
                     src={imgSrc} 
                     alt={`Portrait of ${name}`} 
-                    className="w-full h-80 object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-80 lg:h-auto lg:aspect-[3/4] object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-700"
                 />
             </div>
             <h3 className="text-2xl font-bold text-white mb-1 tracking-wide">{name}</h3>
@@ -141,7 +141,7 @@ const DnaPage: React.FC<DnaPageProps> = ({ setCurrentPage }) => {
                             <FounderCard 
                                 name="Michael Walker"
                                 title="The Architect | Co-Founder & Technical Lead"
-                                imgSrc="https://coolcatamaran.com/images/headshots/Mike.png"
+                                imgSrc="https://coolcatamaran.com/images/headshots/Mike.png?v=2"
                                 body={`If Peter is the destination, Michael is the machine. With an MBA and a deep background in digital systems, Michael brings an obsessive level of detail to the NEKO hull. He is not satisfied with 'standard marine practice.'
 
 Having cut his teeth sailing the Caribbean, he bridges the gap between the raw elements and advanced technology. He specialises in 'invisible engineering'—hybrid propulsion and systems integration that grant a sailor silence, safety, and autonomy. He ensures that every NEKO performs as beautifully in the engine room as it does at the helm.`}
@@ -151,7 +151,7 @@ Having cut his teeth sailing the Caribbean, he bridges the gap between the raw e
                             <FounderCard 
                                 name="Peter Walker"
                                 title="The Course Setter | Co-Founder & Strategic Lead"
-                                imgSrc="https://coolcatamaran.com/images/headshots/Peter.png"
+                                imgSrc="https://coolcatamaran.com/images/headshots/Peter.png?v=2"
                                 body={`Peter provides the stability behind the vision. A lifelong entrepreneur with a background in high-stakes finance, he built and exited a major Forex technology firm—a career defined by managing risk with zero margin for error.
 
 But his compass was always set on the water. Shaped by the Mediterranean and the inherited memory of his mother’s circumnavigation, he saw a need for a vessel that balanced true sailing capability with modern business precision. Peter ensures that NEKO is built not just as a passion project, but as a robust, enduring enterprise.`}

@@ -7,7 +7,6 @@ import WhyPage from './components/WhyPage';
 import Neko19Page from './components/Neko19Page';
 import ContactPage from './components/ContactPage';
 import InvestorPage from './components/InvestorPage';
-import PasswordProtect from './components/PasswordProtect';
 import { Page, Language } from './types';
 import { NAV_LINKS } from './constants';
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -120,11 +119,7 @@ const App: React.FC = () => {
       case 'NEKO 19':
         return <Neko19Page setCurrentPage={setCurrentPage} />;
       case 'Investors':
-        return (
-          <PasswordProtect>
-            <InvestorPage />
-          </PasswordProtect>
-        );
+        return <InvestorPage />;
       case 'Enquire':
         return <ContactPage />;
       case 'Privacy Policy':
