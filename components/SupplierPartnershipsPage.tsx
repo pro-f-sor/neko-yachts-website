@@ -2,8 +2,20 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import { LightningBoltIcon, MegaphoneIcon, UserGroupIcon, CheckIcon, ArrowRightIcon } from './icons/Icons';
+import { Page } from '../types';
 
-const SupplierPartnershipsPage: React.FC = () => {
+interface SupplierPartnershipsPageProps {
+  setCurrentPage?: (page: Page) => void;
+}
+
+const SupplierPartnershipsPage: React.FC<SupplierPartnershipsPageProps> = ({ setCurrentPage }) => {
+  const handleHomeClick = () => {
+    if (setCurrentPage) {
+      setCurrentPage('Home');
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <div className="bg-white text-grey-900 selection:bg-[#D5C4A1] selection:text-white font-sans">
       
@@ -145,7 +157,7 @@ const SupplierPartnershipsPage: React.FC = () => {
                       If you believe your product belongs on the NEKO 19, we invite you to open a dialogue with our procurement team.
                   </p>
                   
-                  <div>
+                  <div className="flex flex-col items-center gap-8">
                     <a 
                         href="mailto:suppliers@nekoyachts.com?subject=Strategic Partnership Proposal | [Company Name]" 
                         className="inline-flex items-center justify-center px-12 py-5 bg-grey-900 text-white font-bold tracking-[0.1em] uppercase hover:bg-white hover:text-grey-900 transition-all duration-300 shadow-xl"
@@ -153,9 +165,16 @@ const SupplierPartnershipsPage: React.FC = () => {
                         Initiate A Partnership
                         <span className="ml-3"><ArrowRightIcon /></span>
                     </a>
+
+                    <button 
+                        onClick={handleHomeClick}
+                        className="text-sm font-bold uppercase tracking-widest text-grey-800 border-b border-grey-800 hover:text-white hover:border-white transition-colors pb-1"
+                    >
+                        Return to Home
+                    </button>
                   </div>
                   
-                  <p className="mt-8 text-sm text-grey-800 font-light">
+                  <p className="mt-12 text-sm text-grey-800 font-light">
                       Please include your technical portfolio and relevant certifications.
                   </p>
               </AnimatedSection>

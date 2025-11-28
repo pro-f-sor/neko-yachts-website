@@ -165,6 +165,12 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
                              {/* Left: Text */}
                              <div className="order-1 flex flex-col justify-center">
+                                {/* CE Badge - Connecting History to Engineering */}
+                                <div className="inline-flex items-center gap-3 mb-8 self-start border border-[#D5C4A1]/30 px-3 py-1.5 rounded-sm bg-[#D5C4A1]/5">
+                                    <div className="h-1.5 w-1.5 rounded-full bg-[#D5C4A1]"></div>
+                                    <span className="text-[#D5C4A1] text-[10px] font-bold uppercase tracking-widest">CE Class A Certified</span>
+                                </div>
+
                                 <h3 className="text-[#D5C4A1] text-sm font-bold tracking-widest uppercase mb-4">The Philosophy</h3>
                                 <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Aviation Grade.<br/>Ocean Tested.</h2>
                                 
@@ -251,7 +257,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                         alt="Silhouette of NEKO 19 Catamaran" 
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-grey-950/80"></div>
+                    <div className="absolute inset-0 bg-grey-900/80"></div>
                 </div>
 
                 <div className="relative z-10 container mx-auto px-6 lg:px-12 text-center">

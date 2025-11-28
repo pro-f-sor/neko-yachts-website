@@ -39,6 +39,11 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [parallaxOffset, setParallaxOffset] = useState(0);
 
+  // Swipe state
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const minSwipeDistance = 50;
+
   const handleNavClick = (page: Page) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -54,6 +59,29 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
+  };
+
+  // Swipe Handlers
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
   };
 
   useEffect(() => {
@@ -240,7 +268,12 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
            </AnimatedSection>
 
           <AnimatedSection>
-            <div className="relative w-full max-w-6xl mx-auto h-[60vh] max-h-[600px] overflow-hidden rounded-sm shadow-2xl bg-grey-900">
+            <div 
+                className="relative w-full max-w-6xl mx-auto h-[60vh] max-h-[600px] overflow-hidden rounded-sm shadow-2xl bg-grey-900"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+            >
               {/* Slides */}
               {innovationGlimpses.map((item, index) => (
                 <div
@@ -273,13 +306,13 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
               {/* Navigation Arrows */}
               <button
                 onClick={prevSlide}
-                className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-10 p-4 text-white/50 hover:text-white transition-colors"
+                className="hidden md:block absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-10 p-4 text-white/50 hover:text-white transition-colors"
               >
                 <ChevronLeftIcon />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-10 p-4 text-white/50 hover:text-white transition-colors"
+                className="hidden md:block absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-10 p-4 text-white/50 hover:text-white transition-colors"
               >
                 <ChevronRightIcon />
               </button>

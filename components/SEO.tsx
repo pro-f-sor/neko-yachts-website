@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 
 interface SEOProps {
@@ -14,8 +13,8 @@ const SEO: React.FC<SEOProps> = ({
   image, 
   canonical 
 }) => {
-  const siteTitle = 'NEKO Yachts';
-  const defaultTitle = 'NEKO Yachts | The Correction';
+  const siteTitle = 'NEKO Catamarans';
+  const defaultTitle = 'NEKO Catamarans | Performance Multihulls';
   const defaultDescription = 'The world didn\'t need another catamaran. It needed a better one. Discover the NEKO 19: Aviation-grade engineering meets sustainable luxury. Arriving 2027.';
   const defaultImage = 'https://coolcatamaran.com/images/neko19/mysterycat3.png';
   const siteUrl = 'https://www.nekoyachts.com';

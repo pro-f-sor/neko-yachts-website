@@ -131,7 +131,7 @@ const App: React.FC = () => {
       case 'Disclaimer':
         return <DisclaimerPage setCurrentPage={setCurrentPage} />;
       case 'Supplier Partnerships':
-        return <SupplierPartnershipsPage />;
+        return <SupplierPartnershipsPage setCurrentPage={setCurrentPage} />;
       case 'Home':
       default:
         return <HomePage setCurrentPage={setCurrentPage} />;

@@ -34,6 +34,12 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><InstagramIcon /></a>
               <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><LinkedInIcon /></a>
             </div>
+            
+            {/* CE Badge */}
+            <div className="mt-8 inline-flex items-center gap-3 border border-grey-800 bg-grey-900 px-4 py-2 rounded-sm group hover:border-[#D5C4A1]/50 transition-colors cursor-default">
+                <div className="h-2 w-2 rounded-full bg-[#D5C4A1] animate-pulse"></div>
+                <span className="text-[10px] font-bold text-grey-300 uppercase tracking-widest group-hover:text-white transition-colors">CE Class A Certified</span>
+            </div>
           </div>
           <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
@@ -89,7 +95,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
           </div>
         </div>
         <div className="mt-12 border-t border-grey-800 pt-8 text-center text-sm text-grey-500">
-          <p>&copy; {new Date().getFullYear()} NEKO Yachts. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Cool Catamaran Company Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>
