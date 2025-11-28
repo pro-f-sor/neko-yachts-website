@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { generateVoyageItinerary } from '../services/geminiService';
-import { SpinnerIcon, ArrowRightIcon } from './icons/Icons';
+import { SpinnerIcon, ArrowRightIcon, CheckIcon } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
 
 const ContactPage: React.FC = () => {
@@ -10,6 +10,10 @@ const ContactPage: React.FC = () => {
     const [itinerary, setItinerary] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [plannerError, setPlannerError] = useState('');
+
+    // State for Save Itinerary Form (Lead Magnet)
+    const [saveForm, setSaveForm] = useState({ name: '', email: '', isOwner: 'no', currentVessel: '' });
+    const [isSaveSubmitted, setIsSaveSubmitted] = useState(false);
 
     // State for contact form
     const [formState, setFormState] = useState({ name: '', email: '', interest: '', message: '' });
@@ -35,6 +39,7 @@ const ContactPage: React.FC = () => {
         setPlannerError('');
         setIsLoading(true);
         setItinerary('');
+        setIsSaveSubmitted(false); // Reset save state on new generation
         try {
             const result = await generateVoyageItinerary(destination);
             
@@ -59,6 +64,18 @@ const ContactPage: React.FC = () => {
             setPlannerError('Failed to generate itinerary. Please try again.');
         } finally {
             setIsLoading(false);
+        }
+    };
+
+    const handleSaveItinerary = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (saveForm.name && validateEmail(saveForm.email)) {
+            console.log('Itinerary Lead Capture:', {
+                destination,
+                ...saveForm,
+                itinerarySummary: itinerary.substring(0, 100) + '...'
+            });
+            setIsSaveSubmitted(true);
         }
     };
     
@@ -136,7 +153,7 @@ const ContactPage: React.FC = () => {
         
         let error = '';
         if (!newsletterEmail.trim()) error = 'Email is required.';
-        else if (!validateEmail(newsletterEmail)) error = 'Please enter a valid email address.';
+        else if (!validateEmail(newsletterEmail)) error = 'Please enter a valid email address.');
         
         setNewsletterError(error);
 
@@ -378,8 +395,104 @@ const ContactPage: React.FC = () => {
                             )}
                             
                             {itinerary && !isLoading && (
-                                <div className="mt-8 p-6 md:p-8 bg-grey-950/60 border border-white/5 rounded-lg max-h-[500px] overflow-y-auto custom-scrollbar">
-                                   <div className="prose prose-invert max-w-none prose-headings:font-bold prose-p:font-light prose-p:text-grey-300 prose-li:text-grey-300" dangerouslySetInnerHTML={{ __html: itinerary }} />
+                                <div className="space-y-8 animate-fade-in-up">
+                                    {/* The Itinerary */}
+                                    <div className="p-6 md:p-8 bg-grey-950/60 border border-white/5 rounded-lg max-h-[500px] overflow-y-auto custom-scrollbar">
+                                        <div className="prose prose-invert max-w-none prose-headings:font-bold prose-p:font-light prose-p:text-grey-300 prose-li:text-grey-300" dangerouslySetInnerHTML={{ __html: itinerary }} />
+                                    </div>
+
+                                    {/* The "Save Itinerary" Lead Magnet */}
+                                    <div className="bg-[#D5C4A1]/10 border border-[#D5C4A1]/30 rounded-lg p-6 md:p-8">
+                                        {isSaveSubmitted ? (
+                                            <div className="text-center py-4">
+                                                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#D5C4A1]/20 text-[#D5C4A1] mb-4">
+                                                    <CheckIcon />
+                                                </div>
+                                                <h3 className="text-xl font-bold text-white mb-2">Itinerary Sent</h3>
+                                                <p className="text-grey-300 font-light">Check your inbox. We've saved this plan for you.</p>
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-wide flex items-center gap-3">
+                                                    <span className="w-1.5 h-6 bg-[#D5C4A1]"></span>
+                                                    Save this plan for later
+                                                </h3>
+                                                <form onSubmit={handleSaveItinerary} className="space-y-6">
+                                                    <div className="grid md:grid-cols-2 gap-6">
+                                                        <div>
+                                                            <input
+                                                                type="text"
+                                                                placeholder="Full Name"
+                                                                required
+                                                                value={saveForm.name}
+                                                                onChange={(e) => setSaveForm({...saveForm, name: e.target.value})}
+                                                                className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-[#D5C4A1]"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                type="email"
+                                                                placeholder="Email Address"
+                                                                required
+                                                                value={saveForm.email}
+                                                                onChange={(e) => setSaveForm({...saveForm, email: e.target.value})}
+                                                                className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-[#D5C4A1]"
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    {/* Qualification Question */}
+                                                    <div className="bg-grey-950/30 p-4 rounded-sm border border-white/5">
+                                                        <p className="text-sm font-bold text-grey-400 uppercase tracking-widest mb-3">Do you currently own a catamaran?</p>
+                                                        <div className="flex items-center gap-6">
+                                                            <label className="flex items-center gap-2 cursor-pointer">
+                                                                <input 
+                                                                    type="radio" 
+                                                                    name="isOwner" 
+                                                                    value="yes" 
+                                                                    checked={saveForm.isOwner === 'yes'}
+                                                                    onChange={(e) => setSaveForm({...saveForm, isOwner: e.target.value})}
+                                                                    className="text-[#D5C4A1] focus:ring-[#D5C4A1]"
+                                                                />
+                                                                <span className="text-white font-light">Yes</span>
+                                                            </label>
+                                                            <label className="flex items-center gap-2 cursor-pointer">
+                                                                <input 
+                                                                    type="radio" 
+                                                                    name="isOwner" 
+                                                                    value="no" 
+                                                                    checked={saveForm.isOwner === 'no'}
+                                                                    onChange={(e) => setSaveForm({...saveForm, isOwner: e.target.value})}
+                                                                    className="text-[#D5C4A1] focus:ring-[#D5C4A1]"
+                                                                />
+                                                                <span className="text-white font-light">No, I am aspiring</span>
+                                                            </label>
+                                                        </div>
+
+                                                        {/* Conditional Vessel Input */}
+                                                        {saveForm.isOwner === 'yes' && (
+                                                            <div className="mt-4 animate-fade-in-up">
+                                                                <input
+                                                                    type="text"
+                                                                    placeholder="Which make/model do you sail? (e.g. Lagoon 620)"
+                                                                    value={saveForm.currentVessel}
+                                                                    onChange={(e) => setSaveForm({...saveForm, currentVessel: e.target.value})}
+                                                                    className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-[#D5C4A1] text-sm"
+                                                                />
+                                                            </div>
+                                                        )}
+                                                    </div>
+
+                                                    <button
+                                                        type="submit"
+                                                        className="w-full bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase py-4 transition-colors"
+                                                    >
+                                                        Email Me This Itinerary
+                                                    </button>
+                                                </form>
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
                             )}
                         </div>
