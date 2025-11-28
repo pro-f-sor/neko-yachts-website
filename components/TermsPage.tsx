@@ -1,91 +1,99 @@
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
+import { ChevronLeftIcon } from './icons/Icons';
+import { Page } from '../types';
 
-const TermsPage: React.FC = () => {
+interface TermsPageProps {
+  setCurrentPage?: (page: Page) => void;
+}
+
+const TermsPage: React.FC<TermsPageProps> = ({ setCurrentPage }) => {
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (setCurrentPage) {
+      e.preventDefault();
+      setCurrentPage('Home');
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
-    <div className="py-20 sm:py-28">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-12 uppercase">Website Terms and Conditions</h1>
+    <div className="bg-white min-h-screen pt-24 pb-20 font-sans text-slate-800">
+      <div className="container mx-auto px-6 lg:px-8">
+        
+        {/* Navigation */}
+        <div className="max-w-3xl mx-auto mb-12">
+            <a 
+              href="/" 
+              onClick={handleHomeClick}
+              className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-slate-500 hover:text-[#D5C4A1] transition-colors cursor-pointer"
+            >
+                <span className="mr-2 transform rotate-180"><ChevronLeftIcon /></span>
+                Back to Home
+            </a>
+        </div>
+
+        <AnimatedSection className="max-w-3xl mx-auto">
+          {/* Header */}
+          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight mb-4 uppercase">
+            Terms & Conditions
+          </h1>
+          <p className="text-slate-500 italic text-sm mb-16 border-b border-slate-200 pb-8">
+            Last Updated: {new Date().toLocaleDateString('en-GB')}
+          </p>
           
-          <div className="text-grey-300 space-y-8 text-lg sm:text-xl leading-relaxed font-light">
-            <p className="text-grey-400 italic text-base">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
-            <p>Welcome to the Neko website (“Website”), operated by Cool Catamaran Company (“we”, “us”, “our”). By accessing this Website, you agree to these Terms of Service.</p>
-            <p>If you do not agree, please do not use the Website.</p>
+          <div className="space-y-12 text-lg leading-relaxed font-light">
+            
+            {/* 1. ACCEPTANCE OF TERMS */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">1. Acceptance of Terms</h3>
+                <p>
+                    By accessing and using this website (the "Site"), operated by Cool Catamaran Company Ltd (trading as "NEKO Yachts"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by these terms, please do not use this Site.
+                </p>
+            </section>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">1. Purpose of the Website</h2>
-                <p>The Website provides marketing and informational content about the Neko catamaran vessel and allows visitors to express interest or contact us.</p>
-                <p>The Website does not facilitate bookings, payments, or online transactions.</p>
-            </div>
+            {/* 2. INTELLECTUAL PROPERTY RIGHTS */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">2. Intellectual Property Rights</h3>
+                <h4 className="text-base font-bold text-slate-900 mb-2">Proprietary Designs:</h4>
+                <p className="mb-4">
+                    All content, conceptual renders, engineering specifications, trademarks, and logos related to the NEKO brand displayed on this Site are the exclusive property of Cool Catamaran Company Ltd.
+                </p>
+                <h4 className="text-base font-bold text-slate-900 mb-2">Restrictions:</h4>
+                <p>
+                    You may not reproduce, distribute, modify, or create derivative works of any material found on this Site without our express written permission. Unauthorized use of our conceptual designs for commercial purposes will be prosecuted to the fullest extent of the law.
+                </p>
+            </section>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">2. Use of the Website</h2>
-                <p>You agree to:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>Use the Website only for lawful purposes</li>
-                    <li>Not attempt to disrupt or compromise the Website</li>
-                    <li>Not submit false or misleading information</li>
-                </ul>
-            </div>
+            {/* 3. INVESTOR PORTAL ACCESS */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">3. Investor Portal Access</h3>
+                <p>
+                    Access to the NEKO Investor Portal is restricted to authorized users. You agree to maintain the confidentiality of your access credentials and are responsible for all activities that occur under your account. We reserve the right to terminate access immediately if we detect unauthorized sharing of proprietary data or credentials.
+                </p>
+            </section>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">3. Intellectual Property</h2>
-                <p>All content—including text, images, graphics, logos, and design—is owned by Cool Catamaran Company or licensed to us.</p>
-                <p>You may not reproduce, distribute, or modify content without our written permission.</p>
-            </div>
+            {/* 4. LIMITATION OF LIABILITY */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">4. Limitation of Liability</h3>
+                <p>
+                    In no event shall Cool Catamaran Company Ltd, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of the Site.
+                </p>
+            </section>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">4. User Submissions</h2>
-                <p>If you submit your name and email:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>You confirm the information is accurate</li>
-                    <li>You grant us permission to contact you regarding our services</li>
-                    <li>We will handle your information according to our Privacy Policy.</li>
-                </ul>
-            </div>
+            {/* 5. GOVERNING LAW */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">5. Governing Law</h3>
+                <p>
+                    These Terms shall be governed and construed in accordance with the laws of England and Wales/European Union, without regard to its conflict of law provisions.
+                </p>
+            </section>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">5. Third-Party Links</h2>
-                <p>The Website may contain links to external websites.</p>
-                <p>We are not responsible for the content or practices of these third-party sites.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">6. Website Availability</h2>
-                <p>We do our best to keep the Website up and running but do not guarantee uninterrupted access.</p>
-                <p>We may modify or discontinue the Website at any time.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">7. Disclaimer of Warranties</h2>
-                <p>The Website is provided “as is” without warranties of any kind.</p>
-                <p>See full Disclaimer below.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">8. Limitation of Liability</h2>
-                <p>To the extent permitted by law, Cool Catamaran Company shall not be liable for:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>Any indirect, incidental, or consequential damages</li>
-                    <li>Loss resulting from use or inability to use the Website</li>
-                </ul>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">9. Governing Law</h2>
-                <p>These Terms are governed by the laws of England and Wales.</p>
-                <p>Any disputes will be resolved in UK courts.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">10. Contact</h2>
-                <p>For questions about these Terms, email us at: <a href="mailto:mail@nekoyachts.com" className="text-[#D5C4A1] hover:underline">mail@nekoyachts.com</a></p>
-            </div>
           </div>
         </AnimatedSection>
       </div>
     </div>
   );
 };
+
 export default TermsPage;

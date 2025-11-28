@@ -1,60 +1,83 @@
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
+import { ChevronLeftIcon } from './icons/Icons';
+import { Page } from '../types';
 
-const CookiePolicyPage: React.FC = () => {
+interface CookiePolicyPageProps {
+  setCurrentPage?: (page: Page) => void;
+}
+
+const CookiePolicyPage: React.FC<CookiePolicyPageProps> = ({ setCurrentPage }) => {
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (setCurrentPage) {
+      e.preventDefault();
+      setCurrentPage('Home');
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
-    <div className="py-20 sm:py-28">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-12 uppercase">Cookie Policy</h1>
+    <div className="bg-white min-h-screen pt-24 pb-20 font-sans text-slate-800">
+      <div className="container mx-auto px-6 lg:px-8">
+        
+        {/* Navigation */}
+        <div className="max-w-3xl mx-auto mb-12">
+            <a 
+              href="/" 
+              onClick={handleHomeClick}
+              className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-slate-500 hover:text-[#D5C4A1] transition-colors cursor-pointer"
+            >
+                <span className="mr-2 transform rotate-180"><ChevronLeftIcon /></span>
+                Back to Home
+            </a>
+        </div>
+
+        <AnimatedSection className="max-w-3xl mx-auto">
+          {/* Header */}
+          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight mb-4 uppercase">
+            Cookie Policy
+          </h1>
+          <p className="text-slate-500 italic text-sm mb-16 border-b border-slate-200 pb-8">
+            Last Updated: {new Date().toLocaleDateString('en-GB')}
+          </p>
           
-          <div className="text-grey-300 space-y-8 text-lg sm:text-xl leading-relaxed font-light">
-            <p className="text-grey-400 italic text-base">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
+          <div className="space-y-12 text-lg leading-relaxed font-light">
             
-            <p>This Cookie Policy explains how Neko (“Website”) uses cookies and similar technologies.</p>
+            {/* 1. WHAT ARE COOKIES? */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">1. What Are Cookies?</h3>
+                <p>
+                    Cookies are small text files placed on your device to ensure our website functions correctly and to help us understand how users interact with our content.
+                </p>
+            </section>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">1. What Are Cookies?</h2>
-                <p>Cookies are small files stored on your device when browsing a website. They help improve functionality and user experience.</p>
-            </div>
-            
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">2. Types of Cookies We Use</h2>
-                <p>Because the Website is still in development, we currently use minimal or essential cookies only:</p>
-                
-                <h3 className="text-xl font-bold text-white mt-6 mb-2">a) Essential Cookies</h3>
-                <p>Necessary for core website functions, such as navigation and loading.</p>
-                
-                <h3 className="text-xl font-bold text-white mt-6 mb-2">b) Analytics Cookies (only if implemented later — update as needed)</h3>
-                <p>Used to understand how visitors use the site. Examples include Google Analytics.</p>
-                <p className="text-grey-400 italic text-base mt-2">If analytics are not yet implemented, remove this line or keep it as a placeholder for future compliance.</p>
-            </div>
-            
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">3. How You Can Control Cookies</h2>
-                <p>You can set your browser to:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>Block all cookies</li>
-                    <li>Delete existing cookies</li>
-                    <li>Notify you when cookies are being used</li>
+            {/* 2. HOW WE USE COOKIES */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">2. How We Use Cookies</h3>
+                <p className="mb-4">
+                    Cool Catamaran Company Ltd uses cookies for the following functions:
+                </p>
+                <ul className="list-disc pl-6 space-y-4 text-slate-700">
+                    <li>
+                        <strong className="font-bold text-slate-900">Essential Cookies:</strong> These are necessary for the website to function, particularly for the secure authentication of the NEKO Investor Portal. These cannot be switched off.
+                    </li>
+                    <li>
+                        <strong className="font-bold text-slate-900">Performance Cookies:</strong> These allow us to count visits and traffic sources so we can improve the performance of our site. All information these cookies collect is aggregated and anonymous.
+                    </li>
+                    <li>
+                        <strong className="font-bold text-slate-900">Functional Cookies:</strong> These enable the website to provide enhanced functionality and personalization, such as remembering your region or preferences.
+                    </li>
                 </ul>
-                <p className="mt-4">Please note: disabling cookies may affect website functionality.</p>
-            </div>
+            </section>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">4. Third-Party Cookies</h2>
-                <p>If we use third-party services such as analytics or embedded media, they may set their own cookies. These providers have their own privacy policies.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">5. Updates to This Cookie Policy</h2>
-                <p>We may update this policy as we add new services or modify the Website.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">6. Contact Us</h2>
-                <p>For questions, contact: <a href="mailto:mail@nekoyachts.com" className="text-[#D5C4A1] hover:underline">mail@nekoyachts.com</a></p>
-            </div>
+            {/* 3. MANAGING COOKIES */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">3. Managing Cookies</h3>
+                <p>
+                    Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see what cookies have been set, visit <a href="http://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#D5C4A1] font-bold hover:underline">www.aboutcookies.org</a> or <a href="http://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#D5C4A1] font-bold hover:underline">www.allaboutcookies.org</a>.
+                </p>
+            </section>
 
           </div>
         </AnimatedSection>
@@ -62,4 +85,5 @@ const CookiePolicyPage: React.FC = () => {
     </div>
   );
 };
+
 export default CookiePolicyPage;

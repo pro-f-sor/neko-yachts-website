@@ -123,13 +123,13 @@ const App: React.FC = () => {
       case 'Enquire':
         return <ContactPage />;
       case 'Privacy Policy':
-        return <PrivacyPolicyPage />;
+        return <PrivacyPolicyPage setCurrentPage={setCurrentPage} />;
       case 'Cookie Policy':
-        return <CookiePolicyPage />;
+        return <CookiePolicyPage setCurrentPage={setCurrentPage} />;
       case 'Terms and Conditions':
-        return <TermsPage />;
+        return <TermsPage setCurrentPage={setCurrentPage} />;
       case 'Disclaimer':
-        return <DisclaimerPage />;
+        return <DisclaimerPage setCurrentPage={setCurrentPage} />;
       case 'Supplier Partnerships':
         return <SupplierPartnershipsPage />;
       case 'Home':

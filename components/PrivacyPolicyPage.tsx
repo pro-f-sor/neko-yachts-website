@@ -1,94 +1,101 @@
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
+import { ChevronLeftIcon } from './icons/Icons';
+import { Page } from '../types';
 
-const PrivacyPolicyPage: React.FC = () => {
+interface PrivacyPolicyPageProps {
+  setCurrentPage?: (page: Page) => void;
+}
+
+const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ setCurrentPage }) => {
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (setCurrentPage) {
+      e.preventDefault();
+      setCurrentPage('Home');
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
-    <div className="py-20 sm:py-28">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-12 uppercase">Privacy Policy</h1>
-          
-          <div className="text-grey-300 space-y-8 text-lg sm:text-xl leading-relaxed font-light">
-            <p className="text-grey-400 italic text-base">Last updated: {new Date().toLocaleDateString('en-GB')}</p>
-            <p>This Privacy Policy explains how Cool Catamaran Company (“we”, “us”, “our”) collects, uses, and protects your personal data when you visit the Neko website (“Website”).</p>
-            <p>We are committed to complying with applicable UK data protection laws, including the UK GDPR and the Data Protection Act 2018.</p>
+    <div className="bg-white min-h-screen pt-24 pb-20 font-sans text-slate-800 selection:bg-[#D5C4A1] selection:text-white">
+      <div className="container mx-auto px-6 lg:px-8">
+        
+        {/* Navigation */}
+        <div className="max-w-3xl mx-auto mb-12">
+            <a 
+              href="/" 
+              onClick={handleHomeClick}
+              className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-slate-500 hover:text-[#D5C4A1] transition-colors cursor-pointer"
+            >
+                <span className="mr-2 transform rotate-180"><ChevronLeftIcon /></span>
+                Back to Home
+            </a>
+        </div>
 
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">1. Data We Collect</h2>
-                <p>We currently collect only the following personal information when voluntarily submitted via our interest or contact form:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>Name</li>
-                    <li>Email address</li>
-                </ul>
-                <p className="mt-4">We do not collect payment information or sensitive categories of personal data.</p>
-            </div>
+        <AnimatedSection className="max-w-3xl mx-auto">
+          {/* Header */}
+          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight mb-4 uppercase">
+            Privacy Policy
+          </h1>
+          <p className="text-slate-500 italic text-sm mb-16 border-b border-slate-200 pb-8">
+            Last Updated: {new Date().toLocaleDateString('en-GB')}
+          </p>
+
+          <div className="space-y-12 text-[15.5px] leading-relaxed font-light">
             
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">2. How We Use Your Data</h2>
-                <p>Your data is used solely for:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>Responding to your inquiry</li>
-                    <li>Providing updates about the Neko vessel or related services</li>
-                    <li>Managing our contact list and potential client communications</li>
-                </ul>
-                <p className="mt-4">We do not sell, rent, or trade your information.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">3. Lawful Basis for Processing</h2>
-                <p>We process your information under:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li><strong>Consent:</strong> When you submit your information voluntarily.</li>
-                    <li><strong>Legitimate Interest:</strong> To communicate with interested clients regarding the Neko vessel.</li>
-                </ul>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">4. Data Storage and Security</h2>
-                <p>We take reasonable technical and organisational measures to protect your personal information. Data may be stored with reputable third-party service providers (e.g., website hosting, email communication tools).</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">5. Data Sharing</h2>
-                <p>We may share your information only with:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>Service providers assisting with website hosting or communications</li>
-                </ul>
-                <p className="mt-4">These parties are required to protect your data and act only under our instruction.</p>
-                <p>We do not transfer your data outside the UK unless adequate safeguards are in place.</p>
-            </div>
-            
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">6. Your Rights</h2>
-                <p>Under UK GDPR, you have the right to:</p>
-                <ul className="list-disc pl-8 space-y-2 mt-4">
-                    <li>Access your data</li>
-                    <li>Correct inaccurate data</li>
-                    <li>Request deletion</li>
-                    <li>Withdraw consent</li>
-                    <li>Object to processing</li>
-                    <li>Lodge a complaint with the ICO (<a href="https://www.ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#D5C4A1] hover:underline">www.ico.org.uk</a>)</li>
-                </ul>
-                <p className="mt-4">To exercise your rights, contact us at: <a href="mailto:mail@nekoyachts.com" className="text-[#D5C4A1] hover:underline">mail@nekoyachts.com</a></p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">7. Cookies</h2>
-                <p>See our full Cookie Policy below.</p>
-            </div>
-
-            <div className="pt-4">
-                <h2 className="text-2xl font-bold text-[#D5C4A1] mb-4 uppercase tracking-wide">8. Contact Us</h2>
+            {/* 1. INTRODUCTION */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">1. Introduction</h3>
                 <p>
-                    Cool Catamaran Company<br />
-                    128 City Road, London, United Kingdom, EC1V 2NX<br />
-                    Email: <a href="mailto:mail@nekoyachts.com" className="text-[#D5C4A1] hover:underline">mail@nekoyachts.com</a>
+                    Cool Catamaran Company Ltd (trading as "NEKO Yachts", "we", "us") is committed to protecting the privacy and security of our clients, investors, and partners. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or access the secure NEKO Investor Portal.
                 </p>
-            </div>
+            </section>
+
+            {/* 2. INFORMATION WE COLLECT */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">2. Information We Collect</h3>
+                <p className="mb-4">
+                    We collect information to provide a bespoke service and ensure the security of our proprietary data.
+                </p>
+                <ul className="list-disc pl-6 space-y-2 text-slate-700">
+                    <li><strong className="font-bold text-slate-900">Personal Identity Data:</strong> Name, email address, and phone number provided via our "Enquire" or "Inner Circle" forms.</li>
+                    <li><strong className="font-bold text-slate-900">Professional Data:</strong> For investors requesting access to the Data Room, we may collect entity names, investment accreditation status, and regional location.</li>
+                    <li><strong className="font-bold text-slate-900">Technical Data:</strong> IP address, browser type, and usage data to monitor site performance and security.</li>
+                </ul>
+            </section>
+
+            {/* 3. HOW WE USE YOUR DATA */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">3. How We Use Your Data</h3>
+                <ul className="list-disc pl-6 space-y-2 text-slate-700">
+                    <li><strong className="font-bold text-slate-900">Investor Verification:</strong> To vet applicants for the secure Investor Portal.</li>
+                    <li><strong className="font-bold text-slate-900">Communication:</strong> To provide updates regarding the NEKO 19 development and launch timeline.</li>
+                    <li><strong className="font-bold text-slate-900">Security:</strong> To prevent unauthorized access to our proprietary intellectual property.</li>
+                </ul>
+            </section>
+
+            {/* 4. DATA SHARING & SECURITY */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">4. Data Sharing & Security</h3>
+                <p>
+                    We do not sell your personal data. We may share data with trusted third-party service providers (e.g., secure hosting, CRM systems) solely for operational purposes. We employ enterprise-grade encryption and access controls to protect your data.
+                </p>
+            </section>
+
+             {/* 5. YOUR RIGHTS */}
+            <section>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 uppercase tracking-wide">5. Your Rights (GDPR/UK)</h3>
+                <p>
+                    Under applicable data protection laws, you have the right to access, correct, or request the deletion of your personal data. To exercise these rights, please contact our Data Protection Officer at <a href="mailto:privacy@nekoyachts.com" className="text-[#D5C4A1] font-bold hover:underline">privacy@nekoyachts.com</a>.
+                </p>
+            </section>
+
           </div>
         </AnimatedSection>
       </div>
     </div>
   );
 };
+
 export default PrivacyPolicyPage;

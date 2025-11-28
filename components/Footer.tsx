@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Page, NavLink } from '../types';
 import { TwitterIcon, InstagramIcon, LinkedInIcon } from './icons/Icons';
 
@@ -20,7 +20,14 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold tracking-wider text-white">NEKO</h2>
+            <div className="flex items-center gap-0.5">
+              <h2 className="text-2xl font-bold tracking-wider text-white">NEK</h2>
+              <img 
+                src="https://coolcatamaran.com/images/logo/NEK-O-gold.png" 
+                alt="O" 
+                className="h-6 w-auto object-contain ml-[-3px] mt-[-1px]"
+              />
+            </div>
             <p className="mt-4 text-grey-400 text-sm">Redefining performance cruising.</p>
             <div className="flex space-x-4 mt-6">
               <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><TwitterIcon /></a>

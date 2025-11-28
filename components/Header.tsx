@@ -77,10 +77,17 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-500 ${isTransparent ? 'h-20' : 'h-16'}`}>
           <div 
-            className="text-2xl font-bold tracking-wider cursor-pointer transition-colors hover:text-[#D5C4A1]"
+            className="flex items-center gap-0.5 cursor-pointer group"
             onClick={() => handleNavClick('Home')}
           >
-            NEKO
+            <div className="text-2xl font-bold tracking-wider transition-colors group-hover:text-[#D5C4A1]">
+              NEK
+            </div>
+            <img 
+              src="https://coolcatamaran.com/images/logo/NEK-O-gold.png" 
+              alt="O" 
+              className="h-6 w-auto object-contain ml-[-3px] mt-[-1px]"
+            />
           </div>
           
           {/* Desktop Navigation & Language */}

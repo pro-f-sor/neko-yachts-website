@@ -47,7 +47,7 @@ const InvestorGate: React.FC<InvestorGateProps> = ({ onUnlock }) => {
           </div>
 
           <h2 className="text-sm font-bold tracking-[0.2em] text-[#D5C4A1] uppercase mb-6 font-serif">
-            Authorized Access Only
+            Authorised Access Only
           </h2>
           
           <p className="text-grey-400 font-light text-sm leading-relaxed mb-10">
