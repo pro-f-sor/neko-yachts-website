@@ -153,7 +153,7 @@ const ContactPage: React.FC = () => {
         
         let error = '';
         if (!newsletterEmail.trim()) error = 'Email is required.';
-        else if (!validateEmail(newsletterEmail)) error = 'Please enter a valid email address.');
+        else if (!validateEmail(newsletterEmail)) error = 'Please enter a valid email address.';
         
         setNewsletterError(error);
 
