@@ -1,3 +1,4 @@
+
 import { GoogleGenAI } from "@google/genai";
 
 export const generateVoyageItinerary = async (destination: string): Promise<string> => {
@@ -9,13 +10,21 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    // Access the environment variable. 
-    // We check GOOGLE_API_KEY first (as configured in Vercel), with a fallback to API_KEY.
-    const apiKey = process.env.GOOGLE_API_KEY || process.env.API_KEY;
+    // Check all common environment variable patterns to ensure the key is found
+    // regardless of the build tool (Vite, CRA, Next.js, or raw Vercel).
+    // The bundler will replace these strings at build time with the actual values.
+    const apiKey = 
+        process.env.GOOGLE_API_KEY || 
+        process.env.API_KEY || 
+        process.env.REACT_APP_GOOGLE_API_KEY || 
+        process.env.REACT_APP_API_KEY ||
+        process.env.VITE_GOOGLE_API_KEY ||
+        process.env.VITE_API_KEY ||
+        process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
     if (!apiKey) {
-        console.error("NEKO Yachts: GOOGLE_API_KEY is missing/empty.");
-        return "Error: System configuration missing (API Key).";
+        console.error("NEKO Yachts: API Key is missing. Tried: GOOGLE_API_KEY, API_KEY, REACT_APP_*, VITE_*, NEXT_PUBLIC_*");
+        return "Error: System configuration missing (API Key). Please check Vercel Environment Variables.";
     }
 
     const ai = new GoogleGenAI({ apiKey });
@@ -33,7 +42,7 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
     // Log the full error object for debugging
     console.error("Error generating voyage itinerary:", error);
     
-    // Return the actual error message. 
+    // Return the actual error message for debugging purposes
     const errorMessage = error instanceof Error ? error.message : String(error);
     return `Error: ${errorMessage}`;
   }
