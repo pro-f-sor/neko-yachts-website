@@ -10,19 +10,19 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    // Safely retrieve API Key, handling environments where 'process' might not be defined
+    // CRITICAL FIX: We must access process.env.API_KEY directly to allow build tools (Vite/Vercel)
+    // to statically replace it with the actual key string during the build.
+    // We wrap it in a try-catch to prevent "ReferenceError: process is not defined" in pure browser environments
+    // where the replacement didn't happen.
     let apiKey = '';
     try {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        if (typeof process !== 'undefined' && process.env) {
-            apiKey = process.env.API_KEY || '';
-        }
+        apiKey = process.env.API_KEY || '';
     } catch (e) {
-        console.warn('Error accessing process.env:', e);
+        console.warn('Environment variable access issue:', e);
     }
 
     if (!apiKey) {
-        console.error("NEKO Yachts: API_KEY is missing in the environment.");
+        console.error("NEKO Yachts: API_KEY is missing. Check your Vercel/Environment configuration.");
         return "Error: System configuration missing (API Key).";
     }
 
