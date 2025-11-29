@@ -2,6 +2,7 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import { ArrowRightIcon } from './icons/Icons';
+import { CeBadge } from './icons/CeBadge'; // Import the new badge
 import { Page } from '../types';
 
 interface DnaPageProps {
@@ -165,12 +166,6 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
                              {/* Left: Text */}
                              <div className="order-1 flex flex-col justify-center">
-                                {/* CE Badge - Connecting History to Engineering */}
-                                <div className="inline-flex items-center gap-3 mb-8 self-start border border-[#D5C4A1]/30 px-3 py-1.5 rounded-sm bg-[#D5C4A1]/5">
-                                    <div className="h-1.5 w-1.5 rounded-full bg-[#D5C4A1]"></div>
-                                    <span className="text-[#D5C4A1] text-[10px] font-bold uppercase tracking-widest">CE Class A Certified</span>
-                                </div>
-
                                 <h3 className="text-[#D5C4A1] text-sm font-bold tracking-widest uppercase mb-4">The Philosophy</h3>
                                 <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Aviation Grade.<br/>Ocean Tested.</h2>
                                 
@@ -199,6 +194,32 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                                     alt="Abstract aviation inspired design" 
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                                 />
+                            </div>
+                        </div>
+                    </AnimatedSection>
+
+                    {/* NEW: THE CERTIFICATION STANDARD */}
+                    <AnimatedSection>
+                        <div className="bg-grey-950 border border-white/10 p-10 lg:p-16 rounded-lg relative overflow-hidden">
+                            {/* Background Texture */}
+                            <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+                                <CeBadge className="w-96 h-96 text-white" />
+                            </div>
+
+                            <div className="relative z-10 grid md:grid-cols-3 gap-12 items-center">
+                                <div className="md:col-span-1 flex flex-col items-center text-center">
+                                    <CeBadge className="w-32 h-32 text-[#D5C4A1] mb-6 animate-pulse-slow" />
+                                    <h4 className="text-xl font-bold text-white uppercase tracking-wider">World's Highest Standard</h4>
+                                </div>
+                                <div className="md:col-span-2">
+                                    <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Why CE Class A (Ocean)?</h3>
+                                    <p className="text-grey-300 font-light leading-relaxed mb-6">
+                                        Many buyers assume that local certifications (like US ABYC or Australian Builders Plate) are sufficient. While excellent for coastal cruising, they are often voluntary guidelines.
+                                    </p>
+                                    <p className="text-white font-medium text-lg leading-relaxed">
+                                        CE Class A is different. It is a rigorous statutory standard. It certifies that the NEKO 19 is structurally engineered to withstand winds exceeding Force 8 (Beaufort) and waves exceeding 4 metres. It is the only global benchmark that guarantees true blue-water survival capability.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </AnimatedSection>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Page, NavLink } from '../types';
 import { TwitterIcon, InstagramIcon, LinkedInIcon } from './icons/Icons';
+import { CeBadge } from './icons/CeBadge';
 
 interface FooterProps {
   setCurrentPage: (page: Page) => void;
@@ -36,9 +37,11 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
             </div>
             
             {/* CE Badge */}
-            <div className="mt-8 inline-flex items-center gap-3 border border-grey-800 bg-grey-900 px-4 py-2 rounded-sm group hover:border-[#D5C4A1]/50 transition-colors cursor-default">
-                <div className="h-2 w-2 rounded-full bg-[#D5C4A1] animate-pulse"></div>
-                <span className="text-[10px] font-bold text-grey-300 uppercase tracking-widest group-hover:text-white transition-colors">CE Class A Certified</span>
+            <div className="mt-8 group cursor-default flex items-center">
+                <CeBadge className="w-16 h-16 text-grey-600 group-hover:text-[#D5C4A1] transition-colors duration-500 flex-shrink-0" />
+                <p className="ml-4 text-[10px] text-grey-600 tracking-widest uppercase group-hover:text-[#D5C4A1] transition-colors text-left max-w-[120px] leading-relaxed">
+                    World's Highest Standard
+                </p>
             </div>
           </div>
           <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
