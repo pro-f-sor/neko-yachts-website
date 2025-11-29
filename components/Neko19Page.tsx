@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Page } from '../types';
 import { ArrowRightIcon, CheckIcon } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
+import SEO from './SEO';
 
 interface Neko19PageProps {
   setCurrentPage: (page: Page) => void;
@@ -46,8 +46,33 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
     window.scrollTo(0, 0);
   };
 
+  // SCHEMA.ORG: Product Data
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "NEKO 19",
+    "brand": {
+      "@type": "Brand",
+      "name": "NEKO Catamarans"
+    },
+    "description": "A category-defining 19-metre sailing catamaran combining aviation-grade engineering with value-as-standard. Launching 2027.",
+    "image": "https://coolcatamaran.com/images/neko19/mysterycat3.png",
+    "releaseDate": "2027-06-01",
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Cool Catamaran Company Ltd"
+    },
+    "category": "Luxury Catamaran"
+  };
+
   return (
     <div className="bg-grey-900 text-white selection:bg-[#D5C4A1] selection:text-grey-900 font-sans">
+        <SEO 
+            title="NEKO 19 | The Correction" 
+            description="The NEKO 19 redefines the luxury catamaran market. No options list, just aviation-grade engineering and sustainable luxury as standard." 
+            canonical="/?page=neko-19"
+            schema={productSchema}
+        />
         
         {/* [SECTION 1: HERO] - The Silhouette */}
         <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">

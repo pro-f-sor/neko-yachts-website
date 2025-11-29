@@ -10,20 +10,34 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    // Per Gemini API guidelines, initialise the client directly with the API key from environment variables.
-    // By initialising here, we prevent a site-wide crash if process.env is not available on load.
+    // Check if API key is present to provide better debug info
+    // Note: accessing process.env might throw in strict browser environments if not replaced by bundler,
+    // so we access it inside the try block.
+    if (!process.env.API_KEY) {
+        console.error("NEKO Yachts: API_KEY is missing. Please ensure it is set in your environment variables.");
+        return "System configuration error: API Key missing.";
+    }
+
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
     const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
-        contents: `Plan a voyage to: ${destination}`,
+        contents: {
+            parts: [
+                { text: `Plan a voyage to: ${destination}` }
+            ]
+        },
         config: {
             systemInstruction: systemInstruction,
         }
     });
+
     return response.text || "Detailed itinerary unavailable. Please try a different destination.";
   } catch (error) {
+    // Log the full error object for debugging
     console.error("Error generating voyage itinerary:", error);
+    
+    // Return a user-friendly message
     return "We're sorry, but we couldn't generate your dream voyage at this time. Please try again later.";
   }
 };

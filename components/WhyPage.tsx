@@ -1,8 +1,8 @@
-
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import { Page } from '../types';
 import { ArrowRightIcon, DiamondIcon, LightningBoltIcon, LeafIcon } from './icons/Icons';
+import SEO from './SEO';
 
 interface WhyPageProps {
   setCurrentPage?: (page: Page) => void;
@@ -22,6 +22,11 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
 
   return (
     <div className="bg-grey-900 text-white selection:bg-[#D5C4A1] selection:text-grey-900">
+      <SEO 
+        title="The Philosophy"
+        description="We didn't find the yacht we wanted to build, so we created the philosophy first. Performance, Price, and Comfort without compromise."
+        canonical="/?page=the-why"
+      />
       
       {/* SECTION 1: HERO */}
       <section className="min-h-screen flex flex-col justify-center items-center py-24 sm:py-32 relative overflow-hidden">

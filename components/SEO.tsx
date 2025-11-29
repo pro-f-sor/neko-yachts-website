@@ -5,13 +5,15 @@ interface SEOProps {
   description?: string;
   image?: string;
   canonical?: string;
+  schema?: Record<string, any>; // New prop for JSON-LD
 }
 
 const SEO: React.FC<SEOProps> = ({ 
   title, 
   description, 
   image, 
-  canonical 
+  canonical,
+  schema
 }) => {
   const siteTitle = 'NEKO Catamarans';
   const defaultTitle = 'NEKO Catamarans | Performance Multihulls';
@@ -25,10 +27,10 @@ const SEO: React.FC<SEOProps> = ({
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
 
   useEffect(() => {
-    // Update Title
+    // 1. Update Title
     document.title = fullTitle;
 
-    // Helper to update or create meta tags
+    // 2. Helper to update or create meta tags
     const updateMeta = (selector: string, attribute: string, value: string) => {
       let element = document.querySelector(selector);
       if (!element) {
@@ -45,21 +47,17 @@ const SEO: React.FC<SEOProps> = ({
       element.setAttribute(attribute, value);
     };
 
-    // Update Standard Meta
+    // 3. Update Meta Tags
     updateMeta('meta[name="description"]', 'content', metaDescription);
-
-    // Update Open Graph
     updateMeta('meta[property="og:title"]', 'content', fullTitle);
     updateMeta('meta[property="og:description"]', 'content', metaDescription);
     updateMeta('meta[property="og:image"]', 'content', metaImage);
     updateMeta('meta[property="og:url"]', 'content', canonicalUrl);
-
-    // Update Twitter
     updateMeta('meta[property="twitter:title"]', 'content', fullTitle);
     updateMeta('meta[property="twitter:description"]', 'content', metaDescription);
     updateMeta('meta[property="twitter:image"]', 'content', metaImage);
 
-    // Update Canonical Link
+    // 4. Update Canonical Link
     let link = document.querySelector('link[rel="canonical"]');
     if (!link) {
       link = document.createElement('link');
@@ -68,7 +66,27 @@ const SEO: React.FC<SEOProps> = ({
     }
     link.setAttribute('href', canonicalUrl);
 
-  }, [fullTitle, metaDescription, metaImage, canonicalUrl]);
+    // 5. Inject JSON-LD Schema
+    let script = document.querySelector('script[type="application/ld+json"]');
+    if (schema) {
+        if (!script) {
+            script = document.createElement('script');
+            script.setAttribute('type', 'application/ld+json');
+            document.head.appendChild(script);
+        }
+        script.textContent = JSON.stringify(schema);
+    } else if (script) {
+        // Remove schema if not provided for this page
+        script.remove();
+    }
+
+    // Cleanup function
+    return () => {
+        // Optional: Reset to defaults on unmount if needed, 
+        // but usually the next page's SEO component handles it.
+    };
+
+  }, [fullTitle, metaDescription, metaImage, canonicalUrl, schema]);
 
   return null;
 };

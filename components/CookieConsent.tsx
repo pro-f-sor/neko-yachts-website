@@ -98,9 +98,11 @@ const CookieConsent: React.FC = () => {
                       <p className="font-semibold text-white text-sm">Necessary</p>
                       <p className="text-xs text-grey-500">Required for the website to function.</p>
                     </div>
-                    <div className="relative inline-block w-10 h-6 align-middle select-none transition duration-200 ease-in">
-                        <input type="checkbox" checked disabled className="absolute block w-6 h-6 rounded-full bg-[#D5C4A1] border-4 border-grey-900 appearance-none cursor-default"/>
-                        <label className="block overflow-hidden h-6 rounded-full bg-[#D5C4A1]/50 cursor-default"></label>
+                    {/* Locked 'On' Switch */}
+                    <div 
+                        className="relative inline-flex h-6 w-11 items-center rounded-full bg-[#D5C4A1]/50 cursor-not-allowed"
+                    >
+                        <span className="inline-block h-4 w-4 transform rounded-full bg-white/50 translate-x-6" />
                     </div>
                   </div>
 
@@ -112,11 +114,12 @@ const CookieConsent: React.FC = () => {
                     </div>
                     <button 
                         onClick={() => togglePreference('analytics')}
-                        className="relative inline-block w-10 h-6 align-middle select-none transition duration-200 ease-in focus:outline-none"
+                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#D5C4A1] focus:ring-offset-2 focus:ring-offset-grey-900 ${preferences.analytics ? 'bg-[#D5C4A1]' : 'bg-grey-700'}`}
                         aria-pressed={preferences.analytics}
                     >
-                        <div className={`block overflow-hidden h-6 rounded-full transition-colors ${preferences.analytics ? 'bg-[#D5C4A1]/50' : 'bg-grey-700'}`}></div>
-                        <div className={`absolute block top-0 w-6 h-6 rounded-full transition-transform duration-200 ease-in transform ${preferences.analytics ? 'translate-x-full bg-[#D5C4A1] -ml-6' : 'bg-grey-400 translate-x-0'}`}></div>
+                        <span
+                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out ${preferences.analytics ? 'translate-x-6' : 'translate-x-1'}`}
+                        />
                     </button>
                   </div>
 
@@ -128,11 +131,12 @@ const CookieConsent: React.FC = () => {
                     </div>
                     <button 
                         onClick={() => togglePreference('marketing')}
-                        className="relative inline-block w-10 h-6 align-middle select-none transition duration-200 ease-in focus:outline-none"
+                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#D5C4A1] focus:ring-offset-2 focus:ring-offset-grey-900 ${preferences.marketing ? 'bg-[#D5C4A1]' : 'bg-grey-700'}`}
                         aria-pressed={preferences.marketing}
                     >
-                        <div className={`block overflow-hidden h-6 rounded-full transition-colors ${preferences.marketing ? 'bg-[#D5C4A1]/50' : 'bg-grey-700'}`}></div>
-                        <div className={`absolute block top-0 w-6 h-6 rounded-full transition-transform duration-200 ease-in transform ${preferences.marketing ? 'translate-x-full bg-[#D5C4A1] -ml-6' : 'bg-grey-400 translate-x-0'}`}></div>
+                        <span
+                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out ${preferences.marketing ? 'translate-x-6' : 'translate-x-1'}`}
+                        />
                     </button>
                   </div>
                 </div>

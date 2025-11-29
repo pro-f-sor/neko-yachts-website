@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Page } from '../types';
 import { 
@@ -10,6 +9,7 @@ import {
   MapPinWaveIcon
 } from './icons/Icons';
 import AnimatedSection from './AnimatedSection';
+import SEO from './SEO';
 
 interface HomePageProps {
   setCurrentPage: (page: Page) => void;
@@ -106,8 +106,45 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
     }
   };
 
+  // SCHEMA.ORG: Organization Data
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NEKO Catamarans",
+    "legalName": "Cool Catamaran Company Ltd",
+    "url": "https://www.nekoyachts.com",
+    "logo": "https://coolcatamaran.com/images/logo/NEK-O-gold.png",
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Peter Walker"
+      },
+      {
+        "@type": "Person",
+        "name": "Michael Walker"
+      }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@nekoyachts.com",
+      "contactType": "sales",
+      "areaServed": "Global"
+    },
+    "sameAs": [
+      "https://twitter.com/nekoyachts",
+      "https://www.linkedin.com/company/neko-yachts",
+      "https://www.instagram.com/nekoyachts"
+    ]
+  };
+
   return (
     <div className="bg-grey-900 text-white selection:bg-[#D5C4A1] selection:text-grey-900 font-sans">
+      <SEO 
+        title="Performance Multihulls"
+        description="The correction to the luxury yachting market. NEKO Catamarans combines aviation-grade engineering with sustainable luxury. Arriving 2027."
+        canonical="/"
+        schema={organizationSchema}
+      />
       
       {/* [SECTION 1: HERO] - THE HOOK */}
       <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
