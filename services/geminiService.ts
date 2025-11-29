@@ -58,8 +58,29 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
     // Log the full error object for debugging
     console.error("Error generating voyage itinerary:", error);
     
-    // Return the actual error message for debugging purposes
-    const errorMessage = error instanceof Error ? error.message : String(error);
+    let errorMessage = error instanceof Error ? error.message : String(error);
+
+    // Attempt to parse clean error message from JSON response (Google often returns JSON inside the Error string)
+    try {
+        const jsonStart = errorMessage.indexOf('{');
+        if (jsonStart !== -1) {
+            const jsonStr = errorMessage.substring(jsonStart);
+            const jsonError = JSON.parse(jsonStr);
+            if (jsonError.error && jsonError.error.message) {
+                errorMessage = jsonError.error.message;
+            }
+        }
+    } catch (e) {
+        // Ignore parsing errors and return original string
+    }
+
+    // Handle specific common errors with helpful hints
+    if (errorMessage.includes("Generative Language API has not been used") || errorMessage.includes("SERVICE_DISABLED")) {
+        console.error("ACTION REQUIRED: You must enable the Generative Language API in your Google Cloud Console.");
+        console.error("Enable here: https://console.developers.google.com/apis/api/generativelanguage.googleapis.com/overview");
+        return "Error: Google AI Service not enabled. Please check browser console for activation link.";
+    }
+
     return `Error: ${errorMessage}`;
   }
 };
