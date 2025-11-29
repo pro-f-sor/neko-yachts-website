@@ -14,11 +14,7 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
 
     const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
-        contents: {
-            parts: [
-                { text: `Plan a voyage to: ${destination}` }
-            ]
-        },
+        contents: `Plan a voyage to: ${destination}`,
         config: {
             systemInstruction: systemInstruction,
         }
@@ -29,7 +25,8 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
     // Log the full error object for debugging
     console.error("Error generating voyage itinerary:", error);
     
-    // Return a user-friendly message
-    return "We're sorry, but we couldn't generate your dream voyage at this time. Please try again later.";
+    // Return the actual error message for debugging purposes
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return `Error: ${errorMessage}`;
   }
 };

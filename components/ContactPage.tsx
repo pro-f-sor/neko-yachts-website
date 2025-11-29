@@ -43,7 +43,8 @@ const ContactPage: React.FC = () => {
         try {
             const result = await generateVoyageItinerary(destination);
             
-            if (result.startsWith("We're sorry") || result.startsWith("Detailed itinerary unavailable")) {
+            // Check for specific error prefixes returned by the service
+            if (result.startsWith("We're sorry") || result.startsWith("Detailed itinerary unavailable") || result.startsWith("Error:")) {
                  setPlannerError(result);
             } else {
                 const formattedResult = result
