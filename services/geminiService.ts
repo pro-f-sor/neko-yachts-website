@@ -1,4 +1,3 @@
-
 import { GoogleGenAI } from "@google/genai";
 
 export const generateVoyageItinerary = async (destination: string): Promise<string> => {
@@ -10,19 +9,13 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    // CRITICAL FIX: We must access process.env.API_KEY directly to allow build tools (Vite/Vercel)
-    // to statically replace it with the actual key string during the build.
-    // We wrap it in a try-catch to prevent "ReferenceError: process is not defined" in pure browser environments
-    // where the replacement didn't happen.
-    let apiKey = '';
-    try {
-        apiKey = process.env.API_KEY || '';
-    } catch (e) {
-        console.warn('Environment variable access issue:', e);
-    }
+    // Access process.env.API_KEY directly.
+    // This top-level access allows bundlers (Vite/Webpack/Vercel) to statically replace 
+    // the string 'process.env.API_KEY' with the actual value at build time.
+    const apiKey = process.env.API_KEY;
 
     if (!apiKey) {
-        console.error("NEKO Yachts: API_KEY is missing. Check your Vercel/Environment configuration.");
+        console.error("NEKO Yachts: API_KEY is missing/empty.");
         return "Error: System configuration missing (API Key).";
     }
 
@@ -41,7 +34,8 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
     // Log the full error object for debugging
     console.error("Error generating voyage itinerary:", error);
     
-    // Return the actual error message for debugging purposes
+    // Return the actual error message. 
+    // If process is not defined (and not replaced by bundler), this will show "ReferenceError: process is not defined".
     const errorMessage = error instanceof Error ? error.message : String(error);
     return `Error: ${errorMessage}`;
   }
