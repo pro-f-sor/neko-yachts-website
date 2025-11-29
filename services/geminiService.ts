@@ -10,7 +10,23 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    // Safely retrieve API Key, handling environments where 'process' might not be defined
+    let apiKey = '';
+    try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if (typeof process !== 'undefined' && process.env) {
+            apiKey = process.env.API_KEY || '';
+        }
+    } catch (e) {
+        console.warn('Error accessing process.env:', e);
+    }
+
+    if (!apiKey) {
+        console.error("NEKO Yachts: API_KEY is missing in the environment.");
+        return "Error: System configuration missing (API Key).";
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
 
     const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
