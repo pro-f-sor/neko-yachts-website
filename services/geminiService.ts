@@ -10,20 +10,36 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    // Check all common environment variable patterns to ensure the key is found
-    // regardless of the build tool (Vite, CRA, Next.js, or raw Vercel).
-    // The bundler will replace these strings at build time with the actual values.
-    const apiKey = 
-        process.env.GOOGLE_API_KEY || 
-        process.env.API_KEY || 
-        process.env.REACT_APP_GOOGLE_API_KEY || 
-        process.env.REACT_APP_API_KEY ||
-        process.env.VITE_GOOGLE_API_KEY ||
-        process.env.VITE_API_KEY ||
-        process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+    let apiKey = '';
+
+    // 1. Try Vite Standard (import.meta.env) - This is the most likely method for this project structure
+    try {
+        // @ts-ignore
+        if (typeof import.meta !== 'undefined' && import.meta.env) {
+            // @ts-ignore
+            apiKey = import.meta.env.VITE_GOOGLE_API_KEY || import.meta.env.VITE_API_KEY;
+        }
+    } catch (e) {
+        console.warn('Vite env access failed', e);
+    }
+
+    // 2. Fallback to Node/CRA Standard (process.env)
+    if (!apiKey) {
+        try {
+            apiKey = 
+                process.env.REACT_APP_GOOGLE_API_KEY || 
+                process.env.REACT_APP_API_KEY || 
+                process.env.NEXT_PUBLIC_GOOGLE_API_KEY ||
+                process.env.VITE_GOOGLE_API_KEY ||
+                process.env.GOOGLE_API_KEY || 
+                process.env.API_KEY;
+        } catch (e) {
+            console.warn('Process env access failed', e);
+        }
+    }
 
     if (!apiKey) {
-        console.error("NEKO Yachts: API Key is missing. Tried: GOOGLE_API_KEY, API_KEY, REACT_APP_*, VITE_*, NEXT_PUBLIC_*");
+        console.error("NEKO Yachts: API Key is missing. Please ensure you have set 'VITE_GOOGLE_API_KEY' in your Vercel Environment Variables and redeployed.");
         return "Error: System configuration missing (API Key). Please check Vercel Environment Variables.";
     }
 
