@@ -10,14 +10,6 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    // Check if API key is present to provide better debug info
-    // Note: accessing process.env might throw in strict browser environments if not replaced by bundler,
-    // so we access it inside the try block.
-    if (!process.env.API_KEY) {
-        console.error("NEKO Yachts: API_KEY is missing. Please ensure it is set in your environment variables.");
-        return "System configuration error: API Key missing.";
-    }
-
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
     const response = await ai.models.generateContent({

@@ -368,6 +368,7 @@ const ContactPage: React.FC = () => {
                                     type="text"
                                     value={destination}
                                     onChange={(e) => setDestination(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && !isLoading && handleGenerate()}
                                     placeholder="e.g., The Greek Islands, The Caribbean, or Fiji"
                                     className="flex-grow bg-grey-950/50 border border-grey-600 text-white rounded-lg px-6 py-4 focus:outline-none focus:border-[#D5C4A1] font-light text-lg placeholder-grey-500"
                                     disabled={isLoading}
