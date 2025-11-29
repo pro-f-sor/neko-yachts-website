@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -57,7 +56,7 @@ const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
 
-  // Sync URL when currentPage changes
+  // Sync URL when currentPage changes and handle Scrolling behavior
   useEffect(() => {
     const slug = PAGE_TO_SLUG[currentPage] || 'home';
     const url = new URL(window.location.href);
@@ -78,6 +77,25 @@ const App: React.FC = () => {
     } catch (e) {
       console.warn('Unable to update URL history', e);
     }
+
+    // SMART SCROLL LOGIC:
+    // When changing pages, we want an INSTANT scroll to top (not smooth).
+    // But for in-page anchors, we want smooth scrolling.
+    
+    // 1. Temporarily disable smooth scrolling on HTML element
+    document.documentElement.style.scrollBehavior = 'auto';
+    
+    // 2. Instant jump to top
+    window.scrollTo(0, 0);
+    
+    // 3. Re-enable smooth scrolling after a small delay
+    // This allows the browser to process the instant jump first
+    const timer = setTimeout(() => {
+        document.documentElement.style.scrollBehavior = 'smooth';
+    }, 50);
+
+    return () => clearTimeout(timer);
+
   }, [currentPage]);
 
   // Handle browser Back/Forward buttons

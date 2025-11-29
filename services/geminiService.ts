@@ -9,13 +9,12 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
   - Use bold text for highlights.`;
 
   try {
-    // Access process.env.API_KEY directly.
-    // This top-level access allows bundlers (Vite/Webpack/Vercel) to statically replace 
-    // the string 'process.env.API_KEY' with the actual value at build time.
-    const apiKey = process.env.API_KEY;
+    // Access the environment variable. 
+    // We check GOOGLE_API_KEY first (as configured in Vercel), with a fallback to API_KEY.
+    const apiKey = process.env.GOOGLE_API_KEY || process.env.API_KEY;
 
     if (!apiKey) {
-        console.error("NEKO Yachts: API_KEY is missing/empty.");
+        console.error("NEKO Yachts: GOOGLE_API_KEY is missing/empty.");
         return "Error: System configuration missing (API Key).";
     }
 
@@ -35,7 +34,6 @@ export const generateVoyageItinerary = async (destination: string): Promise<stri
     console.error("Error generating voyage itinerary:", error);
     
     // Return the actual error message. 
-    // If process is not defined (and not replaced by bundler), this will show "ReferenceError: process is not defined".
     const errorMessage = error instanceof Error ? error.message : String(error);
     return `Error: ${errorMessage}`;
   }

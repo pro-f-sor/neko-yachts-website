@@ -89,12 +89,24 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
     return () => clearInterval(slideInterval);
   }, [nextSlide]);
   
+  // Optimized Parallax using requestAnimationFrame
   useEffect(() => {
+    let animationFrameId: number;
+
     const handleScroll = () => {
-      setParallaxOffset(window.scrollY * 0.5);
+        // Use requestAnimationFrame to ensure smooth visual updates synced with refresh rate
+        animationFrameId = window.requestAnimationFrame(() => {
+            setParallaxOffset(window.scrollY * 0.5);
+        });
     };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrameId) {
+          window.cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
 
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -151,7 +163,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
         {/* Video with Parallax */}
         <div
           className="absolute inset-0 z-0"
-          style={{ transform: `translateY(${parallaxOffset}px)` }}
+          style={{ transform: `translateY(${parallaxOffset}px)`, willChange: 'transform' }}
         >
           <video
             autoPlay
