@@ -24,7 +24,8 @@ const SEO: React.FC<SEOProps> = ({
   const fullTitle = title ? `${title} | ${siteTitle}` : defaultTitle;
   const metaDescription = description || defaultDescription;
   const metaImage = image || defaultImage;
-  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  // Ensure canonical uses path, not query
+  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${window.location.pathname}`;
 
   useEffect(() => {
     // 1. Update Title
@@ -82,8 +83,7 @@ const SEO: React.FC<SEOProps> = ({
 
     // Cleanup function
     return () => {
-        // Optional: Reset to defaults on unmount if needed, 
-        // but usually the next page's SEO component handles it.
+        // Optional cleanup
     };
 
   }, [fullTitle, metaDescription, metaImage, canonicalUrl, schema]);

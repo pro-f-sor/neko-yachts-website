@@ -19,12 +19,13 @@ import CookieConsent from './components/CookieConsent';
 
 // Mapping for URL slugs to internal Page types
 const SLUG_TO_PAGE: Record<string, Page> = {
+  '': 'Home', // Root path
   'home': 'Home',
   'the-why': 'The Why',
   'the-dna': 'The DNA',
   'neko-19': 'NEKO 19',
   'investors': 'Investors',
-  'contact': 'Enquire', // Handle legacy slug
+  'contact': 'Enquire',
   'enquire': 'Enquire',
   'privacy-policy': 'Privacy Policy',
   'cookie-policy': 'Cookie Policy',
@@ -35,14 +36,25 @@ const SLUG_TO_PAGE: Record<string, Page> = {
 
 // Reverse mapping to generate URL slugs from Page types
 const PAGE_TO_SLUG: Record<string, string> = Object.entries(SLUG_TO_PAGE).reduce((acc, [slug, page]) => {
-  acc[page] = slug;
+  // Prefer 'enquire' over 'contact' for the reverse map
+  if (slug !== 'contact' && slug !== 'home' && slug !== '') {
+    acc[page] = slug;
+  }
   return acc;
 }, {} as Record<string, string>);
+// Manually set Home to empty string for cleaner URL
+PAGE_TO_SLUG['Home'] = '';
 
 const App: React.FC = () => {
-  // Initialize state by reading the URL 'page' query parameter
+  // Initialize state by reading the URL Pathname
   const [currentPage, setCurrentPage] = useState<Page>(() => {
     if (typeof window !== 'undefined') {
+      // Remove leading slash
+      const path = window.location.pathname.substring(1);
+      if (SLUG_TO_PAGE[path]) {
+        return SLUG_TO_PAGE[path];
+      }
+      // Handle legacy query params for backward compatibility
       const params = new URLSearchParams(window.location.search);
       const pageSlug = params.get('page');
       if (pageSlug && SLUG_TO_PAGE[pageSlug]) {
@@ -58,38 +70,24 @@ const App: React.FC = () => {
 
   // Sync URL when currentPage changes and handle Scrolling behavior
   useEffect(() => {
-    const slug = PAGE_TO_SLUG[currentPage] || 'home';
-    const url = new URL(window.location.href);
+    const slug = PAGE_TO_SLUG[currentPage] || '';
+    const newPath = slug ? `/${slug}` : '/';
     
-    if (slug === 'home') {
-      url.searchParams.delete('page');
-    } else {
-      url.searchParams.set('page', slug);
-    }
-
-    // Only push state if the URL actually changed to prevent redundant history entries
-    // Ensure url is converted to string for compatibility
-    // Wrap in try-catch to prevent Uncaught SecurityError in restricted environments
-    try {
-      if (window.location.search !== url.search) {
-        window.history.pushState({}, '', url.toString());
-      }
-    } catch (e) {
-      console.warn('Unable to update URL history', e);
+    // Only push state if the URL actually changed
+    if (window.location.pathname !== newPath) {
+        try {
+            window.history.pushState({}, '', newPath);
+        } catch (e) {
+            console.warn('Unable to update URL history', e);
+        }
     }
 
     // SMART SCROLL LOGIC:
-    // When changing pages, we want an INSTANT scroll to top (not smooth).
-    // But for in-page anchors, we want smooth scrolling.
-    
     // 1. Temporarily disable smooth scrolling on HTML element
     document.documentElement.style.scrollBehavior = 'auto';
-    
     // 2. Instant jump to top
     window.scrollTo(0, 0);
-    
     // 3. Re-enable smooth scrolling after a small delay
-    // This allows the browser to process the instant jump first
     const timer = setTimeout(() => {
         document.documentElement.style.scrollBehavior = 'smooth';
     }, 50);
@@ -101,9 +99,8 @@ const App: React.FC = () => {
   // Handle browser Back/Forward buttons
   useEffect(() => {
     const handlePopState = () => {
-      const params = new URLSearchParams(window.location.search);
-      const pageSlug = params.get('page');
-      setCurrentPage(pageSlug && SLUG_TO_PAGE[pageSlug] ? SLUG_TO_PAGE[pageSlug] : 'Home');
+      const path = window.location.pathname.substring(1);
+      setCurrentPage(SLUG_TO_PAGE[path] ? SLUG_TO_PAGE[path] : 'Home');
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -112,7 +109,6 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // For the homepage, we only consider it "scrolled" after passing the hero section
       const scrollThreshold = currentPage === 'Home' ? window.innerHeight * 0.8 : 10;
       setIsScrolled(window.scrollY > scrollThreshold);
       setShowScrollButton(window.scrollY > 200);
