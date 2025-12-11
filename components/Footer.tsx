@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Page, NavLink } from '../types';
-import { TwitterIcon, InstagramIcon, LinkedInIcon } from './icons/Icons';
+import { FacebookIcon, InstagramIcon, LinkedInIcon } from './icons/Icons';
 import { CeBadge } from './icons/CeBadge';
 
 interface FooterProps {
@@ -31,17 +31,19 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
             </div>
             <p className="mt-4 text-grey-400 text-sm">Redefining performance cruising.</p>
             <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><TwitterIcon /></a>
-              <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><InstagramIcon /></a>
-              <a href="#" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><LinkedInIcon /></a>
+              <a href="https://www.facebook.com/NekoCatamaran" target="_blank" rel="noopener noreferrer" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><FacebookIcon /></a>
+              <a href="https://www.instagram.com/neko.yachts/" target="_blank" rel="noopener noreferrer" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><InstagramIcon /></a>
+              <a href="https://www.linkedin.com/company/neko-yachts/" target="_blank" rel="noopener noreferrer" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><LinkedInIcon /></a>
             </div>
             
             {/* CE Badge */}
             <div className="mt-8 group cursor-default flex items-center">
                 <CeBadge className="w-16 h-16 text-grey-600 group-hover:text-[#D5C4A1] transition-colors duration-500 flex-shrink-0" />
-                <p className="ml-4 text-[10px] text-grey-600 tracking-widest uppercase group-hover:text-[#D5C4A1] transition-colors text-left max-w-[120px] leading-relaxed">
-                    World's Highest Standard
-                </p>
+                <div className="ml-4 flex flex-col justify-center">
+                    <p className="text-[10px] text-grey-600 tracking-widest uppercase group-hover:text-[#D5C4A1] transition-colors leading-relaxed">
+                        World's Highest Standard
+                    </p>
+                </div>
             </div>
           </div>
           <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">

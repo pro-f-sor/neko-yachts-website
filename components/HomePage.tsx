@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Page } from '../types';
 import { 
@@ -143,9 +144,9 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
       "areaServed": "Global"
     },
     "sameAs": [
-      "https://twitter.com/nekoyachts",
-      "https://www.linkedin.com/company/neko-yachts",
-      "https://www.instagram.com/nekoyachts"
+      "https://www.facebook.com/NekoCatamaran",
+      "https://www.linkedin.com/company/neko-yachts/",
+      "https://www.instagram.com/neko.yachts/"
     ]
   };
 
