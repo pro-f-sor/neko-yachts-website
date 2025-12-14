@@ -77,7 +77,7 @@ const CookieConsent: React.FC = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-fade-in-up">
-      <div className="max-w-6xl mx-auto bg-[#0E1F2F]/50 backdrop-blur-md border border-grey-800 shadow-2xl rounded-xl overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-[#0E1F2F]/50 backdrop-blur-md border border-grey-800 shadow-2xl rounded-none overflow-hidden">
         <div className="p-6 md:p-8">
           <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-12">
             
@@ -147,7 +147,7 @@ const CookieConsent: React.FC = () => {
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3 flex-shrink-0 min-w-[200px]">
               <button
                 onClick={handleAcceptAll}
-                className="w-full px-6 py-3 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold rounded-lg text-sm transition-colors shadow-md"
+                className="w-full px-6 py-3 bg-[#D5C4A1] hover:bg-[#C8B593] text-grey-900 font-semibold rounded-none text-sm transition-colors shadow-md"
               >
                 Accept All
               </button>
@@ -155,14 +155,14 @@ const CookieConsent: React.FC = () => {
               {showDetails ? (
                 <button
                   onClick={handleSavePreferences}
-                  className="w-full px-6 py-3 bg-grey-800 hover:bg-grey-700 text-white font-semibold rounded-lg text-sm transition-colors border border-grey-700"
+                  className="w-full px-6 py-3 bg-grey-800 hover:bg-grey-700 text-white font-semibold rounded-none text-sm transition-colors border border-grey-700"
                 >
                   Save Preferences
                 </button>
               ) : (
                 <button
                     onClick={handleAcceptNecessary}
-                    className="w-full px-6 py-3 bg-transparent hover:bg-grey-800 text-[#D8D8D8] hover:text-white font-medium rounded-lg text-sm transition-colors border border-grey-700"
+                    className="w-full px-6 py-3 bg-transparent hover:bg-grey-800 text-[#D8D8D8] hover:text-white font-medium rounded-none text-sm transition-colors border border-grey-700"
                 >
                     Necessary Only
                 </button>

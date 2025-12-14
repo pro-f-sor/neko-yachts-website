@@ -324,7 +324,7 @@ const InvestorPage: React.FC = () => {
   };
 
   const labelClass = "block text-xs font-bold uppercase tracking-widest text-grey-500 mb-2";
-  const inputClass = "w-full bg-white border border-grey-300 text-grey-900 px-4 py-3 rounded-sm focus:outline-none focus:border-[#D5C4A1] focus:ring-1 focus:ring-[#D5C4A1] transition-colors font-light text-sm";
+  const inputClass = "w-full bg-white border border-grey-300 text-grey-900 px-4 py-3 rounded-none focus:outline-none focus:border-[#D5C4A1] focus:ring-1 focus:ring-[#D5C4A1] transition-colors font-light text-sm";
   const errorClass = "mt-1 text-xs text-red-500 font-mono";
 
   // If locked, show gate
@@ -346,7 +346,7 @@ const InvestorPage: React.FC = () => {
           {accessLevel === 'GCC' && (
             <button 
                 onClick={() => setLang(isArabic ? 'en' : 'ar')}
-                className="flex items-center space-x-2 bg-grey-900 text-[#D5C4A1] border border-[#D5C4A1] px-5 py-3 rounded-sm shadow-xl hover:bg-grey-800 hover:shadow-2xl transition-all duration-300 w-fit"
+                className="flex items-center space-x-2 bg-grey-900 text-[#D5C4A1] border border-[#D5C4A1] px-5 py-3 rounded-none shadow-xl hover:bg-grey-800 hover:shadow-2xl transition-all duration-300 w-fit"
             >
                 <GlobeIcon />
                 <span className={`text-xs font-bold uppercase tracking-wider ${isArabic ? 'font-sans' : 'font-arabic'}`}>
@@ -501,7 +501,7 @@ const InvestorPage: React.FC = () => {
                             <img 
                                 src="https://coolcatamaran.com/images/headshots/Peter.png" 
                                 alt="Peter Walker" 
-                                className="w-24 h-24 rounded-sm object-cover grayscale"
+                                className="w-24 h-24 rounded-none object-cover grayscale"
                             />
                             <div>
                                 <h4 className="text-xl font-bold text-grey-900">Peter Walker</h4>
@@ -517,7 +517,7 @@ const InvestorPage: React.FC = () => {
                             <img 
                                 src="https://coolcatamaran.com/images/headshots/Mike.png" 
                                 alt="Michael Walker" 
-                                className="w-24 h-24 rounded-sm object-cover grayscale"
+                                className="w-24 h-24 rounded-none object-cover grayscale"
                             />
                             <div>
                                 <h4 className="text-xl font-bold text-grey-900">Michael Walker</h4>
@@ -557,7 +557,7 @@ const InvestorPage: React.FC = () => {
                         
                         <button 
                             onClick={() => setShowForm(true)}
-                            className="inline-flex items-center justify-center px-10 py-5 bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase transition-all duration-300 shadow-xl"
+                            className="inline-flex items-center justify-center px-10 py-5 bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase transition-all duration-300 shadow-xl rounded-none"
                         >
                             {t.cta.button}
                             <span className={`transform ${isArabic ? 'rotate-180 mr-3' : 'ml-3'}`}><ArrowRightIcon /></span>
@@ -577,7 +577,7 @@ const InvestorPage: React.FC = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4" dir={isArabic ? 'rtl' : 'ltr'}>
             <div className="absolute inset-0 bg-grey-900/90 backdrop-blur-sm" onClick={closeForm}></div>
             
-            <div className={`relative bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl animate-fade-in-up ${isArabic ? 'font-arabic' : 'font-sans'}`}>
+            <div className={`relative bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-none shadow-2xl animate-fade-in-up ${isArabic ? 'font-arabic' : 'font-sans'}`}>
                 <button 
                     onClick={closeForm}
                     className={`absolute top-6 text-grey-500 hover:text-grey-900 transition-colors ${isArabic ? 'left-6' : 'right-6'}`}
@@ -764,7 +764,7 @@ const InvestorPage: React.FC = () => {
                                 <div className="pt-4 border-t border-grey-100 flex justify-end">
                                     <button 
                                         type="submit" 
-                                        className="inline-flex items-center justify-center px-10 py-4 bg-[#D5C4A1] hover:bg-grey-900 hover:text-white text-grey-900 font-bold tracking-widest uppercase transition-all duration-300 shadow-lg"
+                                        className="inline-flex items-center justify-center px-10 py-4 bg-[#D5C4A1] hover:bg-grey-900 hover:text-white text-grey-900 font-bold tracking-widest uppercase transition-all duration-300 shadow-lg rounded-none"
                                     >
                                         {tForm.labels.submit}
                                     </button>

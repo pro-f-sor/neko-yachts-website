@@ -36,10 +36,28 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
               <a href="https://www.linkedin.com/company/neko-yachts/" target="_blank" rel="noopener noreferrer" className="text-grey-400 hover:text-[#D5C4A1] transition-colors"><LinkedInIcon /></a>
             </div>
             
-            {/* CE Badge */}
-            <div className="mt-8 group cursor-default flex items-center">
-                <CeBadge className="w-16 h-16 text-grey-600 group-hover:text-[#D5C4A1] transition-colors duration-500 flex-shrink-0" />
-                <div className="ml-4 flex flex-col justify-center">
+            {/* CE Badge with Shimmer Beam */}
+            <div className="mt-10 group cursor-default flex items-center relative">
+                
+                {/* Badge Container */}
+                <div className="relative w-16 h-16 flex-shrink-0 mr-4">
+                    {/* Rotating Shimmer Gradient (The Beam) */}
+                    <div 
+                        className="absolute -inset-[1px] rounded-full animate-[spin_3s_linear_infinite]"
+                        style={{
+                            background: 'conic-gradient(from 0deg, transparent 0deg, transparent 90deg, #D5C4A1 180deg, transparent 270deg, transparent 360deg)',
+                            opacity: 0.6
+                        }}
+                    ></div>
+                    
+                    {/* Inner Mask to create the 1px border effect */}
+                    <div className="absolute inset-0 bg-grey-950 rounded-full z-10"></div>
+
+                    {/* The Badge */}
+                    <CeBadge className="relative z-20 w-full h-full text-grey-600 group-hover:text-[#D5C4A1] transition-colors duration-500" />
+                </div>
+
+                <div className="flex flex-col justify-center">
                     <p className="text-[10px] text-grey-600 tracking-widest uppercase group-hover:text-[#D5C4A1] transition-colors leading-relaxed">
                         World's Highest Standard
                     </p>

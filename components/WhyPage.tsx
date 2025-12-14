@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import { Page } from '../types';
@@ -91,7 +92,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
             </div>
 
             {/* Right Column: Image */}
-            <div className="relative h-full min-h-[400px] md:min-h-full rounded-xl overflow-hidden shadow-2xl group">
+            <div className="relative h-full min-h-[400px] md:min-h-full rounded-none overflow-hidden shadow-2xl group">
                  <img 
                     src="https://coolcatamaran.com/images/why/compass1.png" 
                     alt="Compass and nautical chart representing direction" 
@@ -113,7 +114,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
             <AnimatedSection className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
                 
                 {/* Left Column: Image */}
-                <div className="relative h-full min-h-[500px] rounded-xl overflow-hidden shadow-2xl group order-1">
+                <div className="relative h-full min-h-[500px] rounded-none overflow-hidden shadow-2xl group order-1">
                     <img 
                         src="https://coolcatamaran.com/images/why/abstract4.png" 
                         alt="Abstract representation of NEKO design philosophy" 
@@ -249,7 +250,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
                     <div className="flex flex-col sm:flex-row gap-6 items-start">
                         <button 
                             onClick={() => handleNavigation('The DNA')}
-                            className="group px-10 py-4 bg-transparent border border-[#D5C4A1] text-[#D5C4A1] font-semibold tracking-widest uppercase hover:bg-[#D5C4A1] hover:text-grey-900 transition-all duration-300"
+                            className="group px-10 py-4 bg-transparent border border-[#D5C4A1] text-[#D5C4A1] font-semibold tracking-widest uppercase hover:bg-[#D5C4A1] hover:text-grey-900 transition-all duration-300 rounded-none"
                         >
                             Discover The DNA
                         </button>
@@ -264,7 +265,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
                 </div>
 
                 {/* Right Column: Image */}
-                <div className="relative h-full min-h-[400px] rounded-xl overflow-hidden shadow-2xl group order-2">
+                <div className="relative h-full min-h-[400px] rounded-none overflow-hidden shadow-2xl group order-2">
                     <img 
                         src="https://coolcatamaran.com/images/why/architech2.png" 
                         alt="Architect drafting plans" 

@@ -17,8 +17,8 @@ const FounderCard: React.FC<{
     quote: string; 
 }> = ({ imgSrc, name, title, body, quote }) => {
     return (
-        <div className="bg-grey-950/30 border border-white/5 p-8 rounded-lg flex flex-col h-full">
-            <div className="mb-8 overflow-hidden rounded-md shadow-lg">
+        <div className="bg-grey-950/30 border border-white/5 p-8 rounded-none flex flex-col h-full">
+            <div className="mb-8 overflow-hidden rounded-none shadow-lg">
                 <img 
                     src={imgSrc} 
                     alt={`Portrait of ${name}`} 
@@ -94,7 +94,7 @@ const DnaPage: React.FC<DnaPageProps> = ({ setCurrentPage }) => {
                     <AnimatedSection>
                         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
                             {/* Left: Image */}
-                            <div className="relative h-[500px] md:h-[600px] w-full rounded-lg overflow-hidden shadow-2xl order-1">
+                            <div className="relative h-[500px] md:h-[600px] w-full rounded-none overflow-hidden shadow-2xl order-1">
                                 <img 
                                     src="https://coolcatamaran.com/images/dna/sundancer.png" 
                                     alt="Vintage 100-foot schooner" 
@@ -179,7 +179,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                                 </div>
 
                                 {/* The Father Filter - Highlighted Box */}
-                                <div className="bg-[#D5C4A1]/10 border-l-4 border-[#D5C4A1] p-8 rounded-r-lg">
+                                <div className="bg-[#D5C4A1]/10 border-l-4 border-[#D5C4A1] p-8 rounded-none">
                                     <h4 className="text-xl font-bold text-white mb-3">The "Father Filter"</h4>
                                     <p className="text-grey-300 leading-relaxed">
                                         This is our ultimate quality control. We design with one rule: If we wouldn't send our own children to sea on it, it doesn't go on the boat. The result is a catamaran with the space of a superyacht, but the intuitive agility to be sailed single-handed by a father, a mother, or a couple.
@@ -188,7 +188,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                             </div>
 
                             {/* Right: Image */}
-                            <div className="relative h-[500px] md:h-[600px] w-full rounded-lg overflow-hidden shadow-2xl order-2">
+                            <div className="relative h-[500px] md:h-[600px] w-full rounded-none overflow-hidden shadow-2xl order-2">
                                 <img 
                                     src="https://coolcatamaran.com/images/dna/earo-abstract3.png" 
                                     alt="Abstract aviation inspired design" 
@@ -200,7 +200,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
 
                     {/* NEW: THE CERTIFICATION STANDARD */}
                     <AnimatedSection>
-                        <div className="bg-grey-950 border border-white/10 p-10 lg:p-16 rounded-lg relative overflow-hidden">
+                        <div className="bg-grey-950 border border-white/10 p-10 lg:p-16 rounded-none relative overflow-hidden">
                             {/* Background Texture */}
                             <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
                                 <CeBadge className="w-96 h-96 text-white" />
@@ -228,7 +228,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                     <AnimatedSection>
                         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
                              {/* Left: Image */}
-                             <div className="relative h-[500px] md:h-[600px] w-full rounded-lg overflow-hidden shadow-2xl order-1">
+                             <div className="relative h-[500px] md:h-[600px] w-full rounded-none overflow-hidden shadow-2xl order-1">
                                 <img 
                                     src="https://coolcatamaran.com/images/dna/architech1.png" 
                                     alt="Architect working on plans" 
@@ -293,7 +293,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                         <div>
                             <button 
                                 onClick={() => handleNavigation('NEKO 19')}
-                                className="inline-flex items-center group px-10 py-5 bg-[#D5C4A1] text-grey-900 font-bold tracking-wider uppercase rounded-sm hover:bg-white transition-all duration-300"
+                                className="inline-flex items-center group px-10 py-5 bg-[#D5C4A1] text-grey-900 font-bold tracking-wider uppercase rounded-none hover:bg-white transition-all duration-300"
                             >
                                 Discover The NEKO 19
                                 <span className="ml-3 group-hover:translate-x-2 transition-transform duration-300">

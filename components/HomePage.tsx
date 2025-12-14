@@ -195,7 +195,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           <div className="mt-12">
             <button
               onClick={() => handleNavClick('NEKO 19')}
-              className="inline-flex items-center justify-center px-10 py-4 bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase rounded-sm transition-all duration-300 shadow-lg"
+              className="inline-flex items-center justify-center px-10 py-4 bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase rounded-none transition-all duration-300 shadow-lg"
             >
               Meet The NEKO 19
               <span className="ml-3"><ArrowRightIcon /></span>
@@ -233,7 +233,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             </div>
             
             {/* Right: Image */}
-            <div className="order-2 relative h-[400px] md:h-[500px] w-full rounded-sm overflow-hidden shadow-2xl group">
+            <div className="order-2 relative h-[400px] md:h-[500px] w-full rounded-none overflow-hidden shadow-2xl group">
               <img 
                 src="https://coolcatamaran.com/images/Carbon_fibre_2_Landscape.png"
                 alt="Close up of carbon fibre weave"
@@ -286,7 +286,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
           <AnimatedSection className="text-center">
             <button
               onClick={() => handleNavClick('The DNA')}
-              className="px-10 py-4 border border-grey-700 hover:border-[#D5C4A1] text-white hover:text-[#D5C4A1] font-bold tracking-widest uppercase transition-all duration-300 rounded-sm"
+              className="px-10 py-4 border border-grey-700 hover:border-[#D5C4A1] text-white hover:text-[#D5C4A1] font-bold tracking-widest uppercase transition-all duration-300 rounded-none"
             >
               Discover The DNA
             </button>
@@ -319,7 +319,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
 
           <AnimatedSection>
             <div 
-                className="relative w-full max-w-6xl mx-auto h-[60vh] max-h-[600px] overflow-hidden rounded-sm shadow-2xl bg-grey-900"
+                className="relative w-full max-w-6xl mx-auto h-[60vh] max-h-[600px] overflow-hidden rounded-none shadow-2xl bg-grey-900"
                 onTouchStart={onTouchStart}
                 onTouchMove={onTouchMove}
                 onTouchEnd={onTouchEnd}
@@ -420,7 +420,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Email Address"
                             required
-                            className="w-full bg-grey-900/50 border border-grey-600 text-white px-6 py-4 rounded-sm focus:outline-none focus:border-[#D5C4A1] transition-colors font-light placeholder-grey-400 backdrop-blur-sm"
+                            className="w-full bg-grey-900/50 border border-grey-600 text-white px-6 py-4 rounded-none focus:outline-none focus:border-[#D5C4A1] transition-colors font-light placeholder-grey-400 backdrop-blur-sm"
                         />
                         <button
                             type="submit"
@@ -439,7 +439,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
 
                 <button
                     onClick={() => handleNavClick('Enquire')}
-                    className="inline-flex items-center justify-center px-12 py-5 bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase rounded-sm transition-all duration-300 shadow-xl"
+                    className="inline-flex items-center justify-center px-12 py-5 bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase rounded-none transition-all duration-300 shadow-xl"
                 >
                     Start The Dialogue
                     <span className="ml-3"><ArrowRightIcon /></span>

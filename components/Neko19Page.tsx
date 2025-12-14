@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Page } from '../types';
 import { ArrowRightIcon, CheckIcon } from './icons/Icons';
@@ -15,7 +16,7 @@ const DossierCard: React.FC<{
   body: string;
   label: string;
 }> = ({ number, title, imgSrc, body, label }) => (
-  <div className="bg-grey-950 border border-grey-800 rounded-sm overflow-hidden group hover:border-[#D5C4A1]/50 transition-colors duration-500">
+  <div className="bg-grey-950 border border-grey-800 rounded-none overflow-hidden group hover:border-[#D5C4A1]/50 transition-colors duration-500">
       {/* Image Container (Aspect Video) */}
       <div className="relative aspect-video overflow-hidden">
           <img 
@@ -103,7 +104,7 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
 
                 <button
                     onClick={handleJoinList}
-                    className="inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase text-sm hover:bg-white transition-all duration-300"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase text-sm hover:bg-white transition-all duration-300 rounded-none"
                 >
                     Join The Priority List
                     <span className="ml-3"><ArrowRightIcon /></span>
@@ -132,7 +133,7 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
                     </div>
 
                     {/* Right: The List */}
-                    <div className="bg-grey-900 p-8 md:p-12 border border-white/5 rounded-sm">
+                    <div className="bg-grey-900 p-8 md:p-12 border border-white/5 rounded-none">
                         <ul className="space-y-6">
                             <li className="flex items-start">
                                 <div className="mt-1 flex-shrink-0 text-[#D5C4A1]"><CheckIcon /></div>
@@ -238,7 +239,7 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
         {/* [SECTION 5: CONVERSION] */}
         <section className="py-24 sm:py-32 bg-grey-900 border-t border-grey-800">
             <div className="container mx-auto px-6 text-center">
-                <AnimatedSection className="max-w-4xl mx-auto bg-grey-950 p-12 md:p-20 rounded-lg shadow-2xl relative overflow-hidden">
+                <AnimatedSection className="max-w-4xl mx-auto bg-grey-950 p-12 md:p-20 rounded-none shadow-2xl relative overflow-hidden">
                     {/* Decorative blurred glow */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#D5C4A1]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -250,7 +251,7 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
                         
                         <button 
                             onClick={handleJoinList}
-                            className="inline-flex items-center justify-center px-12 py-5 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase text-sm hover:bg-white transition-all duration-300 shadow-xl"
+                            className="inline-flex items-center justify-center px-12 py-5 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase text-sm hover:bg-white transition-all duration-300 shadow-xl rounded-none"
                         >
                             Request Access
                         </button>

@@ -160,7 +160,7 @@ const SupplierPartnershipsPage: React.FC<SupplierPartnershipsPageProps> = ({ set
                   <div className="flex flex-col items-center gap-8">
                     <a 
                         href="mailto:suppliers@nekoyachts.com?subject=Strategic Partnership Proposal | [Company Name]" 
-                        className="inline-flex items-center justify-center px-12 py-5 bg-grey-900 text-white font-bold tracking-[0.1em] uppercase hover:bg-white hover:text-grey-900 transition-all duration-300 shadow-xl"
+                        className="inline-flex items-center justify-center px-12 py-5 bg-grey-900 text-white font-bold tracking-[0.1em] uppercase hover:bg-white hover:text-grey-900 transition-all duration-300 shadow-xl rounded-none"
                     >
                         Initiate A Partnership
                         <span className="ml-3"><ArrowRightIcon /></span>

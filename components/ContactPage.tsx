@@ -238,7 +238,7 @@ const ContactPage: React.FC = () => {
                             {/* Right Column: Form */}
                             <div>
                                 {isFormSubmitted ? (
-                                    <div className="h-full flex flex-col justify-center items-center text-center p-8 bg-grey-950/50 border border-white/5 rounded-lg">
+                                    <div className="h-full flex flex-col justify-center items-center text-center p-8 bg-grey-950/50 border border-white/5 rounded-none">
                                         <h3 className="text-2xl font-bold text-[#D5C4A1] mb-4">Message Received</h3>
                                         <p className="text-grey-300 font-light">
                                             Thank you for starting the conversation. We will be in touch shortly.
@@ -325,7 +325,7 @@ const ContactPage: React.FC = () => {
                                         <div>
                                             <button 
                                                 type="submit" 
-                                                className="inline-flex items-center group px-8 py-4 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase rounded-sm hover:bg-white transition-all duration-300"
+                                                className="inline-flex items-center group px-8 py-4 bg-[#D5C4A1] text-grey-900 font-bold tracking-widest uppercase rounded-none hover:bg-white transition-all duration-300"
                                             >
                                                 Start The Conversation
                                                 <span className="ml-3 group-hover:translate-x-1 transition-transform duration-300">
@@ -355,7 +355,7 @@ const ContactPage: React.FC = () => {
 
                 <div className="relative z-10 container mx-auto px-6">
                     <AnimatedSection className="max-w-4xl mx-auto">
-                        <div className="backdrop-blur-xl bg-grey-900/80 border border-white/10 rounded-xl p-8 md:p-12 shadow-2xl">
+                        <div className="backdrop-blur-xl bg-grey-900/80 border border-white/10 rounded-none p-8 md:p-12 shadow-2xl">
                             <div className="text-center mb-10">
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 leading-tight">DON'T JUST WAIT FOR THE BOAT.</h2>
                                 <h2 className="text-3xl md:text-5xl font-bold text-[#D5C4A1] mb-6 leading-tight">PLAN WHERE YOU'LL TAKE IT.</h2>
@@ -371,13 +371,13 @@ const ContactPage: React.FC = () => {
                                     onChange={(e) => setDestination(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && !isLoading && handleGenerate()}
                                     placeholder="e.g., The Greek Islands, The Caribbean, or Fiji"
-                                    className="flex-grow bg-grey-950/50 border border-grey-600 text-white rounded-lg px-6 py-4 focus:outline-none focus:border-[#D5C4A1] font-light text-lg placeholder-grey-500"
+                                    className="flex-grow bg-grey-950/50 border border-grey-600 text-white rounded-none px-6 py-4 focus:outline-none focus:border-[#D5C4A1] font-light text-lg placeholder-grey-500"
                                     disabled={isLoading}
                                 />
                                 <button 
                                     onClick={handleGenerate} 
                                     disabled={isLoading} 
-                                    className="bg-[#D5C4A1] hover:bg-[#C8B593] disabled:bg-[#D5C4A1]/50 disabled:cursor-not-allowed text-grey-900 font-bold tracking-wider uppercase py-4 px-8 rounded-lg transition-colors flex items-center justify-center min-w-[200px]"
+                                    className="bg-[#D5C4A1] hover:bg-[#C8B593] disabled:bg-[#D5C4A1]/50 disabled:cursor-not-allowed text-grey-900 font-bold tracking-wider uppercase py-4 px-8 rounded-none transition-colors flex items-center justify-center min-w-[200px]"
                                 >
                                     {isLoading ? (
                                         <>
@@ -391,7 +391,7 @@ const ContactPage: React.FC = () => {
                             </div>
 
                             {plannerError && (
-                                <div className="text-center p-4 bg-red-900/30 border border-red-500/30 rounded-lg">
+                                <div className="text-center p-4 bg-red-900/30 border border-red-500/30 rounded-none">
                                     <p className="text-red-300 font-light">{plannerError}</p>
                                 </div>
                             )}
@@ -399,12 +399,12 @@ const ContactPage: React.FC = () => {
                             {itinerary && !isLoading && (
                                 <div className="space-y-8 animate-fade-in-up">
                                     {/* The Itinerary */}
-                                    <div className="p-6 md:p-8 bg-grey-950/60 border border-white/5 rounded-lg max-h-[500px] overflow-y-auto custom-scrollbar">
+                                    <div className="p-6 md:p-8 bg-grey-950/60 border border-white/5 rounded-none max-h-[500px] overflow-y-auto custom-scrollbar">
                                         <div className="prose prose-invert max-w-none prose-headings:font-bold prose-p:font-light prose-p:text-grey-300 prose-li:text-grey-300" dangerouslySetInnerHTML={{ __html: itinerary }} />
                                     </div>
 
                                     {/* The "Save Itinerary" Lead Magnet */}
-                                    <div className="bg-[#D5C4A1]/10 border border-[#D5C4A1]/30 rounded-lg p-6 md:p-8">
+                                    <div className="bg-[#D5C4A1]/10 border border-[#D5C4A1]/30 rounded-none p-6 md:p-8">
                                         {isSaveSubmitted ? (
                                             <div className="text-center py-4">
                                                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#D5C4A1]/20 text-[#D5C4A1] mb-4">
@@ -428,7 +428,7 @@ const ContactPage: React.FC = () => {
                                                                 required
                                                                 value={saveForm.name}
                                                                 onChange={(e) => setSaveForm({...saveForm, name: e.target.value})}
-                                                                className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-[#D5C4A1]"
+                                                                className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-none focus:outline-none focus:border-[#D5C4A1]"
                                                             />
                                                         </div>
                                                         <div>
@@ -438,13 +438,13 @@ const ContactPage: React.FC = () => {
                                                                 required
                                                                 value={saveForm.email}
                                                                 onChange={(e) => setSaveForm({...saveForm, email: e.target.value})}
-                                                                className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-[#D5C4A1]"
+                                                                className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-none focus:outline-none focus:border-[#D5C4A1]"
                                                             />
                                                         </div>
                                                     </div>
 
                                                     {/* Qualification Question */}
-                                                    <div className="bg-grey-950/30 p-4 rounded-sm border border-white/5">
+                                                    <div className="bg-grey-950/30 p-4 rounded-none border border-white/5">
                                                         <p className="text-sm font-bold text-grey-400 uppercase tracking-widest mb-3">Do you currently own a catamaran?</p>
                                                         <div className="flex items-center gap-6">
                                                             <label className="flex items-center gap-2 cursor-pointer">
@@ -479,7 +479,7 @@ const ContactPage: React.FC = () => {
                                                                     placeholder="Which make/model do you sail? (e.g. Lagoon 620)"
                                                                     value={saveForm.currentVessel}
                                                                     onChange={(e) => setSaveForm({...saveForm, currentVessel: e.target.value})}
-                                                                    className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-[#D5C4A1] text-sm"
+                                                                    className="w-full bg-grey-950/50 border border-grey-600 text-white px-4 py-3 rounded-none focus:outline-none focus:border-[#D5C4A1] text-sm"
                                                                 />
                                                             </div>
                                                         )}
@@ -487,7 +487,7 @@ const ContactPage: React.FC = () => {
 
                                                     <button
                                                         type="submit"
-                                                        className="w-full bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase py-4 transition-colors"
+                                                        className="w-full bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase py-4 transition-colors rounded-none"
                                                     >
                                                         Email Me This Itinerary
                                                     </button>
@@ -524,7 +524,7 @@ const ContactPage: React.FC = () => {
                                     onBlur={handleNewsletterBlur}
                                     placeholder="Email Address"
                                     required
-                                    className="w-full bg-transparent border-b border-grey-700 text-white px-4 py-3 focus:outline-none focus:border-[#D5C4A1] transition-colors font-light text-center placeholder-grey-600"
+                                    className="w-full bg-transparent border-b border-grey-700 text-white px-4 py-3 focus:outline-none focus:border-[#D5C4A1] transition-colors font-light text-center placeholder-grey-600 rounded-none"
                                 />
                                 <button
                                     type="submit"

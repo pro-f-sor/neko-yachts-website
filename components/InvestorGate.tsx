@@ -34,7 +34,7 @@ const InvestorGate: React.FC<InvestorGateProps> = ({ onUnlock }) => {
       <div className={`max-w-lg w-full transition-transform duration-100 ${isShake ? 'translate-x-[-10px]' : ''} ${isShake ? 'translate-x-[10px]' : ''}`}>
         
         {/* The Velvet Rope Card */}
-        <div className="bg-grey-950 border border-[#D5C4A1] p-10 md:p-14 text-center shadow-2xl relative overflow-hidden rounded-sm">
+        <div className="bg-grey-950 border border-[#D5C4A1] p-10 md:p-14 text-center shadow-2xl relative overflow-hidden rounded-none">
           
           {/* Decorative Corner Accents */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#D5C4A1]"></div>
@@ -64,14 +64,14 @@ const InvestorGate: React.FC<InvestorGateProps> = ({ onUnlock }) => {
                     if (error) setError('');
                 }}
                 placeholder="Enter Access Key"
-                className="w-full bg-grey-900 border-b border-grey-700 text-white text-center py-4 focus:outline-none focus:border-[#D5C4A1] transition-colors font-mono tracking-[0.2em] placeholder-grey-700 text-lg"
+                className="w-full bg-grey-900 border-b border-grey-700 text-white text-center py-4 focus:outline-none focus:border-[#D5C4A1] transition-colors font-mono tracking-[0.2em] placeholder-grey-700 text-lg rounded-none"
                 autoFocus
                 />
             </div>
             
             <button 
                 type="submit" 
-                className="w-full bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase py-4 transition-colors duration-300 flex items-center justify-center gap-3 mt-8 shadow-lg"
+                className="w-full bg-[#D5C4A1] hover:bg-white text-grey-900 font-bold tracking-widest uppercase py-4 transition-colors duration-300 flex items-center justify-center gap-3 mt-8 shadow-lg rounded-none"
             >
               Enter Secure Room
               <ArrowRightIcon />
