@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react-dom": "^19.2.0",
+    "@google/genai": "^1.26.0",
     "react": "^19.2.0",
-    "@google/genai": "^1.26.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@the-focus-ai/nano-banana": "^1.0.9",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
