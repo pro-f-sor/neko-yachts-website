@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, navLinks, 
               NEK
             </div>
             <img 
-              src="https://coolcatamaran.com/images/logo/NEK-O-gold.png" 
+              src="/images/logo/NEK-O-gold.png" 
               alt="O" 
               className="h-6 w-auto object-contain ml-[-3px] mt-[-1px]"
             />

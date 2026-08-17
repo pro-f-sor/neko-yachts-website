@@ -18,17 +18,17 @@ interface HomePageProps {
 
 const innovationGlimpses = [
   {
-    imgSrc: 'https://coolcatamaran.com/images/Closeup_reverse_bow_landscape.png',
+    imgSrc: '/images/Closeup_reverse_bow_landscape.png',
     alt: 'Dramatic silhouette of a catamaran bow against a sunrise',
     text: 'A silhouette engineered for performance. Sculpted by the wind.',
   },
   {
-    imgSrc: 'https://coolcatamaran.com/images/cleat_1_landscape.png',
+    imgSrc: '/images/cleat_1_landscape.png',
     alt: 'Extreme close-up of a custom-designed deck fitting on a yacht',
     text: 'Every component, re-imagined. Every line, considered.',
   },
   {
-    imgSrc: 'https://coolcatamaran.com/images/modern-abstract-interior.png',
+    imgSrc: '/images/modern-abstract-interior.png',
     alt: 'Modern and abstract catamaran interior with flowing lines',
     text: 'Where light and shadow define a new dimension of space.',
   }
@@ -126,7 +126,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
     "name": "NEKO Catamarans",
     "legalName": "Cool Catamaran Company Ltd",
     "url": "https://www.nekoyachts.com",
-    "logo": "https://coolcatamaran.com/images/logo/NEK-O-gold.png",
+    "logo": "/images/logo/NEK-O-gold.png",
     "founder": [
       {
         "@type": "Person",
@@ -175,7 +175,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             poster="https://images.pexels.com/photos/163236/luxury-yacht-sailing-sea-sky-163236.jpeg?auto=compress&cs=tinysrgb&w=1920"
           >
             <source
-              src="https://coolcatamaran.com/images/video/sidehull.mp4"
+              src="/images/video/sidehull.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -235,7 +235,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
             {/* Right: Image */}
             <div className="order-2 relative h-[400px] md:h-[500px] w-full rounded-none overflow-hidden shadow-2xl group">
               <img 
-                src="https://coolcatamaran.com/images/Carbon_fibre_2_Landscape.png"
+                src="/images/Carbon_fibre_2_Landscape.png"
                 alt="Close up of carbon fibre weave"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -389,7 +389,7 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://coolcatamaran.com/images/in-a-bay-at-dusk.png"
+            src="/images/in-a-bay-at-dusk.png"
             alt="Catamaran anchored at dusk"
             className="w-full h-full object-cover"
           />

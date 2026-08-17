@@ -58,7 +58,7 @@ const DnaPage: React.FC<DnaPageProps> = ({ setCurrentPage }) => {
             <div className="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="https://coolcatamaran.com/images/dna/waveshero.png" 
+                        src="/images/dna/waveshero.png" 
                         alt="Dark moody ocean waves" 
                         className="w-full h-full object-cover"
                     />
@@ -96,7 +96,7 @@ const DnaPage: React.FC<DnaPageProps> = ({ setCurrentPage }) => {
                             {/* Left: Image */}
                             <div className="relative h-[500px] md:h-[600px] w-full rounded-none overflow-hidden shadow-2xl order-1">
                                 <img 
-                                    src="https://coolcatamaran.com/images/dna/sundancer.png" 
+                                    src="/images/dna/sundancer.png" 
                                     alt="Vintage 100-foot schooner" 
                                     className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                                 />
@@ -142,7 +142,7 @@ const DnaPage: React.FC<DnaPageProps> = ({ setCurrentPage }) => {
                             <FounderCard 
                                 name="Michael Walker"
                                 title="The Architect | Co-Founder & Technical Lead"
-                                imgSrc="https://coolcatamaran.com/images/headshots/Mike.png?v=2"
+                                imgSrc="/images/headshots/Mike.png"
                                 body={`If Peter is the destination, Michael is the machine. With an MBA and a deep background in digital systems, Michael brings an obsessive level of detail to the NEKO hull. He is not satisfied with 'standard marine practice.'
 
 Having cut his teeth sailing the Caribbean, he bridges the gap between the raw elements and advanced technology. He specialises in 'invisible engineering'—hybrid propulsion and systems integration that grant a sailor silence, safety, and autonomy. He ensures that every NEKO performs as beautifully in the engine room as it does at the helm.`}
@@ -152,7 +152,7 @@ Having cut his teeth sailing the Caribbean, he bridges the gap between the raw e
                             <FounderCard 
                                 name="Peter Walker"
                                 title="The Course Setter | Co-Founder & Strategic Lead"
-                                imgSrc="https://coolcatamaran.com/images/headshots/Peter.png?v=2"
+                                imgSrc="/images/headshots/Peter.png"
                                 body={`Peter provides the stability behind the vision. A lifelong entrepreneur with a background in high-stakes finance, he built and exited a major Forex technology firm—a career defined by managing risk with zero margin for error.
 
 But his compass was always set on the water. Shaped by the Mediterranean and the inherited memory of his mother’s circumnavigation, he saw a need for a vessel that balanced true sailing capability with modern business precision. Peter ensures that NEKO is built not just as a passion project, but as a robust, enduring enterprise.`}
@@ -190,7 +190,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                             {/* Right: Image */}
                             <div className="relative h-[500px] md:h-[600px] w-full rounded-none overflow-hidden shadow-2xl order-2">
                                 <img 
-                                    src="https://coolcatamaran.com/images/dna/earo-abstract3.png" 
+                                    src="/images/dna/earo-abstract3.png" 
                                     alt="Abstract aviation inspired design" 
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                                 />
@@ -230,7 +230,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                              {/* Left: Image */}
                              <div className="relative h-[500px] md:h-[600px] w-full rounded-none overflow-hidden shadow-2xl order-1">
                                 <img 
-                                    src="https://coolcatamaran.com/images/dna/architech1.png" 
+                                    src="/images/dna/architech1.png" 
                                     alt="Architect working on plans" 
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                                 />
@@ -274,7 +274,7 @@ But his compass was always set on the water. Shaped by the Mediterranean and the
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="https://coolcatamaran.com/images/dna/cat1.png" 
+                        src="/images/dna/cat1.png" 
                         alt="Silhouette of NEKO 19 Catamaran" 
                         className="w-full h-full object-cover"
                     />

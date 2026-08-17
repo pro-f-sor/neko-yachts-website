@@ -215,7 +215,7 @@ const InvestorPageSingapore: React.FC<InvestorPageSingaporeProps> = ({ onOpenFor
             <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
                 <AnimatedSection className="flex flex-col md:flex-row gap-8 items-start">
                     <img 
-                        src="https://coolcatamaran.com/images/headshots/Peter.png?v=2" 
+                        src="/images/headshots/Peter.png" 
                         alt="Peter Walker" 
                         className="w-32 h-32 object-cover grayscale border border-slate-200"
                     />
@@ -232,7 +232,7 @@ const InvestorPageSingapore: React.FC<InvestorPageSingaporeProps> = ({ onOpenFor
 
                 <AnimatedSection className="flex flex-col md:flex-row gap-8 items-start">
                     <img 
-                        src="https://coolcatamaran.com/images/headshots/Mike.png?v=2" 
+                        src="/images/headshots/Mike.png" 
                         alt="Michael Walker" 
                         className="w-32 h-32 object-cover grayscale border border-slate-200"
                     />

@@ -34,7 +34,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://coolcatamaran.com/images/why/wave1.png" 
+            src="/images/why/wave1.png" 
             alt="Ocean waves representing respect for nature" 
             className="w-full h-full object-cover"
           />
@@ -94,7 +94,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
             {/* Right Column: Image */}
             <div className="relative h-full min-h-[400px] md:min-h-full rounded-none overflow-hidden shadow-2xl group">
                  <img 
-                    src="https://coolcatamaran.com/images/why/compass1.png" 
+                    src="/images/why/compass1.png" 
                     alt="Compass and nautical chart representing direction" 
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                  />
@@ -116,7 +116,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
                 {/* Left Column: Image */}
                 <div className="relative h-full min-h-[500px] rounded-none overflow-hidden shadow-2xl group order-1">
                     <img 
-                        src="https://coolcatamaran.com/images/why/abstract4.png" 
+                        src="/images/why/abstract4.png" 
                         alt="Abstract representation of NEKO design philosophy" 
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -202,7 +202,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
       {/* PARALLAX IMAGE PORTAL (Between Section 4 and 5) */}
       <div 
           className="relative w-full min-h-[60vh] flex items-center justify-center bg-fixed bg-center bg-cover bg-no-repeat py-24"
-          style={{ backgroundImage: `url('https://coolcatamaran.com/images/why/sunset2.png')` }}
+          style={{ backgroundImage: `url('/images/why/sunset2.png')` }}
       >
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 container mx-auto px-6 text-center">
@@ -267,7 +267,7 @@ const WhyPage: React.FC<WhyPageProps> = ({ setCurrentPage }) => {
                 {/* Right Column: Image */}
                 <div className="relative h-full min-h-[400px] rounded-none overflow-hidden shadow-2xl group order-2">
                     <img 
-                        src="https://coolcatamaran.com/images/why/architech2.png" 
+                        src="/images/why/architech2.png" 
                         alt="Architect drafting plans" 
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />

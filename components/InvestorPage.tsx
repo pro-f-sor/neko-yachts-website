@@ -499,7 +499,7 @@ const InvestorPage: React.FC = () => {
                         {/* Peter */}
                         <AnimatedSection delay={100} className="flex flex-col md:flex-row gap-8 items-start">
                             <img 
-                                src="https://coolcatamaran.com/images/headshots/Peter.png" 
+                                src="/images/headshots/Peter.png" 
                                 alt="Peter Walker" 
                                 className="w-24 h-24 rounded-none object-cover grayscale"
                             />
@@ -515,7 +515,7 @@ const InvestorPage: React.FC = () => {
                         {/* Michael */}
                         <AnimatedSection delay={200} className="flex flex-col md:flex-row gap-8 items-start">
                             <img 
-                                src="https://coolcatamaran.com/images/headshots/Mike.png" 
+                                src="/images/headshots/Mike.png" 
                                 alt="Michael Walker" 
                                 className="w-24 h-24 rounded-none object-cover grayscale"
                             />

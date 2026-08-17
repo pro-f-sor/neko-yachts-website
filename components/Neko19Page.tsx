@@ -57,7 +57,7 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
       "name": "NEKO Catamarans"
     },
     "description": "A category-defining 19-metre sailing catamaran combining aviation-grade engineering with value-as-standard. Launching 2027.",
-    "image": "https://coolcatamaran.com/images/neko19/mysterycat3.png",
+    "image": "/images/neko19/mysterycat3.png",
     "releaseDate": "2027-06-01",
     "manufacturer": {
       "@type": "Organization",
@@ -80,7 +80,7 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
              {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://coolcatamaran.com/images/neko19/mysterycat3.png"
+                    src="/images/neko19/mysterycat3.png"
                     alt="Silhouette of the NEKO 19 Catamaran in low light"
                     className="w-full h-full object-cover"
                 />
@@ -181,21 +181,21 @@ const Neko19Page: React.FC<Neko19PageProps> = ({ setCurrentPage }) => {
                         <DossierCard 
                             number="01"
                             title="The Flybridge"
-                            imgSrc="https://coolcatamaran.com/images/rend/flybridge.jpg"
+                            imgSrc="/images/rend/flybridge.jpg"
                             body="360° Vision. Zero Compromise. A command centre designed for single-handed sailing, transitioning instantly into a social lounge for 8 guests."
                             label="Engineering Concept [ALPHA]"
                         />
                          <DossierCard 
                             number="02"
                             title="The Interior"
-                            imgSrc="https://coolcatamaran.com/images/rend/interior.jpg"
+                            imgSrc="/images/rend/interior.jpg"
                             body="A Loft, Not a Cabin. East-West beds. Ducted climate control. We prioritised silence, space, and light over cabin count."
                             label="Engineering Concept [ALPHA]"
                         />
                          <DossierCard 
                             number="03"
                             title="The Invisible Engineering"
-                            imgSrc="https://coolcatamaran.com/images/rend/hull-starter.png"
+                            imgSrc="/images/rend/hull-starter.png"
                             body="From the collision bulkheads to the proprietary hull layup, the true luxury of the NEKO 19 is peace of mind."
                             label="Engineering Concept [ALPHA]"
                         />

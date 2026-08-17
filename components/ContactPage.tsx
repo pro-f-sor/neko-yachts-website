@@ -177,7 +177,7 @@ const ContactPage: React.FC = () => {
             <div className="relative h-[80vh] flex flex-col items-center justify-center text-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="https://coolcatamaran.com/images/contact/calmsea.png" 
+                        src="/images/contact/calmsea.png" 
                         alt="Calm sea horizon" 
                         className="w-full h-full object-cover"
                     />
@@ -346,7 +346,7 @@ const ContactPage: React.FC = () => {
                 {/* Background Image (Nautical Chart) */}
                 <div className="absolute inset-0 z-0">
                     <img 
-                        src="https://coolcatamaran.com/images/contact/tour.png" 
+                        src="/images/contact/tour.png" 
                         alt="Vintage nautical chart" 
                         className="w-full h-full object-cover"
                     />

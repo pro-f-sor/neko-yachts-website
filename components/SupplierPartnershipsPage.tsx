@@ -24,7 +24,7 @@ const SupplierPartnershipsPage: React.FC<SupplierPartnershipsPageProps> = ({ set
          {/* Background Image */}
          <div className="absolute inset-0 z-0">
              <img 
-                src="https://coolcatamaran.com/images/Carbon_fibre_2_Landscape.png" 
+                src="/images/Carbon_fibre_2_Landscape.png" 
                 alt="Detail of raw carbon fibre weave" 
                 className="w-full h-full object-cover"
              />

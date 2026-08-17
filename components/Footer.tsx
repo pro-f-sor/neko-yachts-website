@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage, navLinks }) => {
             <div className="flex items-center gap-0.5">
               <h2 className="text-2xl font-bold tracking-wider text-white">NEK</h2>
               <img 
-                src="https://coolcatamaran.com/images/logo/NEK-O-gold.png" 
+                src="/images/logo/NEK-O-gold.png" 
                 alt="O" 
                 className="h-6 w-auto object-contain ml-[-3px] mt-[-1px]"
               />
